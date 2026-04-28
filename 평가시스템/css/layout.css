@@ -4,6 +4,10 @@
   --scrollbar-width: 0px;
 }
 
+#krds-header .header-container .logo a {
+  background-image: url('../images/common/logo_familynet.svg') !important;
+}
+
 /* GNB 오픈 시 스크롤바 유무에 따른 레이아웃 시프트 방지 */
 .is-gnb-web.hasScrollY #container,
 .is-gnb-web.hasScrollY #krds-footer,

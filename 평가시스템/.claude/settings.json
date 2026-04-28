@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/**)",
+      "Read(//Users/ijaegwang/wordncode/Work/**)",
+      "Bash(mkdir -p /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/css)",
+      "Bash(mkdir -p /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/js)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/css/plugin/swiper-bundle.min.css /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/css/swiper-bundle.min.css)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/js/plugin/swiper-bundle.min.js /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/js/swiper-bundle.min.js)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/js/component/ui-script.js /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/js/ui-script.js)",
+      "Bash(mkdir -p /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/_unused)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/cdn /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/_unused/cdn)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/css /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/_unused/css)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/js /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/_unused/js)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources/fonts /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/_unused/fonts)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/css /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/css)",
+      "Bash(mv /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/js /Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/js)",
+      "Bash(xargs ls *)",
+      "Read(//private/tmp/**)",
+      "Bash(cat /tmp/krds-extracted.css __TRACKED_VAR__/css/ui.css)",
+      "Bash(mv /tmp/ui-merged.css __TRACKED_VAR__/css/ui.css)",
+      "Bash(npx prettier *)"
+    ],
+    "additionalDirectories": [
+      "/Users/ijaegwang/wordncode/Work/ㅎ/한국건강가정진흥원/평가시스템/resources",
+      "/private/tmp"
+    ]
+  }
+}

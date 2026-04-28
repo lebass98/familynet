@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+:root {
+  --scrollbar-width: 0px;
+}
+
+/* GNB 오픈 시 스크롤바 유무에 따른 레이아웃 시프트 방지 */
+.is-gnb-web.hasScrollY #container,
+.is-gnb-web.hasScrollY #krds-footer,
+.is-gnb-web.hasScrollY #krds-header .gnb-toggle-wrap,
+.is-gnb-web.hasScrollY #krds-header .header-container,
+.is-gnb-web.hasScrollY #krds-header .krds-main-menu,
+.is-gnb-web.hasScrollY #krds-masthead {
+  padding-right: var(--scrollbar-width) !important;
+}
+
+.is-gnb-web.hasScrollY #krds-footer .foot-quick {
+  padding-right: var(--scrollbar-width) !important;
+  margin-right: calc(-1 * var(--scrollbar-width)) !important;
+}
+
+/* GNB Layout */
+.krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content > ul > li {
+  width: 220px;
+  flex: 0 0 auto;
+}
+
+.gnb-sub-content .sub-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.gnb-sub-content .sub-title span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+.gnb-sub-content .btn-link {
+  font-size: 14px;
+  color: #464C53;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.gnb-sub-content .btn-link::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url('../images/main/ico-ar.svg') no-repeat center center / contain;
+  opacity: 1;
+}
+
+/* Footer */
+#footer {
+  background: #F4F5F6;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+#footer .inner {
+  max-width: 1430px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#footer p {
+  font-size: 15px;
+  color: #464C53;
+  font-weight: 400;
+}

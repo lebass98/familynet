@@ -1,0 +1,784 @@
+/* [폰트 설정] 국가기관 공식 웹사이트용 Pretendard GOV 웹폰트 임포트 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css");
+
+/* [헤더 레이아웃] 사이트 최상단 헤더 영역의 기본 구조 및 고정(Sticky) 설정 */
+#header {
+    position: relative;
+    z-index: 1000;
+    background: #fff;
+}
+
+#header::after {
+    display: none;
+}
+
+/* [컨테이너 너비] 공통 컨테이너 및 네비게이션 영역의 최대 너비(1430px) 설정 */
+.lnb>ul,
+.official_gov_banner .banner_inner,
+.h_navi .utill,
+.gnb_wrap {
+    width: 100%;
+    max-width: 1430px;
+}
+
+.gnb_wrap {
+    height: 64px;
+}
+
+/* [LNB 오버레이] 메뉴 활성화 시 배경을 어둡게 처리하는 백드롭(Backdrop) 요소 */
+.lnb-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+/* [기본 스타일] 웹사이트 전체의 기본 폰트 패밀리 및 텍스트 렌더링 설정 */
+body {
+    font-family: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* [정부 공식 배너] 헤더 최상단 대한민국 정부 상징 및 공식 안내 영역 */
+.official_gov_banner {
+    background: #f4f4f4;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 13px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.official_gov_banner .banner_inner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.official_gov_banner .left_info {
+    color: #333;
+}
+
+.official_gov_banner .left_info img {
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-top: -3px;
+}
+
+/* [SNS 링크 영역] 배너 우측 상단 소셜 미디어 아이콘 리스트 및 링크 스타일 */
+.official_gov_banner .right_sns ul {
+    display: flex;
+}
+
+.official_gov_banner .right_sns ul li a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 48px;
+    justify-content: center;
+    border-right: 1px dashed #DCDCDC;
+}
+
+.official_gov_banner .right_sns ul li:last-child a {
+    border-right: none;
+}
+
+.official_gov_banner .right_sns ul li a img {
+    width: 16px;
+    height: 16px;
+}
+
+.official_gov_banner .right_sns ul li a:hover img {
+    opacity: 0.7;
+}
+
+/* [메인 헤더 래퍼] 로고 및 유틸리티 메뉴를 감싸는 영역의 높이 및 경계선 설정 */
+.h_wrap {
+    height: 136px !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+/* [로고 위치 설정] 헤더 중앙 로고의 세로 위치 조정 */
+.h_wrap h1 {
+    top: 44px !important;
+}
+
+.h_wrap h1 img {
+    max-height: 80px;
+}
+
+/* [유틸리티 네비게이션] 로그인, 회원가입 등 상단 유틸리티 메뉴 영역의 여백 설정 */
+.h_navi .utill {
+    padding: 30px 0 26px 0 !important;
+    height: 80px;
+}
+
+.utill_menu ul li {
+    position: relative;
+    float: left;
+    margin-left: 30px;
+}
+
+.utill_menu ul li::before {
+    content: none !important;
+}
+
+/* [유틸리티 아이콘] 메뉴 항목별(홈, 로그인, 가입) 맞춤형 아이콘 및 상세 스타일 */
+.utill_menu ul li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: center center;
+    left: 0;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.utill_menu ul li a {
+    color: #1d1d1d;
+    font-weight: 700;
+    font-size: 17px;
+    padding-left: 12px;
+}
+
+.utill_menu ul li.home a,
+.utill_menu ul li.join a,
+.utill_menu ul li.login a {
+    background: none;
+}
+
+.utill_menu ul li.home:after {
+    background-image: url(../../images/header/icon_family_home.svg);
+}
+
+.utill_menu ul li.login:after {
+    background-image: url(../../images/header/icon_top_login.svg);
+}
+
+.utill_menu ul li.join:after {
+    background-image: url(../../images/header/icon_top_join.svg);
+}
+
+/* [LNB 메인 메뉴] 주 메뉴(1차 카테고리)의 폰트, 간격 및 활성화 상태 스타일 */
+.lnb>ul>li:first-child {
+    margin-left: 0;
+}
+
+.lnb>ul>li {
+    position: initial;
+    padding: 0;
+}
+
+.lnb>ul>li>a {
+    color: #464C53;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 20px 55px 22px 20px;
+}
+
+.lnb>ul>li.active>a {
+    color: #177E8B;
+}
+
+.lnb>ul>li>a:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/header/icon_lnb_arrow-down.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    right: 25px;
+    transition: all 0.2s ease;
+}
+
+.lnb>ul>li.active>a:before {
+    transform: rotate(180deg);
+    transition: all 0.2s ease;
+}
+
+.lnb>ul>li>a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: #177E8B;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.lnb>ul>li.active>a:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #177E8B;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* [서브 메뉴 영역] 주 메뉴 호버 시 나타나는 하위 카테고리(2차 메뉴) 컨테이너 설정 */
+.lnb>ul>li>div.lnb_sub {
+    border: none;
+    padding: 0;
+    padding-top: 25px;
+    width: auto;
+    height: auto;
+}
+
+.lnb>ul>li>div.lnb_sub p {
+    font-weight: 700;
+    color: #1e2124;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.lnb>ul>li>div.lnb_sub p>a {
+    font-size: 15px;
+    color: #1E2124;
+    font-weight: 400;
+    margin-left: 18px;
+    text-decoration: underline;
+}
+
+.lnb>ul>li>div.lnb_sub p>a:after {
+    content: ">";
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.lnb>ul>li>div.lnb_sub p::before {
+    display: none;
+}
+
+.lnb>ul>li:hover>div.lnb_sub {
+    background: none;
+}
+
+.lnb>ul>li.l_title1>div.lnb_sub {
+    border-left: none;
+}
+
+/* [서브 메뉴 리스트] 하위 카테고리 항목들의 레이아웃 및 개별 항목 디자인 */
+.lnb>ul>li>div.lnb_sub>ul {
+    max-width: 1430px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    row-gap: 12px;
+    margin-top: 16px;
+}
+
+.lnb>ul>li>div.lnb_sub>ul>li {
+    min-width: 220px;
+    height: 46px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.lnb>ul>li>div.lnb_sub>ul>li.active {
+    border-radius: 6px;
+    background-color: #EEF2F7;
+}
+
+.lnb>ul>li>div.lnb_sub>ul>li a:hover {
+    text-decoration: none;
+}
+
+.lnb>ul>li>div.lnb_sub>ul>li a {
+    color: #1E2124;
+    padding-left: 15px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.lnb>ul>li>div.lnb_sub>ul>li a::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #33363D;
+    left: 8px;
+    top: 47%;
+}
+
+.lnb>ul>li.l_title6>div.lnb_sub,
+.lnb>ul>li.l_title5>div.lnb_sub,
+.lnb>ul>li.l_title4>div.lnb_sub,
+.lnb>ul>li.l_title3>div.lnb_sub,
+.lnb>ul>li.l_title2>div.lnb_sub,
+.lnb>ul>li.l_title1>div.lnb_sub {
+    left: 0;
+}
+
+/* [푸터 기본 양식] 사이트 하부 푸터 영역의 배경색 및 기본 레이아웃 정의 */
+#footer {
+    padding: 0;
+    border: none;
+    background-color: #F4F5F6;
+}
+
+/* [패밀리 사이트] 관련 기관 링크 선택(Select) 버튼 및 확장 시의 아이콘/스타일 변화 */
+.f_wrap .f_utill .familySite .btn_family.open::before {
+    border-top: none !important;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url('../../images/footer/icon_family_more-.svg');
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.f_wrap .f_utill .familySite .btn_family.open {
+    color: #1E2124;
+    background-color: #F4F5F6 !important;
+    border: none;
+    border-left: 1px solid #CDD1D5;
+    border-right: 1px solid #CDD1D5;
+}
+
+.f_wrap .f_utill .familySite .btn_family {
+    border: none;
+    border-left: 1px solid #CDD1D5;
+    border-right: 1px solid #CDD1D5;
+    border-radius: 0;
+    color: #1E2124;
+    font-size: 17px;
+    font-weight: 400;
+    width: 357px;
+    padding: 19px 24px;
+    background-color: #fff !important;
+}
+
+/* [패밀리 사이트 리스트] 하단 관련 기관 리스트의 스크롤바 커스텀 및 내부 링크 스타일 */
+.f_wrap .f_utill .familySite .familyList {
+    bottom: 59px;
+    width: calc(100% - 8px);
+    overflow: auto;
+    height: 294px;
+    border-right: 6px solid #fff;
+    outline: 1px solid #CDD1D5;
+    left: 1px;
+}
+
+.f_wrap .f_utill .familySite .familyList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.f_wrap .f_utill .familySite .familyList::-webkit-scrollbar-track {
+    background: transparent;
+    background-color: #f1f1f1;
+    border-radius: 99px;
+    margin: 10px 0;
+    background-clip: padding-box;
+}
+
+.f_wrap .f_utill .familySite .familyList::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 99px;
+    background-clip: padding-box;
+}
+
+.f_wrap .f_utill .familySite .familyList::-webkit-scrollbar-thumb:hover {
+    background: #333;
+    background-clip: padding-box;
+}
+
+.f_wrap .f_utill .familySite .familyList li a {
+    font-size: 17px;
+    padding: 19px 24px;
+    color: #1E2124;
+}
+
+.f_wrap .f_utill .familySite .familyList li a:hover {
+    font-weight: 600;
+    background: none;
+    color: #1E2124;
+}
+
+.f_wrap .f_utill .familySite .btn_family::before {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url('../../images/footer/icon_family_more.svg');
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.f_wrap {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* [패밀리 사이트 래퍼] 푸터 영역 내 관련 사이트 배너의 상하 경계 및 배경 설정 */
+.family_site_wrap {
+    border-top: 1px solid #CDD1D5;
+    border-bottom: 1px solid #CDD1D5;
+    background-color: #fff;
+}
+
+.family_site_inner {
+    max-width: 1430px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* [푸터 바텀 섹션] 푸터 최하단 정보(주소, 저작권, 약관 등)의 레이아웃 및 여백 정의 */
+.footer_bottom {
+    width: 100%;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.footer_bottom_inner {
+    max-width: 1430px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.f_wrap .f_logo {
+    padding-top: 0;
+}
+
+.f_wrap .f_menu {
+    margin-left: 0;
+}
+
+.f_wrap .f_utill .familySite .familyList li {
+    border: none;
+    border-bottom: 1px solid #CDD1D5;
+}
+
+.f_wrap .f_utill .familySite .familyList li:first-child {
+    border-top: none;
+}
+
+.f_wrap .f_utill .familySite .familyList li:last-child {
+    border-bottom: none;
+}
+
+/* [푸터 텍스트] 푸터 내 주소 정보 및 법적 고지 텍스트의 스타일 및 간격 설정 */
+.f_wrap .f_menu .f_txt {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #CDD1D5;
+    color: #1E2124;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.f_wrap .f_menu .cert-copy {
+    position: relative;
+}
+
+.f_wrap .f_menu ul {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.f_wrap .f_menu ul li {
+    float: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.f_wrap .f_menu ul li::before {
+    display: none;
+}
+
+.f_wrap .f_menu ul li a {
+    font-size: 17px;
+    color: #1E2124;
+}
+
+.f_wrap .f_menu ul li a b {
+    color: #177E8B;
+}
+
+.f_wrap .f_menu .cert-copy p {
+    color: #464C53;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* [반응형 스타일 모음] 디바이스 해상도에 따른 레이아웃 및 컨텐츠 가시성 최적화 (Breakpoint 리스트) */
+
+@media screen and (min-width: 1099px) {
+    a.all_menu {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    .mob-only {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .footer_bottom {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .f_wrap .f_menu .cert-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 16px 0;
+    }
+
+    .f_wrap .f_menu .cert-copy p {
+        position: relative;
+        right: 0;
+    }
+
+    .f_wrap .f_menu .f_txt {
+        padding-bottom: 26px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .h_wrap {
+        padding: 0;
+        height: auto !important;
+    }
+
+    .h_wrap h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .official_gov_banner {
+        padding: 0 16px;
+    }
+
+    .h_wrap_bottom {
+        display: flex;
+        padding: 0 16px;
+        justify-content: space-between;
+        height: 72px;
+        align-items: center;
+    }
+
+    .h_navi .utill {
+        padding: 0 !important;
+        align-items: center;
+        display: flex;
+    }
+
+    #naviMenu {
+        max-width: 550px;
+    }
+
+    .navi-login {
+        gap: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navi-login .close_area {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navi-login .close_area .close_btn {
+        width: 24px;
+        height: 24px;
+    }
+
+    .navi-login a.mob-login {
+        font-size: 22px;
+        color: #1E2124;
+        font-weight: 700;
+        line-height: 1.5;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .mob-navi-top .mob-member {
+        padding: 8px 16px 16px;
+        display: flex;
+        gap: 8px;
+    }
+
+    .mob-navi-top .mob-member li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .mob-navi-top .mob-member li a {
+        color: #1E2124;
+        font-size: 17px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        line-height: 56px;
+        gap: 2px;
+    }
+
+    .mob-menuCtg {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mob-menuCtg li {
+        padding: 16px 16px 0 16px;
+    }
+
+    .mob-menuCtg li .t_a_line {
+        border-bottom: 1px solid #8A949E;
+        padding: 4px 8px 12px;
+    }
+
+    .mob-menuCtg li .t_a_line a {
+        color: #1E2124;
+        font-size: 19px;
+        font-weight: 700;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .mob-menuCtg li .side_sub {
+        padding: 8px 0;
+    }
+
+    .mob-menuCtg li .side_sub li {
+        padding: 12px 8px;
+        border-radius: 8px;
+    }
+
+    .mob-menuCtg li .side_sub li a {
+        font-size: 17px;
+        color: #1E2124;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .mob-menuCtg li .side_sub li:active {
+        background-color: #EEF2F7;
+    }
+
+    .mob-menuCtg li .side_sub li:active a {
+        font-weight: 700;
+    }
+
+    .mob-navi-bottom {
+        border-top: 4px solid #CDD1D5;
+    }
+
+
+    .mob-navi-bottom .mob-sns {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        flex-direction: column;
+    }
+
+    .mob-navi-bottom .mob-sns li a {
+        font-size: 15px;
+        color: #1E2124;
+        font-weight: 400;
+        position: relative;
+        display: inline-flex;
+        line-height: 22px;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .mob-navi-bottom .mob-sns li a::after {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../../images/header/icon_mob_sns_ar.svg');
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: center center;
+    }
+
+
+
+    .f_wrap .f_logo {
+        display: block;
+    }
+
+    .f_wrap .f_menu {
+        text-align: left;
+    }
+
+    .f_wrap {
+        text-align: left;
+    }
+
+    .f_wrap .f_utill {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .f_wrap .f_menu ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .f_wrap {
+        padding: 0;
+    }
+
+    .right_sns {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .sns_top_cards>a>p {
+        text-align: center;
+        word-break: keep-all;
+    }
+
+    .f_wrap .f_menu .f_txt p {
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+
+    .f_wrap .f_utill .familySite .btn_family,
+    .f_wrap .f_utill,
+    .family_site_inner {
+        width: 100%;
+    }
+}

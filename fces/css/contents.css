@@ -145,8 +145,8 @@ main .inner {
   text-overflow: ellipsis;
   padding-left: 12px;
   position: relative;
-  color:#333;
-  line-height:1;
+  color: #333;
+  line-height: 1;
 }
 
 .notice-item .text::before {
@@ -203,17 +203,17 @@ main .inner {
 
 /* Tablet & Mobile Responsiveness */
 @media screen and (max-width: 1400px) {
-  .inner {
+  main .inner {
     max-width: 100%;
-    padding: 0 40px;
+    padding: 0 20px;
   }
-  
+
   .card-group {
     flex-direction: column;
     align-items: center;
   }
-  
-  .purple-card, 
+
+  .purple-card,
   .card-sub-wrap {
     width: 100%;
     max-width: 664px;
@@ -221,29 +221,34 @@ main .inner {
 }
 
 @media screen and (max-width: 768px) {
-  .inner {
-    padding: 0 20px;
+  main .inner {
+    padding: 0 16px;
   }
-  
+
   .hero-section {
     padding: 40px 0;
   }
-  
+
   .sub-slogan {
     font-size: 18px;
   }
-  
+
   .main-slogan {
     font-size: 36px;
     margin-bottom: 20px;
     line-height: 1.2;
   }
-  
+
   .desc {
     font-size: 15px;
-    br { display: none; } /* Remove line breaks on mobile */
+
+    br {
+      display: none;
+    }
+
+    /* Remove line breaks on mobile */
   }
-  
+
   .slogan-wrap {
     margin-bottom: 40px;
   }
@@ -253,16 +258,16 @@ main .inner {
     min-height: 300px;
     padding: 32px;
   }
-  
+
   .purple-card .card-title {
     font-size: 32px;
   }
-  
+
   .card-sub-wrap {
     flex-direction: column;
     max-width: 100%;
   }
-  
+
   .notice-card,
   .archive-card,
   .faq-card,
@@ -270,15 +275,26 @@ main .inner {
     width: 100% !important;
     height: auto;
     min-height: 180px;
+    padding: 16px;
   }
-  
+
   .notice-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
   }
-  
+
   .notice-item .date {
     margin-left: 12px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 16px;
   }
+
+  .btn-go {
+    top: 16px;
+    right: 16px;
+  }
+
 }

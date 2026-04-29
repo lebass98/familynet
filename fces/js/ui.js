@@ -1733,6 +1733,30 @@ const krds_calendar = {
   },
 };
 
+/*** * krds_modal * ***/
+const krds_modal = {
+  init() {
+    const modalOverlay = document.querySelector(".modal-overlay");
+    if (!modalOverlay) return;
+
+    const openBtns = document.querySelectorAll(".btn-open-modal");
+    const closeBtns = modalOverlay.querySelectorAll(".btn-close-modal, .btn-modal-close");
+
+    openBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modalOverlay.classList.add("active");
+      });
+    });
+
+    closeBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modalOverlay.classList.remove("active");
+      });
+    });
+  },
+};
+
+
 /*** * krds_inPageNavigation * ***/
 const krds_inPageNavigation = {
   quickIndicators: null,
@@ -2693,6 +2717,7 @@ window.addEventListener("DOMContentLoaded", () => {
   krds_disclosure.init();
   krds_dropEvent.init();
   krds_calendar.init();
+  krds_modal.init();
   krds_inPageNavigation.init();
   krds_adjustContentScale.init();
   krds_toggleSwitch.init();

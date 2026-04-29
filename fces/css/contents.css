@@ -999,17 +999,17 @@ main .inner {
     min-width: 500px; /* 테이블 최소 너비 축소 */
   }
 
-  /* 테이블 컬럼 너비 재조정 */
-  .modal-table col:nth-child(1) { width: 50px !important; }
-  .modal-table col:nth-child(2) { width: 80px !important; }
-  .modal-table col:nth-child(3) { width: 80px !important; }
-  .modal-table col:nth-child(5) { width: 100px !important; }
+  /* 테이블 컬럼 너비 재조정 (텍스트 줄바꿈 방지를 위해 다시 확대) */
+  .modal-table col:nth-child(1) { width: 60px !important; } /* 번호 */
+  .modal-table col:nth-child(2) { width: 80px !important; } /* 유형 */
+  .modal-table col:nth-child(3) { width: 80px !important; } /* 평가자 */
+  .modal-table col:nth-child(5) { width: 120px !important; } /* 보완요청일 */
 
   .modal-table th, 
   .modal-table td {
     height: 40px;
     font-size: 13px;
-    padding: 0 4px; /* 좌우 여백 축소 */
+    padding: 0 12px; /* 좌우 여백 확대 */
   }
 
   .modal-detail-table-wrap {
@@ -1022,14 +1022,17 @@ main .inner {
     margin-bottom: 0;
   }
 
+  .modal-detail-table col:nth-child(1) { width: 100px !important; }
+
   .modal-detail-table th {
-    width: 80px; /* 레이블 영역 축소 */
-    padding: 10px 8px;
+    width: 100px; /* 레이블 영역 확대 */
+    padding: 10px 12px;
     font-size: 13px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
   }
 
   .modal-detail-table td {
-    padding: 10px 8px;
+    padding: 10px 12px;
     font-size: 13px;
   }
 

@@ -502,46 +502,82 @@ main .inner {
   cursor: pointer;
 }
 
-/* Table Custom Styles */
-.krds-table-wrap .tbl.data th {
-  text-align: center;
+/* Default Table Styles */
+.default-table-wrap {
+  margin-top: 24px;
+  border-top: 1px solid #111;
 }
 
-.krds-table-wrap .tbl.data td {
+.default-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.default-table th {
+  background-color: #f7f7f7;
+  height: 60px;
+  border: 1px solid #e1e1e1;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
   text-align: center;
   vertical-align: middle;
 }
 
-.krds-table-wrap .tbl.data td.text-left {
-  text-align: left;
+.default-table td {
+  height: 60px;
+  border: 1px solid #e1e1e1;
+  font-size: 15px;
+  color: #333;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 10px;
 }
 
-.btn-table {
+.default-table td.text-left {
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-status {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
+  height: 34px;
+  padding: 0 20px;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #666;
   cursor: pointer;
-  border: none;
-  min-width: 100px;
+  transition: all 0.2s;
+  min-width: 88px;
 }
 
-.btn-table.purple { background-color: #5e4bc8; color: #fff; }
-.btn-table.brown { background-color: #a67c45; color: #fff; }
-.btn-table.light-purple { background-color: #e8e6f5; color: #5e4bc8; }
-.btn-table.outline { border: 1px solid #ddd; background-color: #fff; color: #666; }
+.btn-status.purple { background-color: #7260d8; border-color: #7260d8; color: #fff; }
+.btn-status.brown { background-color: #a67c45; border-color: #a67c45; color: #fff; }
+.btn-status.lavender { background-color: #f1f0fa; border-color: #f1f0fa; color: #7260d8; }
 
-.badge-reason {
+.btn-status:hover {
+  opacity: 0.9;
+}
+
+.badge-red {
   background-color: #e53935;
   color: #fff;
   padding: 2px 8px;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
   margin-left: 8px;
-  font-weight: 500;
+  font-weight: 600;
+  vertical-align: middle;
 }
 
 .empty-msg {
@@ -554,15 +590,11 @@ main .inner {
 }
 
 @media screen and (max-width: 1200px) {
-  .content-title-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .default-table-wrap {
+    overflow-x: auto;
   }
-  .search-filter-wrap {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 12px;
+  .default-table {
+    min-width: 1000px;
   }
 }
 

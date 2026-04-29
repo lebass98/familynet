@@ -1530,8 +1530,8 @@ const krds_calendar = {
   // ui 동작 확인용 테스트 코드
   example() {
     this.datePickerArea.forEach((datePicker) => {
-      const year = datePicker.querySelector(".calendar-switch-wrap .year").innerText.slice(0, -1);
-      const month = datePicker.querySelector(".calendar-switch-wrap .month").innerText.slice(0, -1);
+      const year = datePicker.querySelector(".calendar-switch-wrap .year").textContent.trim().slice(0, -1);
+      const month = datePicker.querySelector(".calendar-switch-wrap .month").textContent.trim().slice(0, -1);
       const caption = datePicker.querySelector(".calendar-tbl caption");
       const tblCells = datePicker.querySelectorAll(".calendar-tbl td");
       const tblCellBtns = datePicker.querySelectorAll(".calendar-tbl td .btn-set-date");
@@ -1544,7 +1544,7 @@ const krds_calendar = {
 
       // 테스트용 (실제 구현에서는 날짜 배열을 받아 처리함)
       tblCells.forEach((cell) => {
-        const day = cell.querySelector(".btn-set-date").innerText.padStart(2, "0");
+        const day = cell.querySelector(".btn-set-date").textContent.trim().padStart(2, "0");
         let [numberYear, numberMonth] = [parseFloat(year), parseFloat(month)];
         if (cell.classList.contains("old")) {
           if (numberMonth === 1) {
@@ -1563,6 +1563,38 @@ const krds_calendar = {
         }
         cell.setAttribute("data-date", `${numberYear}.${String(numberMonth).padStart(2, "0")}.${day}`);
       });
+
+      const prevBtn = datePicker.querySelector(".btn-cal-move.prev");
+      const nextBtn = datePicker.querySelector(".btn-cal-move.next");
+      const yearText = datePicker.querySelector(".calendar-switch-wrap .year");
+      const monthText = datePicker.querySelector(".calendar-switch-wrap .month");
+
+      const updateCalendar = (direction) => {
+        let y = parseInt(yearText.textContent.trim().slice(0, -1));
+        let m = parseInt(monthText.textContent.trim().slice(0, -1));
+        if (direction === "prev") {
+          m--;
+          if (m < 1) { m = 12; y--; }
+        } else if (direction === "next") {
+          m++;
+          if (m > 12) { m = 1; y++; }
+        }
+        yearText.textContent = y + "년";
+        monthText.textContent = String(m).padStart(2, "0") + "월";
+        caption.innerHTML = `${y}년 ${String(m).padStart(2, "0")}월`;
+
+        let currentDay = 1;
+        tblCells.forEach((cell) => {
+          if (!cell.classList.contains("old") && !cell.classList.contains("new")) {
+            cell.querySelector(".btn-set-date").textContent = currentDay;
+            cell.setAttribute("data-date", `${y}.${String(m).padStart(2, "0")}.${String(currentDay).padStart(2, "0")}`);
+            currentDay++;
+          }
+        });
+      };
+
+      if (prevBtn) prevBtn.addEventListener("click", () => updateCalendar("prev"));
+      if (nextBtn) nextBtn.addEventListener("click", () => updateCalendar("next"));
 
       // action
       const accReset = (action, btn, type) => {
@@ -1597,7 +1629,7 @@ const krds_calendar = {
               accSet();
             }
             if (target === "확인") {
-              const value1 = action.closest(".krds-calendar-area").querySelector("td.period.start")?.getAttribute("data-date");
+              const value1 = action.closest(".krds-calendar-area").querySelector("td.period.start")?.getAttribute("data-date") || "";
               const value2 = action.closest(".krds-calendar-area").querySelector("td.period.end")?.getAttribute("data-date") || "";
               targetInputStart.value = value1;
               targetInputEnd.value = value2;
@@ -1643,10 +1675,10 @@ const krds_calendar = {
           btn.addEventListener("click", () => {
             const currentTd = btn.closest("td");
             // 현재 td의 날짜
-            const currentDate = new Date(currentTd.getAttribute("data-date"));
+            const currentDate = new Date(currentTd.getAttribute("data-date").replace(/\./g, "/"));
             // 두 번째 클릭일 때, 시작날짜 이전 이면 초기화
             if (startTd) {
-              const startDate = new Date(startTd.getAttribute("data-date"));
+              const startDate = new Date(startTd.getAttribute("data-date").replace(/\./g, "/"));
               if (currentDate < startDate) {
                 console.log("시작날짜 이전은 선택할 수 없습니다.");
                 startTd = null;
@@ -1665,6 +1697,10 @@ const krds_calendar = {
               btn.closest("td").classList.add("period", "start");
               btn.setAttribute("aria-pressed", "true");
               startTd = currentTd;
+              const targetInputStart = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:first-child input.datepicker");
+              if (targetInputStart) targetInputStart.value = currentTd.getAttribute("data-date");
+              const targetInputEnd = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:last-child input.datepicker");
+              if (targetInputEnd) targetInputEnd.value = "";
             } else {
               btn.closest("td").classList.add("period", "end");
               btn.setAttribute("aria-pressed", "true");
@@ -1682,6 +1718,8 @@ const krds_calendar = {
                   started = false;
                 }
               });
+              const targetInputEnd = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:last-child input.datepicker");
+              if (targetInputEnd) targetInputEnd.value = currentTd.getAttribute("data-date");
               startTd = null;
             }
           });

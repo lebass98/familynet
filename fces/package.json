@@ -18,5 +18,8 @@
     "디지털 서비스"
   ],
   "author": "krds",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^29.1.0"
+  }
 }

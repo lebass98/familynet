@@ -12,7 +12,7 @@
     <link href="../css/layout.css" type="text/css" rel="stylesheet" />
     <link href="../css/ui.css" type="text/css" rel="stylesheet" />
     <link href="../css/contents.css" type="text/css" rel="stylesheet" />
-    <script defer src="../js/ui.js"></script>
+    <script defer src="../js/ui.js?v=2"></script>
 </head>
 
 <body>
@@ -318,7 +318,7 @@
             <div class="stepper-wrap">
                 <ol class="stepper">
                     <li>
-                        <dl class="complete">
+                        <dl class="active">
                             <dt>
                                 <img src="../images/sub/step-icon-01.svg" alt="평가선택">
                             </dt>
@@ -326,7 +326,7 @@
                         </dl>
                     </li>
                     <li>
-                        <dl class="active">
+                        <dl>
                             <dt>
                                 <img src="../images/sub/step-icon-02.svg" alt="기관 운영 현황 작성">
                             </dt>
@@ -366,14 +366,135 @@
                         <div class="filter-item">
                             <span class="filter-label">평가기간</span>
                             <div class="filter-conts">
-                                <div class="input-date-wrap">
-                                    <input type="text" class="krds-input" value="2026.04.20">
-                                    <button type="button" class="btn-cal"><span class="sr-only">달력 선택</span></button>
-                                </div>
-                                <span class="tilde">~</span>
-                                <div class="input-date-wrap">
-                                    <input type="text" class="krds-input" value="2026.04.24">
-                                    <button type="button" class="btn-cal"><span class="sr-only">달력 선택</span></button>
+                                <div class="calendar-conts">
+                                    <div class="input-group range set">
+                                        <ul>
+                                            <li>
+                                                <div class="input-date-wrap">
+                                                    <input type="text" class="krds-input form-btn-datepicker datepicker" placeholder="YYYY.MM.DD">
+                                                    <button type="button" class="btn-cal form-btn-datepicker"><span class="sr-only">시작일 선택</span></button>
+                                                </div>
+                                            </li>
+                                            <li class="tilde">~</li>
+                                            <li>
+                                                <div class="input-date-wrap">
+                                                    <input type="text" class="krds-input form-btn-datepicker datepicker" placeholder="YYYY.MM.DD">
+                                                    <button type="button" class="btn-cal form-btn-datepicker"><span class="sr-only">종료일 선택</span></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- krds-calendar-area -->
+                                    <div class="krds-calendar-area">
+                                        <div class="calendar-wrap">
+                                            <div class="calendar-head">
+                                                <button type="button" class="krds-btn medium icon btn-cal-move prev"><span class="sr-only">이전달</span></button>
+                                                <div class="calendar-switch-wrap">
+                                                    <div class="calendar-drop-down">
+                                                        <button type="button" class="btn-cal-switch year">2026년</button>
+                                                        <div class="calendar-select">
+                                                            <ul class="sel">
+                                                                <li><button type="button" class="active">2026년</button></li>
+                                                                <li><button type="button">2025년</button></li>
+                                                                <li><button type="button">2024년</button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="calendar-drop-down">
+                                                        <button type="button" class="btn-cal-switch month">04월</button>
+                                                        <div class="calendar-select">
+                                                            <ul class="sel">
+                                                                <li><button type="button">01월</button></li>
+                                                                <li><button type="button">02월</button></li>
+                                                                <li><button type="button">03월</button></li>
+                                                                <li><button type="button" class="active">04월</button></li>
+                                                                <li><button type="button">05월</button></li>
+                                                                <li><button type="button">06월</button></li>
+                                                                <li><button type="button">07월</button></li>
+                                                                <li><button type="button">08월</button></li>
+                                                                <li><button type="button">09월</button></li>
+                                                                <li><button type="button">10월</button></li>
+                                                                <li><button type="button">11월</button></li>
+                                                                <li><button type="button">12월</button></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="krds-btn medium icon btn-cal-move next"><span class="sr-only">다음달</span></button>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="calendar-table-wrap">
+                                                    <table class="calendar-tbl">
+                                                        <caption>2026년 04월</caption>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col" class="sun">일</th>
+                                                                <th scope="col">월</th>
+                                                                <th scope="col">화</th>
+                                                                <th scope="col">수</th>
+                                                                <th scope="col">목</th>
+                                                                <th scope="col">금</th>
+                                                                <th scope="col" class="sat">토</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="old"><button type="button" class="btn-set-date">29</button></td>
+                                                                <td class="old"><button type="button" class="btn-set-date">30</button></td>
+                                                                <td class="old"><button type="button" class="btn-set-date">31</button></td>
+                                                                <td><button type="button" class="btn-set-date">1</button></td>
+                                                                <td><button type="button" class="btn-set-date">2</button></td>
+                                                                <td><button type="button" class="btn-set-date">3</button></td>
+                                                                <td class="sat"><button type="button" class="btn-set-date">4</button></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sun"><button type="button" class="btn-set-date">5</button></td>
+                                                                <td><button type="button" class="btn-set-date">6</button></td>
+                                                                <td><button type="button" class="btn-set-date">7</button></td>
+                                                                <td><button type="button" class="btn-set-date">8</button></td>
+                                                                <td><button type="button" class="btn-set-date">9</button></td>
+                                                                <td><button type="button" class="btn-set-date">10</button></td>
+                                                                <td class="sat"><button type="button" class="btn-set-date">11</button></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sun"><button type="button" class="btn-set-date">12</button></td>
+                                                                <td><button type="button" class="btn-set-date">13</button></td>
+                                                                <td><button type="button" class="btn-set-date">14</button></td>
+                                                                <td><button type="button" class="btn-set-date">15</button></td>
+                                                                <td><button type="button" class="btn-set-date">16</button></td>
+                                                                <td><button type="button" class="btn-set-date">17</button></td>
+                                                                <td class="sat"><button type="button" class="btn-set-date">18</button></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sun"><button type="button" class="btn-set-date">19</button></td>
+                                                                <td class="today"><button type="button" class="btn-set-date">20</button></td>
+                                                                <td><button type="button" class="btn-set-date">21</button></td>
+                                                                <td><button type="button" class="btn-set-date">22</button></td>
+                                                                <td><button type="button" class="btn-set-date">23</button></td>
+                                                                <td><button type="button" class="btn-set-date">24</button></td>
+                                                                <td class="sat"><button type="button" class="btn-set-date">25</button></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="sun"><button type="button" class="btn-set-date">26</button></td>
+                                                                <td><button type="button" class="btn-set-date">27</button></td>
+                                                                <td><button type="button" class="btn-set-date">28</button></td>
+                                                                <td><button type="button" class="btn-set-date">29</button></td>
+                                                                <td><button type="button" class="btn-set-date">30</button></td>
+                                                                <td class="new"><button type="button" class="btn-set-date">1</button></td>
+                                                                <td class="sat new"><button type="button" class="btn-set-date">2</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="calendar-footer">
+                                                <div class="calendar-btn-wrap">
+                                                    <button type="button" class="krds-btn medium text" id="get-today">오늘</button>
+                                                    <button type="button" class="krds-btn medium primary">확인</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -418,21 +539,21 @@
                         <tbody>
                             <tr>
                                 <td>5</td>
-                                <td class="text-left">평가보고는 평가지표에서 제시하는 기준에 따라 자체적으로 기관 및 사업운영...</td>
+                                <td class="text-left">평가보고는 평가지표에서 제시하는 기준에 따라 자체적으로 기관 및 사업운영</td>
                                 <td>2026.03.20~2026.04.20</td>
                                 <td>진행중</td>
                                 <td><button type="button" class="btn-status purple">평가하기</button></td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td class="text-left">기관 스스로 진단하는 의미뿐만 아니라 외부 평가단이 평가하는 기초 자료...</td>
+                                <td class="text-left">기관 스스로 진단하는 의미뿐만 아니라 외부 평가단이 평가하는 기초 자료</td>
                                 <td>2026.03.20~2026.04.20</td>
                                 <td>보안요청 <span class="badge-red">보완사유</span></td>
                                 <td><button type="button" class="btn-status brown">재평가</button></td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td class="text-left">평가보고는 평가지표에서 제시하는 기준에 따라 자체적으로 기관 및 사업운영...</td>
+                                <td class="text-left">평가보고는 평가지표에서 제시하는 기준에 따라 자체적으로 기관 및 사업운영</td>
                                 <td>2026.03.20~2026.04.20</td>
                                 <td>완료</td>
                                 <td><button type="button" class="btn-status lavender">상세보기</button></td>

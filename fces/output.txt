@@ -1,0 +1,9 @@
+Could not load link: "http://localhost/css/krds.min.css"
+Could not load link: "http://localhost/css/base.css"
+Could not load link: "http://localhost/css/layout.css"
+Could not load link: "http://localhost/css/ui.css"
+Could not load link: "http://localhost/css/contents.css"
+Could not load script: "http://localhost/js/ui.js"
+Btns: 30
+Click 1, Period TDs: 0
+Click 2, Period TDs: 0

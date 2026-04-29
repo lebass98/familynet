@@ -205,7 +205,7 @@ main .inner {
 #sub-contents {
   background: #fff;
   min-height: 800px;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 #sub-contents .inner {
@@ -454,6 +454,38 @@ main .inner {
   padding-right: 44px;
 }
 
+.input-group.range.set ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group.range.set .tilde {
+  font-size: 16px;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-conts {
+  position: relative;
+  display: inline-block;
+}
+
+.krds-calendar-area {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  margin-top: 8px;
+}
+
+.krds-calendar-area.active {
+  display: block;
+}
+
 .input-date-wrap .btn-cal {
   position: absolute;
   right: 12px;
@@ -517,19 +549,27 @@ main .inner {
 .default-table th {
   background-color: #f7f7f7;
   height: 60px;
-  border: 1px solid #e1e1e1;
-  font-size: 16px;
-  font-weight: 700;
+  border-right: 1px solid #e1e1e1;
+  font-size: 17px;
+  font-weight: 500;
   color: #111;
   text-align: center;
   vertical-align: middle;
+}
+.default-table th:last-child {
+  border-right:none;
+}
+.default-table td:last-child {
+  border-right:none;
 }
 
 .default-table td {
   height: 60px;
   border: 1px solid #e1e1e1;
-  font-size: 15px;
-  color: #333;
+  border-left:none;
+  font-size: 17px;
+  color: #111;
+  font-weight:400;
   text-align: center;
   vertical-align: middle;
   padding: 0 10px;
@@ -583,9 +623,10 @@ main .inner {
 .empty-msg {
   text-align: center;
   padding: 80px 0;
-  font-size: 18px;
-  color: #666;
-  border-top: 1px solid #ddd;
+  font-size: 17px;
+  font-weight:400;
+  color: #111;
+  border-bottom: 1px solid #ddd;
   margin-top: -1px;
 }
 

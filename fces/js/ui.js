@@ -1733,8 +1733,8 @@ const krds_calendar = {
   },
 };
 
-/*** * krds_modal * ***/
-const krds_modal = {
+/*** * krds_custom_modal * ***/
+const krds_custom_modal = {
   init() {
     const modalOverlay = document.querySelector(".modal-overlay");
     if (!modalOverlay) return;
@@ -2717,7 +2717,7 @@ window.addEventListener("DOMContentLoaded", () => {
   krds_disclosure.init();
   krds_dropEvent.init();
   krds_calendar.init();
-  krds_modal.init();
+  krds_custom_modal.init();
   krds_inPageNavigation.init();
   krds_adjustContentScale.init();
   krds_toggleSwitch.init();

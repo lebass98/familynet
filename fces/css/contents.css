@@ -452,7 +452,7 @@ main .inner {
 /* Date Input */
 .input-date-wrap {
   position: relative;
-  width: 172px;
+  width: 200px;
 }
 
 .input-date-wrap .krds-input {
@@ -477,19 +477,6 @@ main .inner {
 .calendar-conts {
   position: relative;
   display: inline-block;
-}
-
-.krds-calendar-area {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  margin-top: 8px;
-}
-
-.krds-calendar-area.active {
-  display: block;
 }
 
 .input-date-wrap .btn-cal {
@@ -930,7 +917,7 @@ main .inner {
 /* 섹션 타이틀 & 필수 표시 텍스트 */
 .section-title-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 16px;
@@ -946,6 +933,7 @@ main .inner {
   font-size: 15px;
   color: #E63946;
   font-weight: 500;
+  padding-left:16px;
 }
 
 /* 입력 테이블 (작성용) */

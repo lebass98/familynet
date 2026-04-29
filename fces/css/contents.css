@@ -946,7 +946,9 @@ main .inner {
   border-collapse: collapse;
 }
 
-.write-table th {
+.write-table > thead > tr > th,
+.write-table > tbody > tr > th,
+.write-table > tr > th {
   background: #F8F8F8;
   height: 60px;
   padding: 0 24px;
@@ -959,7 +961,9 @@ main .inner {
   position: relative;
 }
 
-.write-table th.required::after {
+.write-table > thead > tr > th.required::after,
+.write-table > tbody > tr > th.required::after,
+.write-table > tr > th.required::after {
   content: '*';
   color: #E63946;
   margin-left: 4px;
@@ -967,7 +971,9 @@ main .inner {
   font-weight: 700;
 }
 
-.write-table td {
+.write-table > thead > tr > td,
+.write-table > tbody > tr > td,
+.write-table > tr > td {
   height: 60px;
   padding: 6px 20px;
   font-size: 17px;
@@ -976,11 +982,15 @@ main .inner {
   vertical-align: middle;
 }
 
-.write-table td.bg-light {
+.write-table > tbody > tr > td.bg-light,
+.write-table > tr > td.bg-light {
   background-color: #F8F8F8;
 }
 
-.write-table .sub-th {
+.write-table > tbody > tr > th.sub-th,
+.write-table > tbody > tr > td.sub-th,
+.write-table > tr > th.sub-th,
+.write-table > tr > td.sub-th {
   background: #F8F8F8;
   border-right: 1px solid #E0E0E0;
   padding: 0 20px;
@@ -1130,6 +1140,9 @@ main .inner {
   outline: none;
 }
 
+.text-right {
+  text-align: right !important;
+}
 
 @media screen and (max-width: 1200px) {
   .default-table-wrap {

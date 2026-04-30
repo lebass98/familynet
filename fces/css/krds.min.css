@@ -1568,7 +1568,7 @@ button.swiper-pagination-bullet {
   --krds-letter-spacing-none: var(--krds-typo-letter-spacing-0);
   --krds-letter-spacing-wide: var(--krds-typo-letter-spacing-1);
   --krds-font-weight-regular: 400;
-  --krds-font-weight-bold: 700;
+  --krds-font-weight-bold: 600;
   --krds-transition-base: 0.4s ease-in-out;
   --krds-transition-fade: opacity 0.4s linear;
   --krds-transition-collapse: max-height 0.4s ease;

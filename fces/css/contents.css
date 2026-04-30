@@ -1248,7 +1248,7 @@ main .inner {
 
   .default-table {
     width: 100% !important;
-    min-width: max-content !important;
+    min-width: 0 !important;
     table-layout: auto;
   }
 

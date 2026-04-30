@@ -249,6 +249,18 @@ main .inner {
   margin-top: 4px;
 }
 
+.gray-box {
+  background-color: #f8f8fa;
+  border-radius: 16px;
+  padding: 24px 32px;
+}
+
+.gray-box p {
+  font-size: 16px;
+  color: #111;
+  line-height: 1.5;
+}
+
 /* Stepper */
 .stepper-wrap {
   margin: 60px 0 60px;
@@ -1116,6 +1128,27 @@ main .inner {
 
 .btn-item:hover {
   opacity: 0.9;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.btn-outline.purple {
+  color: #725aa4;
+  border: 1px solid #725aa4;
+}
+
+.btn-outline.purple:hover {
+  background-color: #f8f8fa;
 }
 
 /* 다중 행 입력 wrap */

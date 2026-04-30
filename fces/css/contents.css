@@ -1302,11 +1302,22 @@ main .inner {
     font-size: 14px;
   }
 
+  .default-table {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .default-table col {
+    width: auto !important;
+  }
+
   .default-table th,
   .default-table td {
     height: auto;
-    padding: 12px 10px;
-    font-size: 14px;
+    padding: 10px 6px;
+    font-size: 13px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   .flex-between {

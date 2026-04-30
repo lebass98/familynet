@@ -1683,7 +1683,106 @@ main .inner {
     height: 40px;
     font-size: 15px;
   }
+
+  /* ======================================
+     FE_SE_0003 - write-table 모바일 반응형
+     테이블: 가로 드래그 스크롤, 줄내림 방지
+     ====================================== */
+
+  /* 테이블 래퍼: 가로 스크롤 컨테이너 */
+  .write-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 24px;
+  }
+
+  /* 테이블 자체: 최소 너비 고정 + 줄내림 방지 */
+  .write-table {
+    min-width: 680px;
+    white-space: nowrap;
+  }
+
+  /* th, td 공통: 폰트/패딩 축소 */
+  .write-table>thead>tr>th,
+  .write-table>tbody>tr>th,
+  .write-table>tr>th {
+    height: auto;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .write-table>thead>tr>td,
+  .write-table>tbody>tr>td,
+  .write-table>tr>td {
+    height: auto;
+    min-height: 44px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* colgroup 첫 번째 열(th 레이블) 너비 고정 */
+  .write-table col:nth-child(1),
+  .write-table col:nth-child(2) {
+    width: 100px !important;
+  }
+
+  /* input-group 내 flex-wrap 허용(모바일 좁은 폭 대응) */
+  .write-table .input-group {
+    flex-wrap: nowrap;
+  }
+
+  /* 운영비 현황 중첩 테이블 */
+  .td-inner-table {
+    padding: 0 !important;
+  }
+
+  .inner-budget-table {
+    min-width: 400px;
+    white-space: nowrap;
+  }
+
+  .inner-budget-table .budget-total,
+  .inner-budget-table .budget-sub {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .budget-label {
+    font-size: 14px;
+    min-width: 48px;
+  }
+
+  /* textarea 줄내림 허용 예외 */
+  .write-table .krds-textarea {
+    white-space: pre-wrap;
+    min-width: 200px;
+  }
+
+  /* 버튼 그룹 */
+  .btn-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-item {
+    min-width: 80px;
+    font-size: 14px;
+    padding: 0 16px;
+  }
+
+  /* 섹션 타이틀 영역 */
+  .section-title-wrap {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .essential-text {
+    font-size: 13px;
+  }
 }
+
 
 /* Tablet & Mobile Responsiveness */
 @media screen and (max-width: 1430px) {
@@ -1782,4 +1881,37 @@ main .inner {
     right: 16px;
   }
 
+}
+
+/* ================================================
+   커스텀 라디오 버튼 - SVG 이미지 교체
+   icon-radio-off.svg / icon-radio-on.svg
+   ================================================ */
+.krds-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: url('../images/common/icon-radio-off.svg') no-repeat center / 24px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.krds-radio input[type="radio"]:checked {
+  background: url('../images/common/icon-radio-on.svg') no-repeat center / 24px;
+  background-color: transparent;
+}
+
+.krds-radio input[type="radio"]:focus-visible {
+  outline: 2px solid #725AA4;
+  outline-offset: 2px;
+  border-radius: 50%;
 }

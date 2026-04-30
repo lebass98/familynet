@@ -1,0 +1,3984 @@
+
+.krds-step-wrap {
+  --krds-step--layout-gap: var(--krds-number-18);
+  --krds-step--step-font-size: var(--krds-pc-font-size-body-xsmall);
+  --krds-step--step-title-font-size: var(--krds-pc-font-size-body-small);
+  --krds-step--circle-size-default: var(--krds-icon--size-medium);
+  --krds-step--circle-size-active: 1.2rem;
+  --krds-step--circle-radius: var(--krds-radius-max);
+  --krds-step--padding-txt-top: var(--krds-padding-9);
+  --krds-step--padding-txt-right: var(--krds-padding-9);
+  --krds-step--border-width-medium: 0.3rem;
+  --krds-step--color-step: var(--krds-light-color-text-subtle);
+  --krds-step--color-step-title: var(--krds-light-color-text-basic);
+  --krds-step--color-fill-default: var(--krds-light-color-element-gray-light);
+  --krds-step--color-fill-done: var(--krds-light-color-element-gray);
+  --krds-step--color-fill-active: var(--krds-light-color-element-primary);
+  --krds-step--color-fill-white: var(--krds-light-color-element-inverse-static);
+  --krds-step--color-border-default: var(--krds-light-color-element-disabled-light);
+  --krds-step--color-border-done: var(--krds-step--color-fill-done);
+  --krds-step--color-border-active: var(--krds-step--color-fill-active);
+  --krds-step--color-icon-done: var(--krds-step--color-fill-white);
+  --krds-step--color-icon-active: var(--krds-step--color-fill-active);
+  display: flex;
+  margin-bottom: var(--krds-step--layout-gap);
+}
+
+.krds-step-wrap>li {
+  flex: 1;
+  position: relative;
+}
+
+.krds-step-wrap>li::after {
+  position: absolute;
+  top: calc(var(--krds-step--circle-size-default) / 2 - var(--krds-step--border-width-medium) / 2);
+  left: 0.1rem;
+  content: "";
+  width: 100%;
+  height: var(--krds-step--border-width-medium);
+  background-color: var(--krds-step--color-fill-default);
+}
+
+.krds-step-wrap>li>span {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: var(--krds-step--padding-txt-top);
+  padding-right: var(--krds-step--padding-txt-top);
+}
+
+.krds-step-wrap>li>span::after,
+.krds-step-wrap>li>span::before {
+  content: "";
+  border-radius: var(--krds-step--circle-radius);
+}
+
+.krds-step-wrap>li>span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: var(--krds-step--circle-size-default);
+  height: var(--krds-step--circle-size-default);
+  background-color: var(--krds-step--color-fill-default);
+  border: 0.1rem solid var(--krds-step--color-border-default);
+}
+
+.krds-step-wrap>li .step {
+  font-size: var(--krds-step--step-font-size);
+  color: var(--krds-step--color-step);
+}
+
+.krds-step-wrap>li .step-tit {
+  font-size: var(--krds-step--step-title-font-size);
+  font-weight: var(--krds-font-weight-bold);
+  color: var(--krds-step--color-step-title);
+  white-space: nowrap;
+}
+
+.krds-step-wrap>li.done::after {
+  background-color: var(--krds-step--color-fill-done);
+}
+
+.krds-step-wrap>li.done>span::before {
+  border-color: var(--krds-step--color-border-done);
+  background-color: var(--krds-step--color-fill-done);
+}
+
+.krds-step-wrap>li.done>span::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  width: var(--krds-step--circle-size-default);
+  height: var(--krds-step--circle-size-default);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_step_done.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_step_done.svg);
+  background-color: var(--krds-step--color-icon-done);
+  z-index: 3;
+}
+
+.krds-step-wrap>li.active::after {
+  background-color: var(--krds-step--color-border-default);
+}
+
+.krds-step-wrap>li.active>span::before {
+  background-color: var(--krds-step--color-fill-white);
+  border-width: var(--krds-step--border-width-medium);
+  border-color: var(--krds-step--color-border-active);
+}
+
+.krds-step-wrap>li.active>span::after {
+  position: absolute;
+  top: calc((var(--krds-step--circle-size-active) - var(--krds-step--circle-size-default)) / 2 * -1);
+  left: calc((var(--krds-step--circle-size-default) - var(--krds-step--circle-size-active)) / 2);
+  width: var(--krds-step--circle-size-active);
+  height: var(--krds-step--circle-size-active);
+  background-color: var(--krds-step--color-icon-active);
+  z-index: 3;
+}
+
+.krds-step-wrap>li:last-child::after {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .krds-step-wrap {
+    --krds-step--layout-gap: var(--krds-padding-10);
+  }
+}
+
+@media (max-width: 767px) {
+  .krds-step-wrap {
+    --krds-step--layout-gap: var(--krds-number-18);
+    --krds-step--step-font-size: var(--krds-mobile-font-size-body-xsmall);
+    --krds-step--step-title-font-size: var(--krds-pc-font-size-body-small);
+    --krds-step--padding-txt-top: var(--krds-step--circle-size-default);
+    --krds-step--padding-txt-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    position: relative;
+    width: 100%;
+    position: static;
+  }
+
+  .krds-step-wrap>li {
+    flex: 1 1 0px;
+    min-width: 0;
+  }
+
+  .krds-step-wrap>li .step {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .krds-step-wrap>li .step-tit {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 767px) {
+  .krds-step-wrap>li:last-child {
+    flex: 0 0 var(--krds-step--circle-size-default);
+  }
+}
+
+[data-krds-mode="high-contrast"] .krds-step-wrap {
+  --krds-step--color-step: var(--krds-high-contrast-color-text-subtle);
+  --krds-step--color-step-title: var(--krds-high-contrast-color-text-basic);
+  --krds-step--color-fill-default: var(--krds-high-contrast-color-element-gray-light);
+  --krds-step--color-fill-done: var(--krds-high-contrast-color-element-gray);
+  --krds-step--color-fill-active: var(--krds-high-contrast-color-element-primary);
+  --krds-step--color-fill-white: var(--krds-high-contrast-color-element-inverse-static);
+  --krds-step--color-border-default: var(--krds-high-contrast-color-element-disabled-light);
+  --krds-step--color-border-done: var(--krds-step--color-fill-done);
+  --krds-step--color-border-active: var(--krds-step--color-fill-active);
+  --krds-step--color-icon-done: var(--krds-step--color-fill-white);
+  --krds-step--color-icon-active: var(--krds-step--color-fill-active);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-step-wrap {
+    --krds-step--color-step: var(--krds-high-contrast-color-text-subtle);
+    --krds-step--color-step-title: var(--krds-high-contrast-color-text-basic);
+    --krds-step--color-fill-default: var(--krds-high-contrast-color-element-gray-light);
+    --krds-step--color-fill-done: var(--krds-high-contrast-color-element-gray);
+    --krds-step--color-fill-active: var(--krds-high-contrast-color-element-primary);
+    --krds-step--color-fill-white: var(--krds-high-contrast-color-element-inverse-static);
+    --krds-step--color-border-default: var(--krds-high-contrast-color-element-disabled-light);
+    --krds-step--color-border-done: var(--krds-step--color-fill-done);
+    --krds-step--color-border-active: var(--krds-step--color-fill-active);
+    --krds-step--color-icon-done: var(--krds-step--color-fill-white);
+    --krds-step--color-icon-active: var(--krds-step--color-fill-active);
+  }
+}
+
+.krds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  --krds-badge--size-height: var(--krds-size-height-4);
+  --krds-badge--line-height: 2.4rem;
+  --krds-badge--padding: var(--krds-padding-3);
+  --krds-badge--radius: var(--krds-radius-small2);
+  --krds-badge--radius-max: var(--krds-radius-max);
+  --krds-badge--dot-size: 0.6rem;
+  --krds-badge--dot-padding: 0;
+  --krds-badge--number-size-height: var(--krds-size-height-3);
+  --krds-badge--pc-font-size: var(--krds-pc-font-size-label-small);
+  --krds-badge--mobile-font-size: var(--krds-mobile-font-size-label-small);
+  --krds-badge--pc-font-size-large: var(--krds-pc-font-size-label-medium);
+  --krds-badge--mobile-font-size-large: var(--krds-mobile-font-size-label-medium);
+  --krds-badge--size-height-large: var(--krds-size-height-5);
+  --krds-badge--color-primary-element: var(--krds-light-color-element-primary);
+  --krds-badge--color-primary-element-lighter: var(--krds-light-color-element-primary-lighter);
+  --krds-badge--color-primary-text: var(--krds-light-color-text-primary);
+  --krds-badge--color-secondary-element: var(--krds-light-color-element-secondary);
+  --krds-badge--color-secondary-element-lighter: var(--krds-light-color-element-secondary-lighter);
+  --krds-badge--color-secondary-text: var(--krds-light-color-text-secondary);
+  --krds-badge--color-gray-element: var(--krds-light-color-element-gray);
+  --krds-badge--color-gray-element-lighter: var(--krds-light-color-element-gray-light);
+  --krds-badge--color-gray-text: var(--krds-light-color-text-subtle);
+  --krds-badge--color-point-element: var(--krds-light-color-element-point);
+  --krds-badge--color-point-element-lighter: var(--krds-light-color-element-point-lighter);
+  --krds-badge--color-point-text: var(--krds-light-color-text-point);
+  --krds-badge--color-danger-element: var(--krds-light-color-element-danger);
+  --krds-badge--color-danger-element-lighter: var(--krds-light-color-element-danger-lighter);
+  --krds-badge--color-danger-text: var(--krds-light-color-text-danger);
+  --krds-badge--color-warning-element: var(--krds-light-color-element-warning);
+  --krds-badge--color-warning-element-lighter: var(--krds-light-color-element-warning-lighter);
+  --krds-badge--color-warning-text: var(--krds-light-color-text-warning);
+  --krds-badge--color-success-element: var(--krds-light-color-element-success);
+  --krds-badge--color-success-element-lighter: var(--krds-light-color-element-success-lighter);
+  --krds-badge--color-success-text: var(--krds-light-color-text-success);
+  --krds-badge--color-information-element: var(--krds-light-color-element-information);
+  --krds-badge--color-information-element-lighter: var(--krds-light-color-element-information-lighter);
+  --krds-badge--color-information-text: var(--krds-light-color-text-information);
+  --krds-badge--color-disabled-element: var(--krds-light-color-element-disabled-dark);
+  --krds-badge--color-disabled-element-lighter: var(--krds-light-color-element-disabled-light);
+  --krds-badge--color-disabled-text: var(--krds-light-color-text-disabled-on);
+  --krds-badge--color-background-basic: var(--krds-light-color-background-white);
+  --krds-badge--color-text-basic: var(--krds-light-color-text-inverse-static);
+  --krds-badge--color-text-warning: var(--krds-light-color-text-static);
+}
+
+.krds-badge.outline-primary {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--color-primary-element);
+  color: var(--krds-badge--color-primary-text);
+}
+
+.krds-badge.bg-primary {
+  background-color: var(--krds-badge--color-primary-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-primary {
+  background-color: var(--krds-badge--color-primary-element-lighter);
+  color: var(--krds-badge--color-primary-text);
+}
+
+.krds-badge.outline-secondary {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-secondary-element);
+  color: var(--krds-badge--color-secondary-text);
+}
+
+.krds-badge.bg-secondary {
+  background-color: var(--krds-badge--color-secondary-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-secondary {
+  background-color: var(--krds-badge--color-secondary-element-lighter);
+  color: var(--krds-badge--color-secondary-text);
+}
+
+.krds-badge.outline-gray {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-gray-element);
+  color: var(--krds-badge--color-gray-text);
+}
+
+.krds-badge.bg-gray {
+  background-color: var(--krds-badge--color-gray-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-gray {
+  background-color: var(--krds-badge--color-gray-element-lighter);
+  color: var(--krds-badge--color-gray-text);
+}
+
+.krds-badge.outline-point {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-point-element);
+  color: var(--krds-badge--color-point-text);
+}
+
+.krds-badge.bg-point {
+  background-color: var(--krds-badge--color-point-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-point {
+  background-color: var(--krds-badge--color-point-element-lighter);
+  color: var(--krds-badge--color-point-text);
+}
+
+.krds-badge.outline-danger {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-danger-element);
+  color: var(--krds-badge--color-danger-text);
+}
+
+.krds-badge.bg-danger {
+  background-color: var(--krds-badge--color-danger-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-danger {
+  background-color: var(--krds-badge--color-danger-element-lighter);
+  color: var(--krds-badge--color-danger-text);
+}
+
+.krds-badge.outline-warning {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-warning-element);
+  color: var(--krds-badge--color-warning-text);
+}
+
+.krds-badge.bg-warning {
+  background-color: var(--krds-badge--color-warning-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-warning {
+  background-color: var(--krds-badge--color-warning-element-lighter);
+  color: var(--krds-badge--color-warning-text);
+}
+
+.krds-badge.outline-success {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-success-element);
+  color: var(--krds-badge--color-success-text);
+}
+
+.krds-badge.bg-success {
+  background-color: var(--krds-badge--color-success-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-success {
+  background-color: var(--krds-badge--color-success-element-lighter);
+  color: var(--krds-badge--color-success-text);
+}
+
+.krds-badge.outline-information {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-information-element);
+  color: var(--krds-badge--color-information-text);
+}
+
+.krds-badge.bg-information {
+  background-color: var(--krds-badge--color-information-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-information {
+  background-color: var(--krds-badge--color-information-element-lighter);
+  color: var(--krds-badge--color-information-text);
+}
+
+.krds-badge.outline-disabled {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-disabled-element);
+  color: var(--krds-badge--color-disabled-text);
+}
+
+.krds-badge.bg-disabled {
+  background-color: var(--krds-badge--color-disabled-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+.krds-badge.bg-light-disabled {
+  background-color: var(--krds-badge--color-disabled-element-lighter);
+  color: var(--krds-badge--color-disabled-text);
+}
+
+.krds-badge.bg-warning {
+  color: var(--krds-badge--color-text-warning);
+}
+
+.krds-badge {
+  height: var(--krds-badge--size-height);
+  line-height: var(--krds-badge--line-height);
+  font-size: var(--krds-badge--pc-font-size);
+  font-weight: var(--krds-font-weight-regular);
+  padding: 0 var(--krds-badge--padding);
+  border-radius: var(--krds-badge--radius);
+}
+
+@media (max-width: 767px) {
+  .krds-badge {
+    font-size: var(--krds-badge--mobile-font-size);
+  }
+}
+
+.krds-badge.large {
+  height: var(--krds-badge--size-height-large);
+  font-size: var(--krds-badge--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+  .krds-badge.large {
+    font-size: var(--krds-badge--mobile-font-size);
+  }
+}
+
+.krds-badge.number {
+  height: var(--krds-badge--number-size-height);
+  border-radius: var(--krds-badge--radius-max);
+}
+
+.krds-badge.dot {
+  width: var(--krds-badge--dot-size);
+  height: var(--krds-badge--dot-size);
+  padding: var(--krds-badge--dot-padding);
+  border-radius: var(--krds-badge--radius-max);
+}
+
+.krds-badge-wrap {
+  --krds-badge--wrap-gap: var(--krds-gap-3);
+  display: flex;
+  gap: var(--krds-badge--wrap-gap);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge {
+  --krds-badge--color-primary-element: var(--krds-high-contrast-color-element-primary);
+  --krds-badge--color-primary-element-lighter: var(--krds-high-contrast-color-element-primary-lighter);
+  --krds-badge--color-primary-text: var(--krds-high-contrast-color-text-primary);
+  --krds-badge--color-secondary-element: var(--krds-high-contrast-color-element-secondary);
+  --krds-badge--color-secondary-element-lighter: var(--krds-high-contrast-color-element-secondary-lighter);
+  --krds-badge--color-secondary-text: var(--krds-high-contrast-color-text-secondary);
+  --krds-badge--color-gray-element: var(--krds-high-contrast-color-element-gray);
+  --krds-badge--color-gray-element-lighter: var(--krds-high-contrast-color-element-gray-light);
+  --krds-badge--color-gray-text: var(--krds-high-contrast-color-text-subtle);
+  --krds-badge--color-point-element: var(--krds-high-contrast-color-element-point);
+  --krds-badge--color-point-element-lighter: var(--krds-high-contrast-color-element-point-lighter);
+  --krds-badge--color-point-text: var(--krds-high-contrast-color-text-point);
+  --krds-badge--color-danger-element: var(--krds-high-contrast-color-element-danger);
+  --krds-badge--color-danger-element-lighter: var(--krds-high-contrast-color-element-danger-lighter);
+  --krds-badge--color-danger-text: var(--krds-high-contrast-color-text-danger);
+  --krds-badge--color-warning-element: var(--krds-high-contrast-color-element-warning);
+  --krds-badge--color-warning-element-lighter: var(--krds-high-contrast-color-element-warning-lighter);
+  --krds-badge--color-warning-text: var(--krds-high-contrast-color-text-warning);
+  --krds-badge--color-success-element: var(--krds-high-contrast-color-element-success);
+  --krds-badge--color-success-element-lighter: var(--krds-high-contrast-color-element-success-lighter);
+  --krds-badge--color-success-text: var(--krds-high-contrast-color-text-success);
+  --krds-badge--color-information-element: var(--krds-high-contrast-color-element-information);
+  --krds-badge--color-information-element-lighter: var(--krds-high-contrast-color-element-information-lighter);
+  --krds-badge--color-information-text: var(--krds-high-contrast-color-text-information);
+  --krds-badge--color-disabled-element: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-badge--color-disabled-element-lighter: var(--krds-high-contrast-color-element-disabled-light);
+  --krds-badge--color-disabled-text: var(--krds-high-contrast-color-text-disabled-on);
+  --krds-badge--color-background-basic: var(--krds-high-contrast-color-background-white);
+  --krds-badge--color-text-basic: var(--krds-high-contrast-color-text-inverse-static);
+  --krds-badge--color-text-warning: var(--krds-high-contrast-color-text-static);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-primary {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--color-primary-element);
+  color: var(--krds-badge--color-primary-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-primary {
+  background-color: var(--krds-badge--color-primary-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-primary {
+  background-color: var(--krds-badge--color-primary-element-lighter);
+  color: var(--krds-badge--color-primary-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-secondary {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-secondary-element);
+  color: var(--krds-badge--color-secondary-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-secondary {
+  background-color: var(--krds-badge--color-secondary-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-secondary {
+  background-color: var(--krds-badge--color-secondary-element-lighter);
+  color: var(--krds-badge--color-secondary-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-gray {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-gray-element);
+  color: var(--krds-badge--color-gray-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-gray {
+  background-color: var(--krds-badge--color-gray-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-gray {
+  background-color: var(--krds-badge--color-gray-element-lighter);
+  color: var(--krds-badge--color-gray-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-point {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-point-element);
+  color: var(--krds-badge--color-point-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-point {
+  background-color: var(--krds-badge--color-point-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-point {
+  background-color: var(--krds-badge--color-point-element-lighter);
+  color: var(--krds-badge--color-point-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-danger {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-danger-element);
+  color: var(--krds-badge--color-danger-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-danger {
+  background-color: var(--krds-badge--color-danger-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-danger {
+  background-color: var(--krds-badge--color-danger-element-lighter);
+  color: var(--krds-badge--color-danger-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-warning {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-warning-element);
+  color: var(--krds-badge--color-warning-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-warning {
+  background-color: var(--krds-badge--color-warning-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-warning {
+  background-color: var(--krds-badge--color-warning-element-lighter);
+  color: var(--krds-badge--color-warning-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-success {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-success-element);
+  color: var(--krds-badge--color-success-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-success {
+  background-color: var(--krds-badge--color-success-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-success {
+  background-color: var(--krds-badge--color-success-element-lighter);
+  color: var(--krds-badge--color-success-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-information {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-information-element);
+  color: var(--krds-badge--color-information-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-information {
+  background-color: var(--krds-badge--color-information-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-information {
+  background-color: var(--krds-badge--color-information-element-lighter);
+  color: var(--krds-badge--color-information-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.outline-disabled {
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-badge--light-color-disabled-element);
+  color: var(--krds-badge--color-disabled-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-disabled {
+  background-color: var(--krds-badge--color-disabled-element);
+  color: var(--krds-badge--color-text-basic);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-light-disabled {
+  background-color: var(--krds-badge--color-disabled-element-lighter);
+  color: var(--krds-badge--color-disabled-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-badge.bg-warning {
+  color: var(--krds-badge--color-text-warning);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-badge {
+    --krds-badge--color-primary-element: var(--krds-high-contrast-color-element-primary);
+    --krds-badge--color-primary-element-lighter: var(--krds-high-contrast-color-element-primary-lighter);
+    --krds-badge--color-primary-text: var(--krds-high-contrast-color-text-primary);
+    --krds-badge--color-secondary-element: var(--krds-high-contrast-color-element-secondary);
+    --krds-badge--color-secondary-element-lighter: var(--krds-high-contrast-color-element-secondary-lighter);
+    --krds-badge--color-secondary-text: var(--krds-high-contrast-color-text-secondary);
+    --krds-badge--color-gray-element: var(--krds-high-contrast-color-element-gray);
+    --krds-badge--color-gray-element-lighter: var(--krds-high-contrast-color-element-gray-light);
+    --krds-badge--color-gray-text: var(--krds-high-contrast-color-text-subtle);
+    --krds-badge--color-point-element: var(--krds-high-contrast-color-element-point);
+    --krds-badge--color-point-element-lighter: var(--krds-high-contrast-color-element-point-lighter);
+    --krds-badge--color-point-text: var(--krds-high-contrast-color-text-point);
+    --krds-badge--color-danger-element: var(--krds-high-contrast-color-element-danger);
+    --krds-badge--color-danger-element-lighter: var(--krds-high-contrast-color-element-danger-lighter);
+    --krds-badge--color-danger-text: var(--krds-high-contrast-color-text-danger);
+    --krds-badge--color-warning-element: var(--krds-high-contrast-color-element-warning);
+    --krds-badge--color-warning-element-lighter: var(--krds-high-contrast-color-element-warning-lighter);
+    --krds-badge--color-warning-text: var(--krds-high-contrast-color-text-warning);
+    --krds-badge--color-success-element: var(--krds-high-contrast-color-element-success);
+    --krds-badge--color-success-element-lighter: var(--krds-high-contrast-color-element-success-lighter);
+    --krds-badge--color-success-text: var(--krds-high-contrast-color-text-success);
+    --krds-badge--color-information-element: var(--krds-high-contrast-color-element-information);
+    --krds-badge--color-information-element-lighter: var(--krds-high-contrast-color-element-information-lighter);
+    --krds-badge--color-information-text: var(--krds-high-contrast-color-text-information);
+    --krds-badge--color-disabled-element: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-badge--color-disabled-element-lighter: var(--krds-high-contrast-color-element-disabled-light);
+    --krds-badge--color-disabled-text: var(--krds-high-contrast-color-text-disabled-on);
+    --krds-badge--color-background-basic: var(--krds-high-contrast-color-background-white);
+    --krds-badge--color-text-basic: var(--krds-high-contrast-color-text-inverse-static);
+    --krds-badge--color-text-warning: var(--krds-high-contrast-color-text-static);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-primary {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--color-primary-element);
+    color: var(--krds-badge--color-primary-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-primary {
+    background-color: var(--krds-badge--color-primary-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-primary {
+    background-color: var(--krds-badge--color-primary-element-lighter);
+    color: var(--krds-badge--color-primary-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-secondary {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-secondary-element);
+    color: var(--krds-badge--color-secondary-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-secondary {
+    background-color: var(--krds-badge--color-secondary-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-secondary {
+    background-color: var(--krds-badge--color-secondary-element-lighter);
+    color: var(--krds-badge--color-secondary-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-gray {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-gray-element);
+    color: var(--krds-badge--color-gray-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-gray {
+    background-color: var(--krds-badge--color-gray-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-gray {
+    background-color: var(--krds-badge--color-gray-element-lighter);
+    color: var(--krds-badge--color-gray-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-point {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-point-element);
+    color: var(--krds-badge--color-point-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-point {
+    background-color: var(--krds-badge--color-point-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-point {
+    background-color: var(--krds-badge--color-point-element-lighter);
+    color: var(--krds-badge--color-point-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-danger {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-danger-element);
+    color: var(--krds-badge--color-danger-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-danger {
+    background-color: var(--krds-badge--color-danger-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-danger {
+    background-color: var(--krds-badge--color-danger-element-lighter);
+    color: var(--krds-badge--color-danger-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-warning {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-warning-element);
+    color: var(--krds-badge--color-warning-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-warning {
+    background-color: var(--krds-badge--color-warning-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-warning {
+    background-color: var(--krds-badge--color-warning-element-lighter);
+    color: var(--krds-badge--color-warning-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-success {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-success-element);
+    color: var(--krds-badge--color-success-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-success {
+    background-color: var(--krds-badge--color-success-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-success {
+    background-color: var(--krds-badge--color-success-element-lighter);
+    color: var(--krds-badge--color-success-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-information {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-information-element);
+    color: var(--krds-badge--color-information-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-information {
+    background-color: var(--krds-badge--color-information-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-information {
+    background-color: var(--krds-badge--color-information-element-lighter);
+    color: var(--krds-badge--color-information-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.outline-disabled {
+    border-width: var(--krds-light-border-width-variable-regular);
+    border-style: solid;
+    border-color: var(--krds-badge--light-color-disabled-element);
+    color: var(--krds-badge--color-disabled-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-disabled {
+    background-color: var(--krds-badge--color-disabled-element);
+    color: var(--krds-badge--color-text-basic);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-light-disabled {
+    background-color: var(--krds-badge--color-disabled-element-lighter);
+    color: var(--krds-badge--color-disabled-text);
+  }
+
+  [data-krds-mode="theme"] .krds-badge.bg-warning {
+    color: var(--krds-badge--color-text-warning);
+  }
+}
+
+.krds-tag-wrap {
+  --krds-btn-tag--color-text: var(--krds-light-color-text-basic);
+  --krds-btn-tag--color-action: var(--krds-light-color-action-white);
+  --krds-btn-tag--color-action-hover: var(--krds-light-color-action-secondary-hover);
+  --krds-btn-tag--color-action-pressed: var(--krds-light-color-action-secondary-pressed);
+  --krds-btn-tag--color-border: var(--krds-light-color-border-gray-light);
+  --krds-btn-tag--color-border-hover: var(--krds-light-color-action-secondary-hover);
+  --krds-btn-tag--color-border-pressed: var(--krds-light-color-action-secondary-pressed);
+  --krds-btn-tag--wrapper-gap-x-small: var(--krds-gap-2);
+  --krds-btn-tag--wrapper-gap-y-small: var(--krds-gap-3);
+  --krds-btn-tag--size-height-small: var(--krds-size-height-4);
+  --krds-btn-tag--button-size-small: var(--krds-size-height-2);
+  --krds-btn-tag--padding-x-small: var(--krds-padding-3);
+  --krds-btn-tag--pc-font-size-small: var(--krds-pc-font-size-label-xsmall);
+  --krds-btn-tag--mobile-font-size-small: var(--krds-mobile-font-size-label-xsmall);
+  --krds-btn-tag--wrapper-gap-x-medium: var(--krds-gap-3);
+  --krds-btn-tag--wrapper-gap-y-medium: var(--krds-gap-3);
+  --krds-btn-tag--size-height-medium: var(--krds-size-height-5);
+  --krds-btn-tag--button-size-medium: var(--krds-size-height-2);
+  --krds-btn-tag--padding-x-medium: var(--krds-padding-4);
+  --krds-btn-tag--pc-font-size-medium: var(--krds-pc-font-size-label-small);
+  --krds-btn-tag--mobile-font-size-medium: var(--krds-mobile-font-size-label-small);
+  --krds-btn-tag--wrapper-gap-x-large: var(--krds-gap-3);
+  --krds-btn-tag--wrapper-gap-y-large: var(--krds-gap-4);
+  --krds-btn-tag--size-height-large: var(--krds-size-height-6);
+  --krds-btn-tag--button-size-large: var(--krds-size-height-2);
+  --krds-btn-tag--padding-x-large: var(--krds-padding-5);
+  --krds-btn-tag--pc-font-size-large: var(--krds-pc-font-size-label-medium);
+  --krds-btn-tag--mobile-font-size-large: var(--krds-mobile-font-size-label-medium);
+}
+
+.krds-tag-wrap.small {
+  gap: var(--krds-btn-tag--wrapper-gap-y-small) var(--krds-btn-tag--wrapper-gap-x-small);
+}
+
+.krds-tag-wrap.small .krds-btn-tag {
+  gap: var(--krds-gap-1);
+  height: var(--krds-btn-tag--size-height-small);
+  padding: var(--krds-padding-3) var(--krds-btn-tag--padding-x-small);
+  border-radius: var(--krds-btn-tag--size-height-small);
+  font-size: var(--krds-btn-tag--pc-font-size-small);
+  line-height: var(--krds-line-height-none);
+}
+
+@media (max-width: 767px) {
+  .krds-tag-wrap.small .krds-btn-tag {
+    font-size: var(--krds-btn-tag--mobile-font-size-small);
+  }
+}
+
+.krds-tag-wrap.small .krds-btn-tag .btn-delete {
+  width: var(--krds-btn-tag--button-size-small);
+  height: var(--krds-btn-tag--button-size-small);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  line-height: var(--krds-line-height-none);
+}
+
+.krds-tag-wrap.medium {
+  gap: var(--krds-btn-tag--wrapper-gap-y-medium) var(--krds-btn-tag--wrapper-gap-x-medium);
+}
+
+.krds-tag-wrap.medium .krds-btn-tag {
+  gap: var(--krds-gap-1);
+  height: var(--krds-btn-tag--size-height-medium);
+  padding: var(--krds-padding-3) var(--krds-btn-tag--padding-x-medium);
+  border-radius: var(--krds-btn-tag--size-height-medium);
+  font-size: var(--krds-btn-tag--pc-font-size-medium);
+  line-height: var(--krds-line-height-none);
+}
+
+@media (max-width: 767px) {
+  .krds-tag-wrap.medium .krds-btn-tag {
+    font-size: var(--krds-btn-tag--mobile-font-size-medium);
+  }
+}
+
+.krds-tag-wrap.medium .krds-btn-tag .btn-delete {
+  width: var(--krds-btn-tag--button-size-medium);
+  height: var(--krds-btn-tag--button-size-medium);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  line-height: var(--krds-line-height-none);
+}
+
+.krds-tag-wrap.large {
+  gap: var(--krds-btn-tag--wrapper-gap-y-large) var(--krds-btn-tag--wrapper-gap-x-large);
+}
+
+.krds-tag-wrap.large .krds-btn-tag {
+  gap: var(--krds-gap-1);
+  height: var(--krds-btn-tag--size-height-large);
+  padding: var(--krds-padding-3) var(--krds-btn-tag--padding-x-large);
+  border-radius: var(--krds-btn-tag--size-height-large);
+  font-size: var(--krds-btn-tag--pc-font-size-large);
+  line-height: var(--krds-line-height-none);
+}
+
+@media (max-width: 767px) {
+  .krds-tag-wrap.large .krds-btn-tag {
+    font-size: var(--krds-btn-tag--mobile-font-size-large);
+  }
+}
+
+.krds-tag-wrap.large .krds-btn-tag .btn-delete {
+  width: var(--krds-btn-tag--button-size-large);
+  height: var(--krds-btn-tag--button-size-large);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  line-height: var(--krds-line-height-none);
+}
+
+.krds-tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--krds-btn-tag--wrapper-gap-y-medium) var(--krds-btn-tag--wrapper-gap-x-medium);
+}
+
+.krds-tag-wrap .krds-btn-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: relative;
+  background-color: var(--krds-btn-tag--color-action);
+  border: 0.1rem solid var(--krds-btn-tag--color-border);
+  transition: var(--krds-transition-base);
+  gap: var(--krds-gap-1);
+  height: var(--krds-btn-tag--size-height-medium);
+  padding: var(--krds-padding-3) var(--krds-btn-tag--padding-x-medium);
+  border-radius: var(--krds-btn-tag--size-height-medium);
+  font-size: var(--krds-btn-tag--pc-font-size-medium);
+  line-height: var(--krds-line-height-none);
+}
+
+@media (max-width: 767px) {
+  .krds-tag-wrap .krds-btn-tag {
+    font-size: var(--krds-btn-tag--mobile-font-size-medium);
+  }
+}
+
+.krds-tag-wrap .krds-btn-tag:hover {
+  background-color: var(--krds-btn-tag--color-action-hover);
+}
+
+.krds-tag-wrap .krds-btn-tag:active {
+  background-color: var(--krds-btn-tag--color-action-pressed);
+}
+
+.krds-tag-wrap .krds-btn-tag.link:active,
+.krds-tag-wrap .krds-btn-tag.link:hover {
+  text-decoration: underline;
+  text-underline-offset: var(--krds-font-underline-offset);
+}
+
+.krds-tag-wrap .krds-btn-tag .btn-delete {
+  width: var(--krds-btn-tag--button-size-medium);
+  height: var(--krds-btn-tag--button-size-medium);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_delete_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  line-height: var(--krds-line-height-none);
+}
+
+[data-krds-mode="high-contrast"] .krds-tag-wrap {
+  --krds-btn-tag--color-text: var(--krds-high-contrast-color-text-basic);
+  --krds-btn-tag--color-action: var(--krds-high-contrast-color-action-white);
+  --krds-btn-tag--color-action-hover: var(--krds-high-contrast-color-action-secondary-hover);
+  --krds-btn-tag--color-action-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+  --krds-btn-tag--color-border: var(--krds-high-contrast-color-border-gray-light);
+  --krds-btn-tag--color-border-hover: var(--krds-high-contrast-color-action-secondary-hover);
+  --krds-btn-tag--color-border-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-tag-wrap {
+    --krds-btn-tag--color-text: var(--krds-high-contrast-color-text-basic);
+    --krds-btn-tag--color-action: var(--krds-high-contrast-color-action-white);
+    --krds-btn-tag--color-action-hover: var(--krds-high-contrast-color-action-secondary-hover);
+    --krds-btn-tag--color-action-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+    --krds-btn-tag--color-border: var(--krds-high-contrast-color-border-gray-light);
+    --krds-btn-tag--color-border-hover: var(--krds-high-contrast-color-action-secondary-hover);
+    --krds-btn-tag--color-border-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+  }
+}
+
+.fieldset {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-gap-7);
+}
+
+.form-col-group {
+  display: flex;
+  gap: var(--krds-gap-5);
+}
+
+.form-col-group .form-group {
+  width: fit-content;
+}
+
+@media (max-width: 767px) {
+  .form-col-group {
+    flex-direction: column;
+  }
+
+  .form-col-group .form-group {
+    width: 100%;
+  }
+}
+
+.form-group {
+  --krds-form-group--label-pc-font-size: var(--krds-pc-font-size-label-small);
+  --krds-form-group--label-mobile-font-size: var(--krds-mobile-font-size-label-small);
+  --krds-form-group--gap: var(--krds-gap-3);
+  --krds-form-group--icon-padding-right: calc(var(--krds-padding-7) * 2 + var(--krds-icon--size-large));
+  --krds-form-group--message-pc-font-size: var(--krds-pc-font-size-label-xsmall);
+  --krds-form-group--message-mobile-font-size: var(--krds-mobile-font-size-label-xsmall);
+  --krds-form-group--message-text-color: var(--krds-light-color-text-subtle);
+  --krds-form-group--message-success-text-color: var(--krds-light-color-text-success);
+  --krds-form-group--message-information-text-color: var(--krds-light-color-text-information);
+  --krds-form-group--message-error-text-color: var(--krds-light-color-text-danger);
+  display: flex;
+  align-items: normal;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-form-group--gap);
+  width: 100%;
+}
+
+.form-group .form-label,
+.form-group .form-tit {
+  width: 100%;
+  color: var(--krds-light-color-text-subtle);
+}
+
+.form-group .form-conts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-gap-4);
+  width: 100%;
+}
+
+.form-group .form-conts.keyword-sch {
+  width: 58.8rem;
+}
+
+.form-group .form-conts .form-label {
+  display: flex;
+  font-size: var(--krds-form-group--label-pc-font-size);
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .form-group .form-conts .form-label {
+    font-size: var(--krds-form-group--label-mobile-font-size);
+  }
+}
+
+.form-group .form-conts.btn-ico-wrap {
+  position: relative;
+}
+
+.form-group .form-conts.btn-ico-wrap .krds-input {
+  padding-right: var(--krds-form-group--icon-padding-right);
+}
+
+.form-group .form-conts.btn-ico-wrap .btn-group,
+.form-group .form-conts.btn-ico-wrap .krds-btn {
+  position: absolute;
+  top: 50%;
+  right: var(--krds-padding-7);
+  transform: translateY(-50%);
+}
+
+.form-group .form-conts.btn-ico-wrap .btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-gap-3);
+}
+
+.form-group .form-conts.btn-ico-wrap .btn-group .krds-btn {
+  position: static;
+  transform: translateY(0);
+}
+
+.form-group .form-conts.btn-ico-wrap .btn-delete-input {
+  display: none;
+}
+
+.form-conts[data-delete="true"] .krds-input:not(:placeholder-shown)~.btn-delete-input {
+  display: flex;
+}
+
+.form-conts[data-delete="true"] .krds-input:not(:placeholder-shown)~.btn-group .btn-delete-input {
+  display: flex;
+}
+
+.form-group .form-conts.calendar-conts {
+  gap: 0;
+}
+
+.form-group>p {
+  width: 100%;
+}
+
+.form-group [class^="form-hint"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-gap-2);
+  width: 100%;
+  font-size: var(--krds-form-group--message-pc-font-size);
+  color: var(--krds-form-group--message-text-color);
+}
+
+@media (max-width: 767px) {
+  .form-group [class^="form-hint"] {
+    font-size: var(--krds-form-group--message-mobile-font-size);
+  }
+}
+
+.form-group [class^="form-hint"]::before {
+  display: inline-flex;
+  content: "";
+  display: inline-flex;
+  width: var(--krds-icon--size-small);
+  height: var(--krds-icon--size-small);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+}
+
+.form-group [class^="form-hint-"]::before {
+  display: inline-flex;
+  width: var(--krds-icon--size-small);
+  height: var(--krds-icon--size-small);
+  background-color: var(--krds-light-color-text-basic);
+  background-color: transparent !important;
+  forced-color-adjust: none;
+}
+
+.form-group .form-hint-success {
+  color: var(--krds-form-group--message-success-text-color);
+}
+
+.form-group .form-hint-success::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+.form-group .form-hint-information {
+  color: var(--krds-form-group--message-information-text-color);
+}
+
+.form-group .form-hint-information::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+.form-group .form-hint-invalid {
+  color: var(--krds-form-group--message-error-text-color);
+}
+
+.form-group .form-hint-invalid::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+.krds-form-checks-inline {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-gap-5);
+  width: 100%;
+}
+
+.input-group.range {
+  align-items: flex-end;
+  position: relative;
+}
+
+.input-group.range>li:not(.mark) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1 1 0px;
+  min-width: 0;
+  gap: var(--krds-form-group--gap);
+  position: relative;
+}
+
+.input-group.range>li.mark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  height: var(--krds-size-height-8);
+}
+
+.input-group.range>li.mark.large {
+  height: var(--krds-size-height-8);
+}
+
+.input-group.range>li.mark.medium {
+  height: var(--krds-size-height-7);
+}
+
+.input-group.range>li.mark.small {
+  height: var(--krds-size-height-6);
+}
+
+.row .input-group {
+  flex-direction: column;
+}
+
+.row .input-group.range>li {
+  width: 100%;
+}
+
+[data-krds-mode="high-contrast"] .form-group {
+  --krds-form-group--message-text-color: var(--krds-high-contrast-color-text-subtle);
+  --krds-form-group--message-success-text-color: var(--krds-high-contrast-color-text-success);
+  --krds-form-group--message-information-text-color: var(--krds-high-contrast-color-text-information);
+  --krds-form-group--message-error-text-color: var(--krds-high-contrast-color-text-danger);
+}
+
+[data-krds-mode="high-contrast"] .form-group .form-label,
+[data-krds-mode="high-contrast"] .form-group .form-tit {
+  color: var(--krds-high-contrast-color-text-subtle);
+}
+
+[data-krds-mode="high-contrast"] .form-group [class^="form-hint"]::before {
+  display: inline-flex;
+  width: var(--krds-icon--size-small);
+  height: var(--krds-icon--size-small);
+  background-color: var(--krds-high-contrast-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+}
+
+[data-krds-mode="high-contrast"] .form-group [class^="form-hint-"]::before {
+  display: inline-flex;
+  width: var(--krds-icon--size-small);
+  height: var(--krds-icon--size-small);
+  background-color: var(--krds-high-contrast-color-text-basic);
+  background-color: transparent !important;
+  forced-color-adjust: none;
+}
+
+[data-krds-mode="high-contrast"] .form-group .form-hint-success::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+[data-krds-mode="high-contrast"] .form-group .form-hint-information::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+[data-krds-mode="high-contrast"] .form-group .form-hint-invalid::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .form-group {
+    --krds-form-group--message-text-color: var(--krds-high-contrast-color-text-subtle);
+    --krds-form-group--message-success-text-color: var(--krds-high-contrast-color-text-success);
+    --krds-form-group--message-information-text-color: var(--krds-high-contrast-color-text-information);
+    --krds-form-group--message-error-text-color: var(--krds-high-contrast-color-text-danger);
+  }
+
+  [data-krds-mode="theme"] .form-group .form-label,
+  [data-krds-mode="theme"] .form-group .form-tit {
+    color: var(--krds-high-contrast-color-text-subtle);
+  }
+
+  [data-krds-mode="theme"] .form-group [class^="form-hint"]::before {
+    display: inline-flex;
+    width: var(--krds-icon--size-small);
+    height: var(--krds-icon--size-small);
+    background-color: var(--krds-high-contrast-color-text-basic);
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information.svg);
+  }
+
+  [data-krds-mode="theme"] .form-group [class^="form-hint-"]::before {
+    display: inline-flex;
+    width: var(--krds-icon--size-small);
+    height: var(--krds-icon--size-small);
+    background-color: var(--krds-high-contrast-color-text-basic);
+    background-color: transparent !important;
+    forced-color-adjust: none;
+  }
+
+  [data-krds-mode="theme"] .form-group .form-hint-success::before {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_success_fill.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  [data-krds-mode="theme"] .form-group .form-hint-information::before {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_information_fill.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+  }
+
+  [data-krds-mode="theme"] .form-group .form-hint-invalid::before {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_error_fill.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+  }
+}
+
+.sch-form-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-gap-5);
+}
+
+.sch-form-wrap.vert {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.sch-form-wrap.vert .sch-input {
+  width: 100%;
+}
+
+.sch-form-wrap .input-group .krds-form-select {
+  width: auto;
+}
+
+.sch-form-wrap .krds-btn.ico-sch-plus::before {
+  width: var(--krds-size-height-4);
+  height: var(--krds-size-height-4);
+}
+
+.sch-input {
+  display: flex;
+  position: relative;
+}
+
+.sch-input .krds-input {
+  padding: 0 var(--krds-size-height-7) 0 var(--krds-padding-6);
+}
+
+.sch-input .krds-input.xlarge {
+  font-weight: var(--krds-font-weight-bold);
+  padding: 0 7.2rem 0 var(--krds-padding-8);
+}
+
+.sch-input .ico-search {
+  position: absolute;
+  top: 50%;
+  right: var(--krds-gap-5);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 767px) {
+  .form-group .form-conts.keyword-sch {
+    width: 100%;
+  }
+
+  .sch-form-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sch-input .krds-input.xlg {
+    padding: 0 var(--krds-number-16) 0 var(--krds-number-8);
+  }
+
+  .sch-input .krds-input.xlg~.ico-search {
+    right: var(--krds-number-8);
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.krds-input {
+  --krds-input--color-surface: var(--krds-light-color-input-surface);
+  --krds-input--color-surface-readonly: var(--krds-light-color-input-surface-disabled);
+  --krds-input--color-surface-disabled: var(--krds-light-color-input-surface-disabled);
+  --krds-input--color-surface-error: var(--krds-light-color-input-surface);
+  --krds-input--color-border: var(--krds-light-color-input-border);
+  --krds-input--color-border-active: var(--krds-light-color-input-border-active);
+  --krds-input--color-border-readonly: var(--krds-light-color-input-border-disabled);
+  --krds-input--color-border-disabled: var(--krds-light-color-input-border-disabled);
+  --krds-input--color-border-error: var(--krds-light-color-input-border-error);
+  --krds-input--color-text: var(--krds-light-color-text-subtle);
+  --krds-input--color-text-active: var(--krds-light-color-text-basic);
+  --krds-input--color-text-readonly: var(--krds-light-color-text-subtle);
+  --krds-input--color-text-disabled: var(--krds-light-color-text-disabled-on);
+  --krds-input--color-text-placeholder: var(--krds-light-color-text-disabled);
+  --krds-input--color-text-error: var(--krds-light-color-text-subtle);
+  --krds-input--padding-x: var(--krds-padding-6);
+  --krds-input--size-height-small: var(--krds-size-height-6);
+  --krds-input--radius-small: var(--krds-radius-medium1);
+  --krds-input--pc-font-size-small: var(--krds-pc-font-size-label-small);
+  --krds-input--mobile-font-size-small: var(--krds-mobile-font-size-label-small);
+  --krds-input--size-height-medium: var(--krds-size-height-7);
+  --krds-input--radius-medium: var(--krds-radius-medium2);
+  --krds-input--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-input--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-input--size-height-large: var(--krds-size-height-8);
+  --krds-input--radius-large: var(--krds-radius-medium3);
+  --krds-input--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-input--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+  --krds-input--size-height-xlarge: var(--krds-size-height-11);
+  --krds-input--radius-xlarge: var(--krds-radius-large2);
+  --krds-input--pc-font-size-xlarge: var(--krds-pc-font-size-heading-medium);
+  --krds-input--mobile-font-size-xlarge: var(--krds-mobile-font-size-heading-medium);
+}
+
+.krds-input {
+  height: var(--krds-input--size-height-large);
+  border-radius: var(--krds-input--radius-large);
+  font-size: var(--krds-input--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+  .krds-input {
+    font-size: var(--krds-input--mobile-font-size-large);
+  }
+}
+
+.krds-input.small {
+  height: var(--krds-input--size-height-small);
+  border-radius: var(--krds-input--radius-small);
+  font-size: var(--krds-input--pc-font-size-small);
+}
+
+@media (max-width: 767px) {
+  .krds-input.small {
+    font-size: var(--krds-input--mobile-font-size-small);
+  }
+}
+
+.krds-input.medium {
+  height: var(--krds-input--size-height-medium);
+  border-radius: var(--krds-input--radius-medium);
+  font-size: var(--krds-input--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+  .krds-input.medium {
+    font-size: var(--krds-input--mobile-font-size-medium);
+  }
+}
+
+.krds-input.large {
+  height: var(--krds-input--size-height-large);
+  border-radius: var(--krds-input--radius-large);
+  font-size: var(--krds-input--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+  .krds-input.large {
+    font-size: var(--krds-input--mobile-font-size-large);
+  }
+}
+
+.krds-input.xlarge {
+  height: var(--krds-input--size-height-xlarge);
+  border-radius: var(--krds-input--radius-xlarge);
+  font-size: var(--krds-input--pc-font-size-xlarge);
+  font-weight: var(--krds-font-weight-bold);
+}
+
+@media (max-width: 767px) {
+  .krds-input.xlarge {
+    font-size: var(--krds-input--mobile-font-size-xlarge);
+  }
+}
+
+.krds-input {
+  position: relative;
+  width: 100%;
+  padding: 0 var(--krds-input--padding-x);
+  border-width: var(--krds-light-border-width-variable-regular);
+  background-color: var(--krds-input--color-surface);
+  border: 0.1rem solid var(--krds-input--color-border);
+  font-family: inherit;
+  color: var(--krds-input--color-text);
+  transition: var(--krds-transition-base);
+}
+
+.krds-input.focus,
+.krds-input:focus {
+  border-color: var(--krds-input--color-border-active);
+  border-width: 2px;
+  outline: 0;
+  box-shadow: none;
+}
+
+.krds-input[readonly] {
+  background-color: var(--krds-input--color-surface-readonly);
+  border-color: var(--krds-input--color-border-readonly);
+  color: var(--krds-input--color-text-readonly);
+}
+
+.krds-input[readonly].datepicker {
+  background-color: var(--krds-input--color-surface);
+  border-color: var(--krds-input--color-border);
+  color: var(--krds-input--color-text);
+}
+
+.krds-input[readonly]:focus {
+  border-color: var(--krds-input--color-border-active);
+}
+
+.krds-input[disabled] {
+  background-color: var(--krds-input--color-surface-disabled);
+  border-color: var(--krds-input--color-border-disabled);
+  color: var(--krds-input--color-text-disabled);
+}
+
+.krds-input::-webkit-input-placeholder {
+  color: var(--krds-input--color-text-placeholder);
+}
+
+.krds-input::-moz-placeholder {
+  color: var(--krds-input--color-text-placeholder);
+}
+
+.krds-input:-ms-input-placeholder {
+  color: var(--krds-input--color-text-placeholder);
+}
+
+.krds-input::-ms-input-placeholder {
+  color: var(--krds-input--color-text-placeholder);
+}
+
+.krds-input:not(textarea):placeholder-shown {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+textarea.krds-input {
+  --krds-input--textarea-size-height: 14.4rem;
+  --krds-input--textarea-padding-x: var(--krds-padding-6);
+  --krds-input--textarea-padding-y: var(--krds-padding-3);
+  height: var(--krds-input--textarea-size-height);
+  padding: var(--krds-input--textarea-padding-y) var(--krds-input--textarea-padding-x);
+  line-height: var(--krds-transition-base);
+}
+
+.is-error .krds-input {
+  background-color: var(--krds-input--color-surface-error);
+  border-color: var(--krds-input--color-border-error);
+  border-width: 2px;
+  color: var(--krds-input--color-text-error);
+}
+
+.is-error .krds-input:focus {
+  border-color: var(--krds-input--color-border-active);
+}
+
+.textarea-wrap {
+  display: flex;
+  align-items: normal;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--krds-gap-3);
+  width: 100%;
+}
+
+.textarea-count {
+  --krds-input--count-number-pc-font-size: var(--krds-pc-font-size-body-small);
+  --krds-input--count-number-mobile-font-size: var(--krds-mobile-font-size-body-small);
+  --krds-input--count-number-color-text: var(--krds-light-color-text-subtle);
+  --krds-input--count-number-color-text-active: var(--krds-light-color-text-primary);
+  --krds-input--count-number-color-text-error: var(--krds-light-color-text-danger);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: var(--krds-gap-1);
+  width: 100%;
+  font-size: var(--krds-input--count-number-pc-font-size);
+  color: var(--krds-input--count-number-color-text);
+}
+
+@media (max-width: 767px) {
+  .textarea-count {
+    font-size: var(--krds-input--count-number-mobile-font-size);
+  }
+}
+
+.textarea-count .count-now {
+  color: var(--krds-input--count-number-color-text-active);
+}
+
+.is-error .textarea-count .count-now {
+  color: var(--krds-input--count-number-color-text-error);
+}
+
+.textarea-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--krds-gap-5);
+}
+
+.textarea-bottom .textarea-count {
+  margin-left: auto;
+  flex-basis: content;
+  order: 2;
+}
+
+.textarea-bottom .form-hint-invalid {
+  align-items: flex-start;
+  order: 1;
+}
+
+.textarea-bottom .form-hint-invalid::before {
+  flex: none;
+}
+
+.calendar-input {
+  --krds-input--color-surface: var(--krds-light-color-input-surface);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.calendar-input .krds-input {
+  padding-right: var(--krds-form-group--icon-padding-right);
+  background-image: none;
+}
+
+.calendar-input .krds-btn {
+  position: absolute;
+  top: 50%;
+  right: var(--krds-padding-7);
+  transform: translateY(-50%);
+}
+
+.calendar-input .range::after {
+  display: none;
+}
+
+[data-krds-mode="high-contrast"] .krds-input {
+  --krds-input--color-surface: var(--krds-high-contrast-color-input-surface);
+  --krds-input--color-surface-readonly: var(--krds-high-contrast-color-input-surface-disabled);
+  --krds-input--color-surface-disabled: var(--krds-high-contrast-color-input-surface-disabled);
+  --krds-input--color-surface-error: var(--krds-high-contrast-color-input-surface);
+  --krds-input--color-border: var(--krds-high-contrast-color-input-border);
+  --krds-input--color-border-active: var(--krds-high-contrast-color-input-border-active);
+  --krds-input--color-border-readonly: var(--krds-high-contrast-color-input-border-disabled);
+  --krds-input--color-border-disabled: var(--krds-high-contrast-color-input-border-disabled);
+  --krds-input--color-border-error: var(--krds-high-contrast-color-input-border-error);
+  --krds-input--color-text: var(--krds-high-contrast-color-text-subtle);
+  --krds-input--color-text-active: var(--krds-high-contrast-color-text-basic);
+  --krds-input--color-text-readonly: var(--krds-high-contrast-color-text-subtle);
+  --krds-input--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+  --krds-input--color-text-placeholder: var(--krds-high-contrast-color-text-disabled);
+  --krds-input--color-text-error: var(--krds-high-contrast-color-text-subtle);
+  border-width: var(--krds-high-contrast-border-width-variable-regular);
+}
+
+[data-krds-mode="high-contrast"] .textarea-count {
+  --krds-input--count-number-color-text: var(--krds-high-contrast-color-text-subtle);
+  --krds-input--count-number-color-text-active: var(--krds-high-contrast-color-text-primary);
+}
+
+[data-krds-mode="high-contrast"] .calendar-input {
+  --krds-input--color-surface: var(--krds-high-contrast-color-input-surface);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-input {
+    --krds-input--color-surface: var(--krds-high-contrast-color-input-surface);
+    --krds-input--color-surface-readonly: var(--krds-high-contrast-color-input-surface-disabled);
+    --krds-input--color-surface-disabled: var(--krds-high-contrast-color-input-surface-disabled);
+    --krds-input--color-surface-error: var(--krds-high-contrast-color-input-surface);
+    --krds-input--color-border: var(--krds-high-contrast-color-input-border);
+    --krds-input--color-border-active: var(--krds-high-contrast-color-input-border-active);
+    --krds-input--color-border-readonly: var(--krds-high-contrast-color-input-border-disabled);
+    --krds-input--color-border-disabled: var(--krds-high-contrast-color-input-border-disabled);
+    --krds-input--color-border-error: var(--krds-high-contrast-color-input-border-error);
+    --krds-input--color-text: var(--krds-high-contrast-color-text-subtle);
+    --krds-input--color-text-active: var(--krds-high-contrast-color-text-basic);
+    --krds-input--color-text-readonly: var(--krds-high-contrast-color-text-subtle);
+    --krds-input--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+    --krds-input--color-text-placeholder: var(--krds-high-contrast-color-text-disabled);
+    --krds-input--color-text-error: var(--krds-high-contrast-color-text-subtle);
+    border-width: var(--krds-high-contrast-border-width-variable-regular);
+  }
+
+  [data-krds-mode="theme"] .textarea-count {
+    --krds-input--count-number-color-text: var(--krds-high-contrast-color-text-subtle);
+    --krds-input--count-number-color-text-active: var(--krds-high-contrast-color-text-primary);
+  }
+
+  [data-krds-mode="theme"] .calendar-input {
+    --krds-input--color-surface: var(--krds-high-contrast-color-input-surface);
+  }
+}
+
+.krds-form-select {
+  --krds-form-select--color-background: var(--krds-light-color-input-surface);
+  --krds-form-select--color-background-readonly: var(--krds-light-color-input-surface-disabled);
+  --krds-form-select--color-background-disabled: var(--krds-light-color-input-surface-disabled);
+  --krds-form-select--color-background-error: var(--krds-light-color-input-surface);
+  --krds-form-select--icon-color-background: var(--krds-light-color-icon-gray);
+  --krds-form-select--icon-color-background-readonly: var(--krds-light-color-icon-disabled-on);
+  --krds-form-select--icon-color-background-disabled: var(--krds-light-color-icon-disabled-on);
+  --krds-form-select--color-border: var(--krds-light-color-input-border);
+  --krds-form-select--color-border-active: var(--krds-light-color-input-border-active);
+  --krds-form-select--color-border-readonly: var(--krds-light-color-input-border-disabled);
+  --krds-form-select--color-border-disabled: var(--krds-light-color-input-border-disabled);
+  --krds-form-select--color-border-error: var(--krds-light-color-input-border-error);
+  --krds-form-select--color-text: var(--krds-light-color-text-disabled);
+  --krds-form-select--color-text-active: var(--krds-light-color-text-basic);
+  --krds-form-select--color-text-completed: var(--krds-light-color-text-subtle);
+  --krds-form-select--color-text-disabled: var(--krds-light-color-text-disabled-on);
+  --krds-form-select--color-text-error: var(--krds-light-color-text-subtle);
+  --krds-form-select--padding-default: var(--krds-padding-6);
+  --krds-form-select--size-height-small: var(--krds-size-height-6);
+  --krds-form-select--icon-size-small: var(--krds-icon--size-small);
+  --krds-form-select--radius-small: var(--krds-radius-medium3);
+  --krds-form-select--padding-right-small: calc(var(--krds-form-select--padding-default) + var(--krds-gap-3) + var(--krds-form-select--icon-size-small));
+  --krds-form-select--pc-font-size-small: var(--krds-pc-font-size-label-small);
+  --krds-form-select--mobile-font-size-small: var(--krds-mobile-font-size-label-small);
+  --krds-form-select--size-height-medium: var(--krds-size-height-7);
+  --krds-form-select--icon-size-medium: var(--krds-icon--size-medium);
+  --krds-form-select--padding-right-medium: calc(var(--krds-form-select--padding-default) + var(--krds-gap-3) + var(--krds-form-select--icon-size-medium));
+  --krds-form-select--radius-medium: var(--krds-radius-medium2);
+  --krds-form-select--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-select--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-form-select--size-height-large: var(--krds-size-height-8);
+  --krds-form-select--icon-size-large: var(--krds-icon--size-large);
+  --krds-form-select--padding-right-large: calc(var(--krds-form-select--padding-default) + var(--krds-gap-3) + var(--krds-form-select--icon-size-large));
+  --krds-form-select--radius-large: var(--krds-radius-medium1);
+  --krds-form-select--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-select--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+}
+
+.krds-form-select {
+  height: var(--krds-form-select--size-height-large);
+  padding: 0 var(--krds-form-select--padding-right-large) 0 var(--krds-form-select--padding-default);
+  background-position: center right var(--krds-form-select--padding-default);
+  background-size: var(--krds-form-select--icon-size-large) !important;
+  border-radius: var(--krds-form-select--radius-large);
+  font-size: var(--krds-form-select--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select {
+    font-size: var(--krds-form-select--mobile-font-size-large);
+  }
+}
+
+.krds-form-select.small {
+  height: var(--krds-form-select--size-height-small);
+  padding: 0 var(--krds-form-select--padding-right-small) 0 var(--krds-form-select--padding-default);
+  background-position: center right var(--krds-form-select--padding-default);
+  background-size: var(--krds-form-select--icon-size-small) !important;
+  border-radius: var(--krds-form-select--radius-small);
+  font-size: var(--krds-form-select--pc-font-size-small);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select.small {
+    font-size: var(--krds-form-select--mobile-font-size-small);
+  }
+}
+
+.krds-form-select.medium {
+  height: var(--krds-form-select--size-height-medium);
+  padding: 0 var(--krds-form-select--padding-right-medium) 0 var(--krds-form-select--padding-default);
+  background-position: center right var(--krds-form-select--padding-default);
+  background-size: var(--krds-form-select--icon-size-medium) !important;
+  border-radius: var(--krds-form-select--radius-medium);
+  font-size: var(--krds-form-select--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select.medium {
+    font-size: var(--krds-form-select--mobile-font-size-medium);
+  }
+}
+
+.krds-form-select.large {
+  height: var(--krds-form-select--size-height-large);
+  padding: 0 var(--krds-form-select--padding-right-large) 0 var(--krds-form-select--padding-default);
+  background-position: center right var(--krds-form-select--padding-default);
+  background-size: var(--krds-form-select--icon-size-large) !important;
+  border-radius: var(--krds-form-select--radius-large);
+  font-size: var(--krds-form-select--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select.large {
+    font-size: var(--krds-form-select--mobile-font-size-large);
+  }
+}
+
+.krds-form-select {
+  position: relative;
+  width: 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select--color-background) !important;
+  border-width: var(--krds-light-border-width-variable-regular);
+  border-style: solid;
+  border-color: var(--krds-form-select--color-border);
+  font-family: inherit;
+  color: var(--krds-form-select--color-text);
+  transition: var(--krds-transition-base);
+}
+
+.krds-form-select:focus {
+  border-color: var(--krds-form-select--color-border-active);
+  border-width: 2px;
+  outline: 0;
+  box-shadow: none;
+  color: var(--krds-form-select--color-text-active);
+}
+
+.krds-form-select.completed {
+  color: var(--krds-form-select--color-text-completed);
+}
+
+.krds-form-select.is-error {
+  border-color: var(--krds-light-color-text-point);
+  border-width: 2px;
+}
+
+.krds-form-select[disabled] {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select--color-background-disabled) !important;
+  border-color: var(--krds-form-select--color-border-disabled);
+  color: var(--krds-form-select--color-text-disabled);
+}
+
+.is-error .krds-form-select {
+  border-color: var(--krds-light-color-text-point);
+  border-width: 2px;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-select {
+  --krds-form-select--color-background: var(--krds-high-contrast-color-input-surface);
+  --krds-form-select--color-background-readonly: var(--krds-high-contrast-color-input-surface-disabled);
+  --krds-form-select--color-background-disabled: var(--krds-high-contrast-color-input-surface-disabled);
+  --krds-form-select--color-background-error: var(--krds-high-contrast-color-input-surface);
+  --krds-form-select--icon-color-background: var(--krds-high-contrast-color-icon-gray);
+  --krds-form-select--icon-color-background-readonly: var(--krds-high-contrast-color-icon-disabled-on);
+  --krds-form-select--icon-color-background-disabled: var(--krds-high-contrast-color-icon-disabled-on);
+  --krds-form-select--color-border: var(--krds-high-contrast-color-input-border);
+  --krds-form-select--color-border-active: var(--krds-high-contrast-color-input-border-active);
+  --krds-form-select--color-border-readonly: var(--krds-high-contrast-color-input-border-disabled);
+  --krds-form-select--color-border-disabled: var(--krds-high-contrast-color-input-border-disabled);
+  --krds-form-select--color-border-error: var(--krds-high-contrast-color-input-border-error);
+  --krds-form-select--color-text: var(--krds-high-contrast-color-text-disabled);
+  --krds-form-select--color-text-active: var(--krds-high-contrast-color-text-basic);
+  --krds-form-select--color-text-completed: var(--krds-high-contrast-color-text-subtle);
+  --krds-form-select--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+  --krds-form-select--color-text-error: var(--krds-high-contrast-color-text-subtle);
+  border-width: var(--krds-high-contrast-border-width-variable-regular);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select--color-background) !important;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-select[disabled] {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select--color-background-disabled) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-select {
+    --krds-form-select--color-background: var(--krds-high-contrast-color-input-surface);
+    --krds-form-select--color-background-readonly: var(--krds-high-contrast-color-input-surface-disabled);
+    --krds-form-select--color-background-disabled: var(--krds-high-contrast-color-input-surface-disabled);
+    --krds-form-select--color-background-error: var(--krds-high-contrast-color-input-surface);
+    --krds-form-select--icon-color-background: var(--krds-high-contrast-color-icon-gray);
+    --krds-form-select--icon-color-background-readonly: var(--krds-high-contrast-color-icon-disabled-on);
+    --krds-form-select--icon-color-background-disabled: var(--krds-high-contrast-color-icon-disabled-on);
+    --krds-form-select--color-border: var(--krds-high-contrast-color-input-border);
+    --krds-form-select--color-border-active: var(--krds-high-contrast-color-input-border-active);
+    --krds-form-select--color-border-readonly: var(--krds-high-contrast-color-input-border-disabled);
+    --krds-form-select--color-border-disabled: var(--krds-high-contrast-color-input-border-disabled);
+    --krds-form-select--color-border-error: var(--krds-high-contrast-color-input-border-error);
+    --krds-form-select--color-text: var(--krds-high-contrast-color-text-disabled);
+    --krds-form-select--color-text-active: var(--krds-high-contrast-color-text-basic);
+    --krds-form-select--color-text-completed: var(--krds-high-contrast-color-text-subtle);
+    --krds-form-select--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+    --krds-form-select--color-text-error: var(--krds-high-contrast-color-text-subtle);
+    border-width: var(--krds-high-contrast-border-width-variable-regular);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+    background-color: var(--krds-form-select--color-background) !important;
+  }
+
+  [data-krds-mode="theme"] .krds-form-select[disabled] {
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_disabled_inverse.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+    background-color: var(--krds-form-select--color-background-disabled) !important;
+  }
+}
+
+.krds-form-select-sort {
+  --krds-form-select-sorting--color-background: var(--krds-light-color-action-secondary);
+  --krds-form-select-sorting--color-background-hover: var(--krds-light-color-action-secondary-hover);
+  --krds-form-select-sorting--color-background-pressed: var(--krds-light-color-action-secondary-pressed);
+  --krds-form-select-sorting--color-text: var(--krds-light-color-text-basic);
+  --krds-form-select-sorting--padding-left: var(--krds-padding-2);
+  --krds-form-select-sorting--radius: var(--krds-radius-small2);
+  --krds-form-select-sorting--icon-size-small: var(--krds-icon--size-small);
+  --krds-form-select-sorting--padding-left-small: var(--krds-padding-1);
+  --krds-form-select-sorting--padding-right-small: calc(var(--krds-form-select-sorting--padding-left) + var(--krds-gap-1) + var(--krds-form-select-sorting--icon-size-small));
+  --krds-form-select-sorting--pc-font-size-small: var(--krds-pc-font-size-label-small);
+  --krds-form-select-sorting--mobile-font-size-small: var(--krds-mobile-font-size-label-small);
+  --krds-form-select-sorting--icon-size-medium: var(--krds-icon--size-medium);
+  --krds-form-select-sorting--padding-left-medium: var(--krds-padding-2);
+  --krds-form-select-sorting--padding-right-medium: calc(var(--krds-form-select-sorting--padding-left) + var(--krds-gap-1) + var(--krds-form-select-sorting--icon-size-medium));
+  --krds-form-select-sorting--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-select-sorting--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-form-select-sorting--icon-size-large: var(--krds-icon--size-large);
+  --krds-form-select-sorting--padding-left-large: var(--krds-padding-2);
+  --krds-form-select-sorting--padding-right-large: calc(var(--krds-form-select-sorting--padding-left) + var(--krds-gap-1) + var(--krds-form-select-sorting--icon-size-large));
+  --krds-form-select-sorting--pc-font-size-large: var(--krds-pc-font-size-heading-small);
+  --krds-form-select-sorting--mobile-font-size-large: var(--krds-mobile-font-size-heading-small);
+  position: relative;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select-sorting--color-background) !important;
+  border: none;
+  border-radius: var(--krds-form-select-sorting--radius);
+  font-family: inherit;
+  color: var(--krds-form-select-sorting--color-text);
+  transition: var(--krds-transition-base);
+}
+
+.krds-form-select-sort {
+  padding: 0 var(--krds-form-select-sorting--padding-right-medium) 0 var(--krds-form-select-sorting--padding-left);
+  background-position: center right var(--krds-form-select-sorting--padding-left);
+  background-size: var(--krds-form-select-sorting--icon-size-medium) !important;
+  font-size: var(--krds-form-select-sorting--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select-sort {
+    font-size: var(--krds-form-select-sorting--mobile-font-size-medium);
+  }
+}
+
+.krds-form-select-sort.small {
+  padding: 0 var(--krds-form-select-sorting--padding-right-small) 0 var(--krds-form-select-sorting--padding-left);
+  background-position: center right var(--krds-form-select-sorting--padding-left);
+  background-size: var(--krds-form-select-sorting--icon-size-small) !important;
+  font-size: var(--krds-form-select-sorting--pc-font-size-small);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select-sort.small {
+    font-size: var(--krds-form-select-sorting--mobile-font-size-small);
+  }
+}
+
+.krds-form-select-sort.medium {
+  padding: 0 var(--krds-form-select-sorting--padding-right-medium) 0 var(--krds-form-select-sorting--padding-left);
+  background-position: center right var(--krds-form-select-sorting--padding-left);
+  background-size: var(--krds-form-select-sorting--icon-size-medium) !important;
+  font-size: var(--krds-form-select-sorting--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select-sort.medium {
+    font-size: var(--krds-form-select-sorting--mobile-font-size-medium);
+  }
+}
+
+.krds-form-select-sort.large {
+  padding: 0 var(--krds-form-select-sorting--padding-right-large) 0 var(--krds-form-select-sorting--padding-left);
+  background-position: center right var(--krds-form-select-sorting--padding-left);
+  background-size: var(--krds-form-select-sorting--icon-size-large) !important;
+  font-size: var(--krds-form-select-sorting--pc-font-size-large);
+  font-weight: var(--krds-font-weight-bold);
+}
+
+@media (max-width: 767px) {
+  .krds-form-select-sort.large {
+    font-size: var(--krds-form-select-sorting--mobile-font-size-large);
+  }
+}
+
+.krds-form-select-sort:hover {
+  background-color: var(--krds-form-select-sorting--color-background-hover) !important;
+}
+
+.krds-form-select-sort:focus {
+  background-color: var(--krds-form-select-sorting--color-background-pressed) !important;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-select-sort {
+  --krds-form-select-sorting--color-background: var(--krds-high-contrast-color-action-secondary);
+  --krds-form-select-sorting--color-background-hover: var(--krds-high-contrast-color-action-secondary-hover);
+  --krds-form-select-sorting--color-background-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+  --krds-form-select-sorting--color-text: var(--krds-high-contrast-color-text-basic);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  -webkit-mask-image: none;
+  mask-image: none;
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+  background-color: transparent !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  background-color: var(--krds-form-select-sorting--color-background) !important;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-select-sort:hover {
+  background-color: var(--krds-form-select-sorting--color-background-hover) !important;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-select-sort:focus {
+  background-color: var(--krds-form-select-sorting--color-background-pressed) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-select-sort {
+    --krds-form-select-sorting--color-background: var(--krds-high-contrast-color-action-secondary);
+    --krds-form-select-sorting--color-background-hover: var(--krds-high-contrast-color-action-secondary-hover);
+    --krds-form-select-sorting--color-background-pressed: var(--krds-high-contrast-color-action-secondary-pressed);
+    --krds-form-select-sorting--color-text: var(--krds-high-contrast-color-text-basic);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_angle_inverse.svg);
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask: none;
+    mask: none;
+    background-color: var(--krds-form-select-sorting--color-background) !important;
+  }
+
+  [data-krds-mode="theme"] .krds-form-select-sort:hover {
+    background-color: var(--krds-form-select-sorting--color-background-hover) !important;
+  }
+
+  [data-krds-mode="theme"] .krds-form-select-sort:focus {
+    background-color: var(--krds-form-select-sorting--color-background-pressed) !important;
+  }
+}
+
+
+label {
+  display: inline-flex;
+}
+
+.krds-check-area {
+  display: flex;
+  gap: var(--krds-gap-6);
+}
+
+.krds-check-area.chk-column {
+  flex-direction: column;
+}
+
+.chip-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: var(--krds-number-5);
+}
+
+.chip-wrap .krds-form-chip {
+  flex: 1;
+}
+
+.chip-wrap .krds-form-chip .radio:not(:checked)~.krds-form-chip-outline::before {
+  display: none;
+}
+
+.chip-wrap .krds-form-chip .radio~.krds-form-chip-outline {
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+}
+
+.krds-form-check {
+  --krds-form-check--color-text: var(--krds-light-color-text-bolder);
+  --krds-form-check--color-text-disabled: var(--krds-light-color-text-disabled);
+  --krds-form-check--color-text-sub: var(--krds-light-color-text-subtle);
+  --krds-form-check--color-text-sub-disabled: var(--krds-light-color-text-disabled);
+  --krds-form-check--button-color-element: var(--krds-light-color-element-inverse);
+  --krds-form-check--button-color-element-disabled: var(--krds-light-color-element-disabled-light);
+  --krds-form-check--button-color-border: var(--krds-light-color-element-gray-dark);
+  --krds-form-check--button-color-border-checked: var(--krds-light-color-element-primary);
+  --krds-form-check--button-color-border-disabled: var(--krds-light-color-element-disabled-dark);
+  --krds-form-check--checkbox-button-color-element-checked: var(--krds-light-color-element-primary);
+  --krds-form-check--radio-check-color-element: var(--krds-light-alpha-black0);
+  --krds-form-check--radio-check-color-element-checked: var(--krds-light-color-element-primary);
+  --krds-form-check--radio-check-color-element-disabled: var(--krds-light-color-element-disabled-dark);
+  --krds-form-check--checkbox-check-color-element: var(--krds-light-alpha-black0);
+  --krds-form-check--checkbox-check-color-element-checked: var(--krds-light-color-element-inverse-static);
+  --krds-form-check--checkbox-check-color-element-disabled: var(--krds-light-color-element-disabled-dark);
+  --krds-form-check--additional-text-color-text: var(--krds-light-color-text-subtle);
+  --krds-form-check--button-size-medium: var(--krds-size-height-3);
+  --krds-form-check--radio-check-size-medium: 1rem;
+  --krds-form-check--checkbox-check-size-medium: 1.2rem;
+  --krds-form-check--radio-button-radius-medium: var(--krds-radius-max);
+  --krds-form-check--checkbox-button-radius-medium: var(--krds-radius-small1);
+  --krds-form-check--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-check--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-form-check--additional-text-pc-font-size-medium: var(--krds-pc-font-size-label-small);
+  --krds-form-check--additional-text-mobile-font-size-medium: var(--krds-mobile-font-size-label-small);
+  --krds-form-check--button-size-large: var(--krds-size-height-4);
+  --krds-form-check--radio-check-size-large: 1.2rem;
+  --krds-form-check--checkbox-check-size-large: var(--krds-size-height-2);
+  --krds-form-check--radio-button-radius-large: var(--krds-radius-max);
+  --krds-form-check--checkbox-button-radius-large: var(--krds-radius-small2);
+  --krds-form-check--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-check--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+  --krds-form-check--additional-text-pc-font-size-large: var(--krds-pc-font-size-label-medium);
+  --krds-form-check--additional-text-mobile-font-size-large: var(--krds-mobile-font-size-label-medium);
+  --krds-form-check--gap: var(--krds-gap-3);
+  --krds-form-check--button-margin-top: 0.3rem;
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label,
+.krds-form-check.medium>input[type="radio"]~label {
+  gap: var(--krds-form-check--gap);
+  font-size: var(--krds-form-check--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-check.medium>input[type="checkbox"]~label,
+  .krds-form-check.medium>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-medium);
+  }
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label:before,
+.krds-form-check.medium>input[type="radio"]~label:before {
+  width: var(--krds-form-check--button-size-medium);
+  height: var(--krds-form-check--button-size-medium);
+  margin-top: var(--krds-form-check--button-margin-top);
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt,
+.krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt {
+  padding-left: calc(var(--krds-form-check--button-size-medium) + var(--krds-form-check--gap));
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+.krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+  font-size: var(--krds-form-check--additional-text-pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-medium);
+  }
+}
+
+.krds-form-check.medium>input[type="radio"]~label:before {
+  border-radius: var(--krds-form-check--radio-button-radius-medium);
+}
+
+.krds-form-check.medium>input[type="radio"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2);
+  width: var(--krds-form-check--radio-check-size-medium);
+  height: var(--krds-form-check--radio-check-size-medium);
+  background-color: var(--krds-form-check--radio-check-color-element);
+  border-radius: var(--krds-radius-max);
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label:before {
+  border-radius: var(--krds-form-check--checkbox-button-radius-medium);
+}
+
+.krds-form-check.medium>input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-medium);
+  height: var(--krds-form-check--checkbox-check-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+.krds-form-check.large>input[type="checkbox"]~label,
+.krds-form-check.large>input[type="radio"]~label {
+  gap: var(--krds-form-check--gap);
+  font-size: var(--krds-form-check--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-check.large>input[type="checkbox"]~label,
+  .krds-form-check.large>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-large);
+  }
+}
+
+.krds-form-check.large>input[type="checkbox"]~label:before,
+.krds-form-check.large>input[type="radio"]~label:before {
+  width: var(--krds-form-check--button-size-large);
+  height: var(--krds-form-check--button-size-large);
+  margin-top: var(--krds-form-check--button-margin-top);
+}
+
+.krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt,
+.krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt {
+  padding-left: calc(var(--krds-form-check--button-size-large) + var(--krds-form-check--gap));
+}
+
+.krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+.krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+  font-size: var(--krds-form-check--additional-text-pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-large);
+  }
+}
+
+.krds-form-check.large>input[type="radio"]~label:before {
+  border-radius: var(--krds-form-check--radio-button-radius-large);
+}
+
+.krds-form-check.large>input[type="radio"]~label:after {
+  top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2);
+  width: var(--krds-form-check--radio-check-size-large);
+  height: var(--krds-form-check--radio-check-size-large);
+  background-color: var(--krds-form-check--radio-check-color-element);
+  border-radius: var(--krds-radius-max);
+}
+
+.krds-form-check.large>input[type="checkbox"]~label:before {
+  border-radius: var(--krds-form-check--checkbox-button-radius-large);
+}
+
+.krds-form-check.large>input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-large);
+  height: var(--krds-form-check--checkbox-check-size-large);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+.krds-form-check input[type="checkbox"]~label,
+.krds-form-check input[type="radio"]~label {
+  position: relative;
+  display: inline-flex;
+  gap: var(--krds-form-check--gap);
+  font-size: var(--krds-form-check--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-check input[type="checkbox"]~label,
+  .krds-form-check input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-medium);
+  }
+}
+
+.krds-form-check input[type="checkbox"]~label:after,
+.krds-form-check input[type="checkbox"]~label:before,
+.krds-form-check input[type="radio"]~label:after,
+.krds-form-check input[type="radio"]~label:before {
+  display: flex;
+  content: "";
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-check input[type="checkbox"]~label:before,
+.krds-form-check input[type="radio"]~label:before {
+  flex-shrink: 0;
+  width: var(--krds-form-check--button-size-medium);
+  height: var(--krds-form-check--button-size-medium);
+  margin-top: var(--krds-form-check--button-margin-top);
+  z-index: 3;
+  background-color: var(--krds-form-check--button-color-element);
+  border: 0.1rem solid var(--krds-form-check--button-color-border);
+}
+
+.krds-form-check input[type="checkbox"]~label:after,
+.krds-form-check input[type="radio"]~label:after {
+  position: absolute;
+  z-index: 4;
+}
+
+.krds-form-check input[type="checkbox"]:disabled~label,
+.krds-form-check input[type="radio"]:disabled~label {
+  color: var(--krds-form-check--color-text-sub-disabled);
+  cursor: default;
+}
+
+.krds-form-check input[type="checkbox"]:disabled~label:before,
+.krds-form-check input[type="radio"]:disabled~label:before {
+  background-color: var(--krds-form-check--button-color-element-disabled) !important;
+  border-color: var(--krds-form-check--button-color-border-disabled) !important;
+}
+
+.krds-form-check input[type="checkbox"]:focus~label,
+.krds-form-check input[type="radio"]:focus~label {
+  box-shadow: var(--krds-box-shadow-outline-inset);
+  outline-offset: 0.4rem;
+}
+
+.krds-form-check input[type="radio"]~label:before {
+  border-radius: var(--krds-form-check--radio-button-radius-medium);
+}
+
+.krds-form-check input[type="radio"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2);
+  width: var(--krds-form-check--radio-check-size-medium);
+  height: var(--krds-form-check--radio-check-size-medium);
+  background-color: var(--krds-form-check--radio-check-color-element);
+  border-radius: var(--krds-radius-max);
+}
+
+.krds-form-check input[type="radio"]:checked~label:before {
+  border-color: var(--krds-form-check--button-color-border-checked);
+}
+
+.krds-form-check input[type="radio"]:checked~label:after {
+  background-color: var(--krds-form-check--radio-check-color-element-checked);
+}
+
+.krds-form-check input[type="radio"]:checked:disabled~label:after {
+  background-color: var(--krds-form-check--radio-check-color-element-disabled);
+}
+
+.krds-form-check input[type="checkbox"]~label:before {
+  border-radius: var(--krds-form-check--checkbox-button-radius-medium);
+}
+
+.krds-form-check input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-medium);
+  height: var(--krds-form-check--checkbox-check-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+.krds-form-check input[type="checkbox"]:checked~label:before {
+  background-color: var(--krds-form-check--checkbox-button-color-element-checked);
+  border-color: var(--krds-form-check--button-color-border-checked);
+}
+
+.krds-form-check input[type="checkbox"]:checked~label:after {
+  background-color: var(--krds-form-check--checkbox-check-color-element-checked);
+  transition-delay: 0.1s;
+}
+
+.krds-form-check input[type="checkbox"]:checked:disabled~label:after {
+  background-color: var(--krds-form-check--checkbox-check-color-element-disabled);
+}
+
+.krds-form-check .krds-form-check-cnt {
+  margin-top: var(--krds-padding-2);
+}
+
+.krds-form-check .krds-form-check-cnt .krds-form-check-p {
+  color: var(--krds-form-check--additional-text-color-text);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check {
+  --krds-form-check--color-text: var(--krds-high-contrast-color-text-bolder);
+  --krds-form-check--color-text-disabled: var(--krds-high-contrast-color-text-disabled);
+  --krds-form-check--color-text-sub: var(--krds-high-contrast-color-text-subtle);
+  --krds-form-check--color-text-sub-disabled: var(--krds-high-contrast-color-text-disabled);
+  --krds-form-check--button-color-element: var(--krds-high-contrast-color-element-inverse);
+  --krds-form-check--button-color-element-disabled: var(--krds-high-contrast-color-element-disabled-light);
+  --krds-form-check--button-color-border: var(--krds-high-contrast-color-element-gray-dark);
+  --krds-form-check--button-color-border-checked: var(--krds-high-contrast-color-element-primary);
+  --krds-form-check--button-color-border-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-form-check--checkbox-button-color-element-checked: var(--krds-high-contrast-color-element-primary);
+  --krds-form-check--radio-check-color-element: var(--krds-light-alpha-black0);
+  --krds-form-check--radio-check-color-element-checked: var(--krds-high-contrast-color-element-primary);
+  --krds-form-check--radio-check-color-element-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-form-check--checkbox-check-color-element: var(--krds-light-alpha-black0);
+  --krds-form-check--checkbox-check-color-element-checked: var(--krds-high-contrast-color-element-inverse-static);
+  --krds-form-check--checkbox-check-color-element-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-form-check--additional-text-color-text: var(--krds-high-contrast-color-text-subtle);
+  --krds-form-check--button-size-medium: var(--krds-size-height-3);
+  --krds-form-check--radio-check-size-medium: 1rem;
+  --krds-form-check--checkbox-check-size-medium: 1.2rem;
+  --krds-form-check--radio-button-radius-medium: var(--krds-radius-max);
+  --krds-form-check--checkbox-button-radius-medium: var(--krds-radius-small1);
+  --krds-form-check--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-check--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-form-check--additional-text-pc-font-size-medium: var(--krds-pc-font-size-label-small);
+  --krds-form-check--additional-text-mobile-font-size-medium: var(--krds-mobile-font-size-label-small);
+  --krds-form-check--button-size-large: var(--krds-size-height-4);
+  --krds-form-check--radio-check-size-large: 1.2rem;
+  --krds-form-check--checkbox-check-size-large: var(--krds-size-height-2);
+  --krds-form-check--radio-button-radius-large: var(--krds-radius-max);
+  --krds-form-check--checkbox-button-radius-large: var(--krds-radius-small2);
+  --krds-form-check--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-check--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+  --krds-form-check--additional-text-pc-font-size-large: var(--krds-pc-font-size-label-medium);
+  --krds-form-check--additional-text-mobile-font-size-large: var(--krds-mobile-font-size-label-medium);
+  --krds-form-check--gap: var(--krds-gap-3);
+  --krds-form-check--button-margin-top: 0.3rem;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label,
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label {
+  gap: var(--krds-form-check--gap);
+  font-size: var(--krds-form-check--pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+
+  [data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label,
+  [data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-medium);
+  }
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label:before,
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label:before {
+  width: var(--krds-form-check--button-size-medium);
+  height: var(--krds-form-check--button-size-medium);
+  margin-top: var(--krds-form-check--button-margin-top);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt,
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt {
+  padding-left: calc(var(--krds-form-check--button-size-medium) + var(--krds-form-check--gap));
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+  font-size: var(--krds-form-check--additional-text-pc-font-size-medium);
+}
+
+@media (max-width: 767px) {
+
+  [data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-medium);
+  }
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label:before {
+  border-radius: var(--krds-form-check--radio-button-radius-medium);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="radio"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2);
+  width: var(--krds-form-check--radio-check-size-medium);
+  height: var(--krds-form-check--radio-check-size-medium);
+  background-color: var(--krds-form-check--radio-check-color-element);
+  border-radius: var(--krds-radius-max);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label:before {
+  border-radius: var(--krds-form-check--checkbox-button-radius-medium);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.medium>input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-medium);
+  height: var(--krds-form-check--checkbox-check-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label,
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label {
+  gap: var(--krds-form-check--gap);
+  font-size: var(--krds-form-check--pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+
+  [data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label,
+  [data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-large);
+  }
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label:before,
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label:before {
+  width: var(--krds-form-check--button-size-large);
+  height: var(--krds-form-check--button-size-large);
+  margin-top: var(--krds-form-check--button-margin-top);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt,
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt {
+  padding-left: calc(var(--krds-form-check--button-size-large) + var(--krds-form-check--gap));
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+  font-size: var(--krds-form-check--additional-text-pc-font-size-large);
+}
+
+@media (max-width: 767px) {
+
+  [data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-large);
+  }
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label:before {
+  border-radius: var(--krds-form-check--radio-button-radius-large);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="radio"]~label:after {
+  top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2);
+  width: var(--krds-form-check--radio-check-size-large);
+  height: var(--krds-form-check--radio-check-size-large);
+  background-color: var(--krds-form-check--radio-check-color-element);
+  border-radius: var(--krds-radius-max);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label:before {
+  border-radius: var(--krds-form-check--checkbox-button-radius-large);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check.large>input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-large);
+  height: var(--krds-form-check--checkbox-check-size-large);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="checkbox"]~label:after {
+  top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+  left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+  display: inline-flex;
+  width: var(--krds-form-check--checkbox-check-size-medium);
+  height: var(--krds-form-check--checkbox-check-size-medium);
+  background-color: var(--krds-high-contrast-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-check--checkbox-check-color-element);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="checkbox"]:checked~label:after {
+  background-color: var(--krds-form-check--checkbox-check-color-element-checked);
+  transition-delay: 0.1s;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="checkbox"]:checked:disabled~label:after {
+  background-color: var(--krds-form-check--checkbox-check-color-element-disabled);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="radio"]:checked~label:before {
+  border-color: var(--krds-form-check--button-color-border-checked);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="radio"]:checked~label:after {
+  background-color: var(--krds-form-check--radio-check-color-element-checked);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-check input[type="radio"]:checked:disabled~label:after {
+  background-color: var(--krds-form-check--radio-check-color-element-disabled);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-check {
+    --krds-form-check--color-text: var(--krds-high-contrast-color-text-bolder);
+    --krds-form-check--color-text-disabled: var(--krds-high-contrast-color-text-disabled);
+    --krds-form-check--color-text-sub: var(--krds-high-contrast-color-text-subtle);
+    --krds-form-check--color-text-sub-disabled: var(--krds-high-contrast-color-text-disabled);
+    --krds-form-check--button-color-element: var(--krds-high-contrast-color-element-inverse);
+    --krds-form-check--button-color-element-disabled: var(--krds-high-contrast-color-element-disabled-light);
+    --krds-form-check--button-color-border: var(--krds-high-contrast-color-element-gray-dark);
+    --krds-form-check--button-color-border-checked: var(--krds-high-contrast-color-element-primary);
+    --krds-form-check--button-color-border-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-form-check--checkbox-button-color-element-checked: var(--krds-high-contrast-color-element-primary);
+    --krds-form-check--radio-check-color-element: var(--krds-light-alpha-black0);
+    --krds-form-check--radio-check-color-element-checked: var(--krds-high-contrast-color-element-primary);
+    --krds-form-check--radio-check-color-element-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-form-check--checkbox-check-color-element: var(--krds-light-alpha-black0);
+    --krds-form-check--checkbox-check-color-element-checked: var(--krds-high-contrast-color-element-inverse-static);
+    --krds-form-check--checkbox-check-color-element-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-form-check--additional-text-color-text: var(--krds-high-contrast-color-text-subtle);
+    --krds-form-check--button-size-medium: var(--krds-size-height-3);
+    --krds-form-check--radio-check-size-medium: 1rem;
+    --krds-form-check--checkbox-check-size-medium: 1.2rem;
+    --krds-form-check--radio-button-radius-medium: var(--krds-radius-max);
+    --krds-form-check--checkbox-button-radius-medium: var(--krds-radius-small1);
+    --krds-form-check--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+    --krds-form-check--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+    --krds-form-check--additional-text-pc-font-size-medium: var(--krds-pc-font-size-label-small);
+    --krds-form-check--additional-text-mobile-font-size-medium: var(--krds-mobile-font-size-label-small);
+    --krds-form-check--button-size-large: var(--krds-size-height-4);
+    --krds-form-check--radio-check-size-large: 1.2rem;
+    --krds-form-check--checkbox-check-size-large: var(--krds-size-height-2);
+    --krds-form-check--radio-button-radius-large: var(--krds-radius-max);
+    --krds-form-check--checkbox-button-radius-large: var(--krds-radius-small2);
+    --krds-form-check--pc-font-size-large: var(--krds-pc-font-size-label-large);
+    --krds-form-check--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+    --krds-form-check--additional-text-pc-font-size-large: var(--krds-pc-font-size-label-medium);
+    --krds-form-check--additional-text-mobile-font-size-large: var(--krds-mobile-font-size-label-medium);
+    --krds-form-check--gap: var(--krds-gap-3);
+    --krds-form-check--button-margin-top: 0.3rem;
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label {
+    gap: var(--krds-form-check--gap);
+    font-size: var(--krds-form-check--pc-font-size-medium);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-medium);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label:before,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label:before {
+    width: var(--krds-form-check--button-size-medium);
+    height: var(--krds-form-check--button-size-medium);
+    margin-top: var(--krds-form-check--button-margin-top);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt {
+    padding-left: calc(var(--krds-form-check--button-size-medium) + var(--krds-form-check--gap));
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-pc-font-size-medium);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-medium);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label:before {
+    border-radius: var(--krds-form-check--radio-button-radius-medium);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="radio"]~label:after {
+    top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+    left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--radio-check-size-medium)) / 2);
+    width: var(--krds-form-check--radio-check-size-medium);
+    height: var(--krds-form-check--radio-check-size-medium);
+    background-color: var(--krds-form-check--radio-check-color-element);
+    border-radius: var(--krds-radius-max);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label:before {
+    border-radius: var(--krds-form-check--checkbox-button-radius-medium);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.medium>input[type="checkbox"]~label:after {
+    top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+    left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+    display: inline-flex;
+    width: var(--krds-form-check--checkbox-check-size-medium);
+    height: var(--krds-form-check--checkbox-check-size-medium);
+    background-color: var(--krds-light-color-text-basic);
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    background-color: var(--krds-form-check--checkbox-check-color-element);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label {
+    gap: var(--krds-form-check--gap);
+    font-size: var(--krds-form-check--pc-font-size-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label {
+    font-size: var(--krds-form-check--mobile-font-size-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label:before,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label:before {
+    width: var(--krds-form-check--button-size-large);
+    height: var(--krds-form-check--button-size-large);
+    margin-top: var(--krds-form-check--button-margin-top);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt {
+    padding-left: calc(var(--krds-form-check--button-size-large) + var(--krds-form-check--gap));
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-pc-font-size-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label+.krds-form-check-cnt .krds-form-check-p,
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label+.krds-form-check-cnt .krds-form-check-p {
+    font-size: var(--krds-form-check--additional-text-mobile-font-size-large);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label:before {
+    border-radius: var(--krds-form-check--radio-button-radius-large);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="radio"]~label:after {
+    top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+    left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--radio-check-size-large)) / 2);
+    width: var(--krds-form-check--radio-check-size-large);
+    height: var(--krds-form-check--radio-check-size-large);
+    background-color: var(--krds-form-check--radio-check-color-element);
+    border-radius: var(--krds-radius-max);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label:before {
+    border-radius: var(--krds-form-check--checkbox-button-radius-large);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check.large>input[type="checkbox"]~label:after {
+    top: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2 + var(--krds-form-check--button-margin-top));
+    left: calc((var(--krds-form-check--button-size-large) - var(--krds-form-check--checkbox-check-size-large)) / 2);
+    display: inline-flex;
+    width: var(--krds-form-check--checkbox-check-size-large);
+    height: var(--krds-form-check--checkbox-check-size-large);
+    background-color: var(--krds-light-color-text-basic);
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    background-color: var(--krds-form-check--checkbox-check-color-element);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="checkbox"]~label:after {
+    top: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2 + var(--krds-form-check--button-margin-top));
+    left: calc((var(--krds-form-check--button-size-medium) - var(--krds-form-check--checkbox-check-size-medium)) / 2);
+    display: inline-flex;
+    width: var(--krds-form-check--checkbox-check-size-medium);
+    height: var(--krds-form-check--checkbox-check-size-medium);
+    background-color: var(--krds-high-contrast-color-text-basic);
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+    background-color: var(--krds-form-check--checkbox-check-color-element);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="checkbox"]:checked~label:after {
+    background-color: var(--krds-form-check--checkbox-check-color-element-checked);
+    transition-delay: 0.1s;
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="checkbox"]:checked:disabled~label:after {
+    background-color: var(--krds-form-check--checkbox-check-color-element-disabled);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="radio"]:checked~label:before {
+    border-color: var(--krds-form-check--button-color-border-checked);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="radio"]:checked~label:after {
+    background-color: var(--krds-form-check--radio-check-color-element-checked);
+  }
+
+  [data-krds-mode="theme"] .krds-form-check input[type="radio"]:checked:disabled~label:after {
+    background-color: var(--krds-form-check--radio-check-color-element-disabled);
+  }
+}
+
+.krds-form-chip {
+  --krds-form-chip--color-text: var(--krds-light-color-text-basic);
+  --krds-form-chip--color-text-checked: var(--krds-light-color-text-primary);
+  --krds-form-chip--color-text-disabled: var(--krds-light-color-text-disabled-on);
+  --krds-form-chip--color-action: var(--krds-light-color-action-white);
+  --krds-form-chip--color-action-checked: var(--krds-light-color-action-primary-selected);
+  --krds-form-chip--color-action-disabled: var(--krds-light-color-action-disabled);
+  --krds-form-chip--color-border: var(--krds-light-color-border-gray);
+  --krds-form-chip--color-border-checked: var(--krds-light-color-border-primary);
+  --krds-form-chip--color-border-disabled: var(--krds-light-color-border-disabled);
+  --krds-form-chip--color-check: var(--krds-light-color-element-disabled-dark);
+  --krds-form-chip--color-check-checked: var(--krds-light-color-icon-primary);
+  --krds-form-chip--color-check-disabled: var(--krds-light-color-icon-disabled-on);
+  --krds-form-chip--size-height-small: var(--krds-size-height-6);
+  --krds-form-chip--check-size-small: 1.2rem;
+  --krds-form-chip--padding-x-small: var(--krds-padding-4);
+  --krds-form-chip--radius-small: var(--krds-radius-medium1);
+  --krds-form-chip--pc-font-size-small: var(--krds-pc-font-size-label-small);
+  --krds-form-chip--mobile-font-size-small: var(--krds-pc-font-size-label-small);
+  --krds-form-chip--size-height-medium: var(--krds-size-height-7);
+  --krds-form-chip--check-size-medium: var(--krds-icon--size-small);
+  --krds-form-chip--padding-x-medium: var(--krds-padding-5);
+  --krds-form-chip--radius-medium: var(--krds-radius-medium2);
+  --krds-form-chip--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-chip--mobile-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-chip--size-height-large: var(--krds-size-height-8);
+  --krds-form-chip--check-size-large: var(--krds-icon--size-small);
+  --krds-form-chip--padding-x-large: var(--krds-padding-6);
+  --krds-form-chip--radius-large: var(--krds-radius-medium3);
+  --krds-form-chip--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-chip--mobile-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-chip--gap: var(--krds-gap-2);
+}
+
+.krds-form-chip.small input[type="checkbox"]~label,
+.krds-form-chip.small input[type="radio"]~label {
+  gap: var(--krds-form-chip--gap);
+  height: var(--krds-form-chip--size-height-small);
+  padding: 0 var(--krds-form-chip--padding-x-small);
+  background-color: var(--krds-form-chip--color-action);
+  border: 0.1rem solid var(--krds-form-chip--color-border);
+  border-radius: var(--krds-form-chip--radius-small);
+  font-size: var(--krds-form-chip--pc-font-size-small);
+  color: var(--krds-form-chip--color-text);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-chip.small input[type="checkbox"]~label,
+  .krds-form-chip.small input[type="radio"]~label {
+    font-size: var(--krds-form-chip--mobile-font-size-small);
+  }
+}
+
+.krds-form-chip.small input[type="checkbox"]~label:before,
+.krds-form-chip.small input[type="radio"]~label:before {
+  display: inline-flex;
+  width: var(--krds-form-chip--check-size-small);
+  height: var(--krds-form-chip--check-size-small);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  background-color: var(--krds-form-chip--color-check);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-chip.medium input[type="checkbox"]~label,
+.krds-form-chip.medium input[type="radio"]~label {
+  gap: var(--krds-form-chip--gap);
+  height: var(--krds-form-chip--size-height-medium);
+  padding: 0 var(--krds-form-chip--padding-x-medium);
+  background-color: var(--krds-form-chip--color-action);
+  border: 0.1rem solid var(--krds-form-chip--color-border);
+  border-radius: var(--krds-form-chip--radius-medium);
+  font-size: var(--krds-form-chip--pc-font-size-medium);
+  color: var(--krds-form-chip--color-text);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-chip.medium input[type="checkbox"]~label,
+  .krds-form-chip.medium input[type="radio"]~label {
+    font-size: var(--krds-form-chip--mobile-font-size-medium);
+  }
+}
+
+.krds-form-chip.medium input[type="checkbox"]~label:before,
+.krds-form-chip.medium input[type="radio"]~label:before {
+  display: inline-flex;
+  width: var(--krds-form-chip--check-size-medium);
+  height: var(--krds-form-chip--check-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  background-color: var(--krds-form-chip--color-check);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-chip.large input[type="checkbox"]~label,
+.krds-form-chip.large input[type="radio"]~label {
+  gap: var(--krds-form-chip--gap);
+  height: var(--krds-form-chip--size-height-large);
+  padding: 0 var(--krds-form-chip--padding-x-large);
+  background-color: var(--krds-form-chip--color-action);
+  border: 0.1rem solid var(--krds-form-chip--color-border);
+  border-radius: var(--krds-form-chip--radius-large);
+  font-size: var(--krds-form-chip--pc-font-size-large);
+  color: var(--krds-form-chip--color-text);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-chip.large input[type="checkbox"]~label,
+  .krds-form-chip.large input[type="radio"]~label {
+    font-size: var(--krds-form-chip--mobile-font-size-large);
+  }
+}
+
+.krds-form-chip.large input[type="checkbox"]~label:before,
+.krds-form-chip.large input[type="radio"]~label:before {
+  display: inline-flex;
+  width: var(--krds-form-chip--check-size-large);
+  height: var(--krds-form-chip--check-size-large);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  background-color: var(--krds-form-chip--color-check);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-chip input[type="checkbox"]~label,
+.krds-form-chip input[type="radio"]~label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  gap: var(--krds-form-chip--gap);
+  height: var(--krds-form-chip--size-height-medium);
+  padding: 0 var(--krds-form-chip--padding-x-medium);
+  background-color: var(--krds-form-chip--color-action);
+  border: 0.1rem solid var(--krds-form-chip--color-border);
+  border-radius: var(--krds-form-chip--radius-medium);
+  font-size: var(--krds-form-chip--pc-font-size-medium);
+  color: var(--krds-form-chip--color-text);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+@media (max-width: 767px) {
+
+  .krds-form-chip input[type="checkbox"]~label,
+  .krds-form-chip input[type="radio"]~label {
+    font-size: var(--krds-form-chip--mobile-font-size-medium);
+  }
+}
+
+.krds-form-chip input[type="checkbox"]~label:before,
+.krds-form-chip input[type="radio"]~label:before {
+  content: "";
+  display: inline-flex;
+  width: var(--krds-form-chip--check-size-medium);
+  height: var(--krds-form-chip--check-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  background-color: var(--krds-form-chip--color-check);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-chip input[type="checkbox"]:disabled~label,
+.krds-form-chip input[type="radio"]:disabled~label {
+  background-color: var(--krds-form-chip--color-action-disabled);
+  border-color: var(--krds-form-chip--color-border-disabled);
+  color: var(--krds-form-chip--color-text-disabled);
+  cursor: default;
+}
+
+.krds-form-chip input[type="checkbox"]:disabled~label:before,
+.krds-form-chip input[type="radio"]:disabled~label:before {
+  background-color: var(--krds-form-chip--color-check-disabled) !important;
+}
+
+.krds-form-chip input[type="checkbox"]:checked~label,
+.krds-form-chip input[type="radio"]:checked~label {
+  background-color: var(--krds-form-chip--color-action-checked);
+  border-color: var(--krds-form-chip--color-border-checked);
+  color: var(--krds-form-chip--color-text-checked);
+}
+
+.krds-form-chip input[type="checkbox"]:checked~label:before,
+.krds-form-chip input[type="radio"]:checked~label:before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox_checked.svg);
+  background-color: var(--krds-form-chip--color-check-checked);
+}
+
+.krds-form-chip input[type="radio"]~label:before {
+  display: none !important;
+}
+
+.krds-form-chip input[type="radio"]:checked~label:before {
+  display: inline-flex !important;
+  background-color: var(--krds-form-chip--color-check-checked);
+}
+
+.krds-form-chip input[type="radio"]:disabled~label:before {
+  display: none !important;
+}
+
+.krds-form-chip.focus input[type="checkbox"]~label,
+.krds-form-chip.focus input[type="radio"]~label {
+  box-shadow: var(--krds-box-shadow-outline-inset);
+  outline-offset: -0.4rem;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-chip {
+  --krds-form-chip--color-text: var(--krds-high-contrast-color-text-basic);
+  --krds-form-chip--color-text-checked: var(--krds-high-contrast-color-text-primary);
+  --krds-form-chip--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+  --krds-form-chip--color-action: var(--krds-high-contrast-color-action-white);
+  --krds-form-chip--color-action-checked: var(--krds-high-contrast-color-action-primary-selected);
+  --krds-form-chip--color-action-disabled: var(--krds-high-contrast-color-action-disabled);
+  --krds-form-chip--color-border: var(--krds-high-contrast-color-border-gray);
+  --krds-form-chip--color-border-checked: var(--krds-high-contrast-color-border-primary);
+  --krds-form-chip--color-border-disabled: var(--krds-high-contrast-color-border-disabled);
+  --krds-form-chip--color-check: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-form-chip--color-check-checked: var(--krds-high-contrast-color-icon-primary);
+  --krds-form-chip--color-check-disabled: var(--krds-high-contrast-color-icon-disabled-on);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="checkbox"]~label:before,
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="radio"]~label:before {
+  display: inline-flex;
+  width: var(--krds-form-chip--check-size-medium);
+  height: var(--krds-form-chip--check-size-medium);
+  background-color: var(--krds-high-contrast-color-text-basic);
+  forced-color-adjust: none;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+  background-color: var(--krds-form-chip--color-check);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="checkbox"]:disabled~label:before,
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="radio"]:disabled~label:before {
+  background-color: var(--krds-form-chip--color-check-disabled) !important;
+}
+
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="checkbox"]:checked~label:before,
+[data-krds-mode="high-contrast"] .krds-form-chip input[type="radio"]:checked~label:before {
+  background-color: var(--krds-form-chip--color-check-checked);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-chip {
+    --krds-form-chip--color-text: var(--krds-high-contrast-color-text-basic);
+    --krds-form-chip--color-text-checked: var(--krds-high-contrast-color-text-primary);
+    --krds-form-chip--color-text-disabled: var(--krds-high-contrast-color-text-disabled-on);
+    --krds-form-chip--color-action: var(--krds-high-contrast-color-action-white);
+    --krds-form-chip--color-action-checked: var(--krds-high-contrast-color-action-primary-selected);
+    --krds-form-chip--color-action-disabled: var(--krds-high-contrast-color-action-disabled);
+    --krds-form-chip--color-border: var(--krds-high-contrast-color-border-gray);
+    --krds-form-chip--color-border-checked: var(--krds-high-contrast-color-border-primary);
+    --krds-form-chip--color-border-disabled: var(--krds-high-contrast-color-border-disabled);
+    --krds-form-chip--color-check: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-form-chip--color-check-checked: var(--krds-high-contrast-color-icon-primary);
+    --krds-form-chip--color-check-disabled: var(--krds-high-contrast-color-icon-disabled-on);
+  }
+
+  [data-krds-mode="theme"] .krds-form-chip input[type="checkbox"]~label:before,
+  [data-krds-mode="theme"] .krds-form-chip input[type="radio"]~label:before {
+    display: inline-flex;
+    width: var(--krds-form-chip--check-size-medium);
+    height: var(--krds-form-chip--check-size-medium);
+    background-color: var(--krds-high-contrast-color-text-basic);
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+    mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_checkbox.svg);
+    background-color: var(--krds-form-chip--color-check);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+  }
+
+  [data-krds-mode="theme"] .krds-form-chip input[type="checkbox"]:disabled~label:before,
+  [data-krds-mode="theme"] .krds-form-chip input[type="radio"]:disabled~label:before {
+    background-color: var(--krds-form-chip--color-check-disabled) !important;
+  }
+
+  [data-krds-mode="theme"] .krds-form-chip input[type="checkbox"]:checked~label:before,
+  [data-krds-mode="theme"] .krds-form-chip input[type="radio"]:checked~label:before {
+    background-color: var(--krds-form-chip--color-check-checked);
+  }
+}
+
+.krds-form-toggle-switch {
+  --krds-form-toggle-switch--color-text: var(--krds-light-color-text-basic);
+  --krds-form-toggle-switch--color-text-disabled: var(--krds-light-color-text-disabled);
+  --krds-form-toggle-switch--button-color-background: var(--krds-light-color-element-gray);
+  --krds-form-toggle-switch--button-color-background-checked: var(--krds-light-color-element-primary);
+  --krds-form-toggle-switch--check-color-background: var(--krds-light-color-element-inverse);
+  --krds-form-toggle-switch--button-color-background-disabled: var(--krds-light-color-element-disabled-light);
+  --krds-form-toggle-switch--check-color-background-disabled: var(--krds-light-color-element-disabled-dark);
+  --krds-form-toggle-switch--check-color-border: var(--krds-form-toggle-switch--button-color-background);
+  --krds-form-toggle-switch--check-color-border-checked: var(--krds-form-toggle-switch--button-color-background-checked);
+  --krds-form-toggle-switch--check-color-border-disabled: var(--krds-form-toggle-switch--button-color-background-disabled);
+  position: relative;
+  display: inline-flex;
+  --krds-form-toggle-switch--button-size-width-medium: 3.2rem;
+  --krds-form-toggle-switch--button-size-height-medium: var(--krds-size-height-3);
+  --krds-form-toggle-switch--check-size-medium: var(--krds-form-toggle-switch--button-size-height-medium);
+  --krds-form-toggle-switch--icon-size-medium: 0.8rem;
+  --krds-form-toggle-switch--button-radius-medium: var(--krds-form-toggle-switch--button-size-height-medium);
+  --krds-form-toggle-switch--pc-font-size-medium: var(--krds-pc-font-size-label-medium);
+  --krds-form-toggle-switch--mobile-font-size-medium: var(--krds-mobile-font-size-label-medium);
+  --krds-form-toggle-switch--button-size-width-large: 4rem;
+  --krds-form-toggle-switch--button-size-height-large: var(--krds-size-height-4);
+  --krds-form-toggle-switch--check-size-large: var(--krds-form-toggle-switch--button-size-height-large);
+  --krds-form-toggle-switch--icon-size-large: 1rem;
+  --krds-form-toggle-switch--button-radius-large: var(--krds-form-toggle-switch--button-size-height-large);
+  --krds-form-toggle-switch--pc-font-size-large: var(--krds-pc-font-size-label-large);
+  --krds-form-toggle-switch--mobile-font-size-large: var(--krds-mobile-font-size-label-large);
+  --krds-form-toggle-switch--gap: var(--krds-gap-3);
+}
+
+.krds-form-toggle-switch.medium [type="checkbox"]~label {
+  gap: var(--krds-form-toggle-switch--gap);
+  font-size: var(--krds-form-toggle-switch--pc-font-size-medium);
+  line-height: var(--krds-form-toggle-switch--button-size-height-medium);
+}
+
+@media (max-width: 767px) {
+  .krds-form-toggle-switch.medium [type="checkbox"]~label {
+    font-size: var(--krds-form-toggle-switch--mobile-font-size-medium);
+  }
+}
+
+.krds-form-toggle-switch.medium [type="checkbox"]~label .switch-toggle {
+  width: var(--krds-form-toggle-switch--button-size-width-medium);
+  height: var(--krds-form-toggle-switch--button-size-height-medium);
+  border-radius: var(--krds-form-toggle-switch--button-radius-medium);
+}
+
+.krds-form-toggle-switch.medium [type="checkbox"]~label .switch-toggle>i {
+  width: var(--krds-form-toggle-switch--check-size-medium);
+  height: var(--krds-form-toggle-switch--check-size-medium);
+  border-radius: var(--krds-radius-max);
+}
+
+.krds-form-toggle-switch.medium [type="checkbox"]~label .switch-toggle>i::before {
+  display: inline-flex;
+  width: var(--krds-form-toggle-switch--icon-size-medium);
+  height: var(--krds-form-toggle-switch--icon-size-medium);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  background-color: var(--krds-form-toggle-switch--button-color-background);
+}
+
+.krds-form-toggle-switch.medium [type="checkbox"]:checked~label .switch-toggle>i {
+  left: calc(var(--krds-form-toggle-switch--button-size-width-medium) - var(--krds-form-toggle-switch--check-size-medium));
+}
+
+.krds-form-toggle-switch.large [type="checkbox"]~label {
+  gap: var(--krds-form-toggle-switch--gap);
+  font-size: var(--krds-form-toggle-switch--pc-font-size-large);
+  line-height: var(--krds-form-toggle-switch--button-size-height-large);
+}
+
+@media (max-width: 767px) {
+  .krds-form-toggle-switch.large [type="checkbox"]~label {
+    font-size: var(--krds-form-toggle-switch--mobile-font-size-large);
+  }
+}
+
+.krds-form-toggle-switch.large [type="checkbox"]~label .switch-toggle {
+  width: var(--krds-form-toggle-switch--button-size-width-large);
+  height: var(--krds-form-toggle-switch--button-size-height-large);
+  border-radius: var(--krds-form-toggle-switch--button-radius-large);
+}
+
+.krds-form-toggle-switch.large [type="checkbox"]~label .switch-toggle>i {
+  width: var(--krds-form-toggle-switch--check-size-large);
+  height: var(--krds-form-toggle-switch--check-size-large);
+  border-radius: var(--krds-radius-max);
+}
+
+.krds-form-toggle-switch.large [type="checkbox"]~label .switch-toggle>i::before {
+  display: inline-flex;
+  width: var(--krds-form-toggle-switch--icon-size-large);
+  height: var(--krds-form-toggle-switch--icon-size-large);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  background-color: var(--krds-form-toggle-switch--button-color-background);
+}
+
+.krds-form-toggle-switch.large [type="checkbox"]:checked~label .switch-toggle>i {
+  left: calc(var(--krds-form-toggle-switch--button-size-width-large) - var(--krds-form-toggle-switch--check-size-large));
+}
+
+.krds-form-toggle-switch.focus [type="checkbox"]~label {
+  box-shadow: var(--krds-box-shadow-outline-inset);
+  outline-offset: -0.4rem;
+}
+
+.krds-form-toggle-switch [type="checkbox"]~label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-form-toggle-switch--gap);
+  font-size: var(--krds-form-toggle-switch--pc-font-size-large);
+  line-height: var(--krds-form-toggle-switch--button-size-height-large);
+}
+
+@media (max-width: 767px) {
+  .krds-form-toggle-switch [type="checkbox"]~label {
+    font-size: var(--krds-form-toggle-switch--mobile-font-size-large);
+  }
+}
+
+.krds-form-toggle-switch [type="checkbox"]~label .switch-toggle {
+  width: var(--krds-form-toggle-switch--button-size-width-large);
+  height: var(--krds-form-toggle-switch--button-size-height-large);
+  border-radius: var(--krds-form-toggle-switch--button-radius-large);
+  background-color: var(--krds-form-toggle-switch--button-color-background);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-toggle-switch [type="checkbox"]~label .switch-toggle>i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: var(--krds-form-toggle-switch--check-size-large);
+  height: var(--krds-form-toggle-switch--check-size-large);
+  border-radius: var(--krds-radius-max);
+  background-color: var(--krds-form-toggle-switch--check-color-background);
+  border: 0.2rem solid var(--krds-form-toggle-switch--check-color-border);
+  box-sizing: border-box;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.krds-form-toggle-switch [type="checkbox"]~label .switch-toggle>i::before {
+  content: "";
+  display: inline-flex;
+  width: var(--krds-form-toggle-switch--icon-size-large);
+  height: var(--krds-form-toggle-switch--icon-size-large);
+  background-color: var(--krds-light-color-text-basic);
+  forced-color-adjust: none;
+  background-color: var(--krds-form-toggle-switch--button-color-background);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_switch_off.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_switch_off.svg);
+  margin-left: -0.1rem;
+}
+
+.krds-form-toggle-switch [type="checkbox"]:checked~label .switch-toggle {
+  background-color: var(--krds-form-toggle-switch--button-color-background-checked);
+}
+
+.krds-form-toggle-switch [type="checkbox"]:checked~label .switch-toggle>i {
+  left: calc(var(--krds-form-toggle-switch--button-size-width-large) - var(--krds-form-toggle-switch--check-size-large));
+  border-color: var(--krds-form-toggle-switch--check-color-border-checked);
+}
+
+.krds-form-toggle-switch [type="checkbox"]:checked~label .switch-toggle>i::before {
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: contain;
+  -webkit-mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_switch_on.svg);
+  mask-image: url(https://www.krds.go.kr/resources/img/component/icon/ico_switch_on.svg);
+  background-color: var(--krds-form-toggle-switch--check-color-border-checked);
+}
+
+.krds-form-toggle-switch [type="checkbox"]:disabled~label .switch-toggle {
+  background-color: var(--krds-form-toggle-switch--button-color-background-disabled);
+}
+
+.krds-form-toggle-switch [type="checkbox"]:disabled~label .switch-toggle>i {
+  background-color: var(--krds-form-toggle-switch--check-color-background-disabled);
+  border-color: var(--krds-form-toggle-switch--check-color-border-disabled);
+}
+
+.krds-form-toggle-switch [type="checkbox"]:disabled~label .switch-toggle>i::before {
+  background-color: var(--krds-form-toggle-switch--button-color-background-disabled);
+}
+
+[data-krds-mode="high-contrast"] .krds-form-toggle-switch {
+  --krds-form-toggle-switch--color-text: var(--krds-high-contrast-color-text-basic);
+  --krds-form-toggle-switch--color-text-disabled: var(--krds-high-contrast-color-text-disabled);
+  --krds-form-toggle-switch--button-color-background: var(--krds-high-contrast-color-element-gray);
+  --krds-form-toggle-switch--button-color-background-checked: var(--krds-high-contrast-color-element-primary);
+  --krds-form-toggle-switch--check-color-background: var(--krds-high-contrast-color-element-inverse);
+  --krds-form-toggle-switch--button-color-background-disabled: var(--krds-high-contrast-color-element-disabled-light);
+  --krds-form-toggle-switch--check-color-background-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+  --krds-form-toggle-switch--check-color-border: var(--krds-form-toggle-switch--button-color-background);
+  --krds-form-toggle-switch--check-color-border-checked: var(--krds-form-toggle-switch--button-color-background-checked);
+  --krds-form-toggle-switch--check-color-border-disabled: var(--krds-form-toggle-switch--button-color-background-disabled);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-form-toggle-switch {
+    --krds-form-toggle-switch--color-text: var(--krds-high-contrast-color-text-basic);
+    --krds-form-toggle-switch--color-text-disabled: var(--krds-high-contrast-color-text-disabled);
+    --krds-form-toggle-switch--button-color-background: var(--krds-high-contrast-color-element-gray);
+    --krds-form-toggle-switch--button-color-background-checked: var(--krds-high-contrast-color-element-primary);
+    --krds-form-toggle-switch--check-color-background: var(--krds-high-contrast-color-element-inverse);
+    --krds-form-toggle-switch--button-color-background-disabled: var(--krds-high-contrast-color-element-disabled-light);
+    --krds-form-toggle-switch--check-color-background-disabled: var(--krds-high-contrast-color-element-disabled-dark);
+    --krds-form-toggle-switch--check-color-border: var(--krds-form-toggle-switch--button-color-background);
+    --krds-form-toggle-switch--check-color-border-checked: var(--krds-form-toggle-switch--button-color-background-checked);
+    --krds-form-toggle-switch--check-color-border-disabled: var(--krds-form-toggle-switch--button-color-background-disabled);
+  }
+}
+
+.krds-drop-wrap {
+  --krds-resize--list-icon-radius: var(--krds-radius-small2);
+  --krds-resize--list-icon-color-border: var(--krds-light-color-border-gray);
+  --krds-resize--list-icon-color-border-selected: var(--krds-light-color-element-secondary);
+  --krds-resize--list-icon-color-background: var(--krds-light-color-action-secondary);
+  --krds-resize--list-icon-color-background-selected: var(--krds-light-color-element-secondary);
+}
+
+.krds-drop-wrap.krds-resize .drop-menu {
+  min-width: 15rem;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link {
+  white-space: nowrap;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link::before {
+  content: "";
+  width: var(--krds-icon--size-large);
+  height: var(--krds-icon--size-large);
+  background: url(https://www.krds.go.kr/resources/img/component/icon/head_ico_font_sample.svg) no-repeat center/contain;
+  flex-shrink: 0;
+  border-radius: var(--krds-resize--list-icon-radius);
+  border: 0.1rem solid var(--krds-resize--list-icon-color-border);
+  background-color: var(--krds-resize--list-icon-color-background);
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.active::before {
+  background-image: url(https://www.krds.go.kr/resources/img/component/icon/head_ico_font_sample_white.svg);
+  border-color: var(--krds-resize--list-icon-color-border-selected);
+  background-color: var(--krds-resize--list-icon-color-background-selected);
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.sm::before {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.md::before {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.lg::before {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.xlg::before {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.krds-drop-wrap.krds-resize .drop-list .item-link.xxlg::before {
+  width: 3rem;
+  height: 3rem;
+}
+
+.krds-scaled-layout .krds-in-page-navigation-type>.inner:not(.in-between) {
+  padding-right: 0;
+}
+
+.krds-scaled-layout .krds-in-page-navigation-type .in-between .contents {
+  padding-right: 0;
+}
+
+.krds-scaled-layout .krds-in-page-navigation-type .krds-in-page-navigation-area {
+  position: static;
+  margin-bottom: var(--krds-gap-9);
+}
+
+[data-krds-mode="high-contrast"] .krds-drop-wrap {
+  --krds-resize--list-icon-color-border: var(--krds-high-contrast-color-border-gray);
+  --krds-resize--list-icon-color-border-selected: var(--krds-high-contrast-color-element-secondary);
+  --krds-resize--list-icon-color-background: var(--krds-high-contrast-color-action-secondary);
+  --krds-resize--list-icon-color-background-selected: var(--krds-high-contrast-color-element-secondary);
+}
+
+[data-krds-mode="high-contrast"] .krds-drop-wrap.krds-resize .item-link::before {
+  background: url(https://www.krds.go.kr/resources/img/component/icon/head_ico_font_sample_white.svg) no-repeat center/contain;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-drop-wrap {
+    --krds-resize--list-icon-color-border: var(--krds-high-contrast-color-border-gray);
+    --krds-resize--list-icon-color-border-selected: var(--krds-high-contrast-color-element-secondary);
+    --krds-resize--list-icon-color-background: var(--krds-high-contrast-color-action-secondary);
+    --krds-resize--list-icon-color-background-selected: var(--krds-high-contrast-color-element-secondary);
+  }
+
+  [data-krds-mode="theme"] .krds-drop-wrap.krds-resize .item-link::before {
+    background: url(https://www.krds.go.kr/resources/img/component/icon/head_ico_font_sample_white.svg) no-repeat center/contain;
+  }
+}
+
+.krds-drop-wrap {
+  --krds-language--top-title-color: var(--krds-light-color-text-secondary);
+  --krds-language--top-title-sub-color: var(--krds-light-color-text-subtle);
+}
+
+.krds-drop-wrap.krds-language .drop-menu {
+  min-width: 20rem;
+}
+
+.krds-drop-wrap.krds-language .drop-top .current-laguage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.krds-drop-wrap.krds-language .drop-top .current-laguage strong {
+  color: var(--krds-language--top-title-color);
+  font-weight: var(--krds-font-weight-bold);
+  font-size: var(--krds-language--top-title-pc-font-size);
+}
+
+@media (max-width: 767px) {
+  .krds-drop-wrap.krds-language .drop-top .current-laguage strong {
+    font-size: var(--krds-language--top-title-mobile-font-size);
+  }
+}
+
+.krds-drop-wrap.krds-language .drop-top .current-laguage span {
+  color: var(--krds-language--top-title-sub-color);
+  font-size: var(--krds-language--top-title-sub-pc-font-size);
+}
+
+@media (max-width: 767px) {
+  .krds-drop-wrap.krds-language .drop-top .current-laguage span {
+    font-size: var(--krds-language--top-title-sub-mobile-font-size);
+  }
+}
+
+.krds-drop-wrap.krds-language .drop-list {
+  min-width: 20rem;
+}
+
+[data-krds-mode="high-contrast"] .krds-drop-wrap {
+  --krds-language--top-title-color: var(--krds-high-contrast-color-text-secondary);
+  --krds-language--top-title-sub-color: var(--krds-high-contrast-color-text-subtle);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-krds-mode="theme"] .krds-drop-wrap {
+    --krds-language--top-title-color: var(--krds-high-contrast-color-text-secondary);
+    --krds-language--top-title-sub-color: var(--krds-high-contrast-color-text-subtle);
+  }
+}

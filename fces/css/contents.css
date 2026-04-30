@@ -1269,6 +1269,10 @@ main .inner {
 }
 
 @media screen and (max-width: 768px) {
+  #sub-contents .inner {
+    padding: 0 12px;
+  }
+
   .stepper-wrap {
     margin: 40px 0;
     overflow-x: auto;
@@ -1403,7 +1407,7 @@ main .inner {
 
 /* Tablet & Mobile Responsiveness */
 @media screen and (max-width: 1430px) {
-  main .inner {
+  #sub-contents .inner {
     max-width: 100%;
     padding: 0 20px;
     margin: 0 auto;

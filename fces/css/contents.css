@@ -1252,6 +1252,10 @@ main .inner {
     table-layout: auto;
   }
 
+  .default-table col {
+    width: auto !important;
+  }
+
   .default-table th,
   .default-table td,
   .default-table td.text-left {

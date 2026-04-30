@@ -1286,6 +1286,32 @@ main .inner {
     margin-bottom: 24px;
   }
 
+  /* 컨텐츠 영역 모바일 반응형 */
+  .section-title {
+    font-size: 18px;
+  }
+
+  .gray-box {
+    padding: 16px 20px;
+  }
+
+  .gray-box p {
+    font-size: 14px;
+  }
+
+  .default-table th,
+  .default-table td {
+    height: auto;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .flex-between {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
   /* 모달 모바일 반응형 작업 */
   .modal-container {
     width: calc(100% - 32px);
@@ -1376,10 +1402,11 @@ main .inner {
 }
 
 /* Tablet & Mobile Responsiveness */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1430px) {
   main .inner {
     max-width: 100%;
     padding: 0 20px;
+    margin: 0 auto;
   }
 
   .card-group {

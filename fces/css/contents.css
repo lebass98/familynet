@@ -612,7 +612,7 @@ main .inner {
 }
 
 .btn-status.purple {
-  background-color: #7260d8;
+  background-color: #725AA4;
   border-color: #7260d8;
   color: #fff;
 }
@@ -624,9 +624,9 @@ main .inner {
 }
 
 .btn-status.lavender {
-  background-color: #f1f0fa;
+  background-color: #E0D9F0;
   border-color: #f1f0fa;
-  color: #7260d8;
+  color: #725AA4;
 }
 
 .btn-status:hover {
@@ -729,6 +729,87 @@ main .inner {
   overflow-y: auto;
 }
 
+/* 파일관리 모달 - select 스타일 */
+.select-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrap .krds-select {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 12px;
+  font-size: 15px;
+  color: #111;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+/* 파일관리 모달 - 태그 칩 스타일 */
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #EDE9F8;
+  color: #5E4BC8;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag-chip .btn-tag-remove {
+  background: none;
+  border: none;
+  color: #5E4BC8;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 파일관리 모달 - 체크박스 */
+.modal-table-wrap input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: url('../images/common/icon-checkbox-off.svg') no-repeat center / 20px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-table-wrap input[type="checkbox"]:checked {
+  background: url('../images/common/icon-checkbox-on.svg') no-repeat center / 20px;
+}
+
+/* 파일관리 - 모달 footer 버튼 간격 */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* mb-20 유틸리티 */
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
 /* 모달 상단 검색 영역 (아이콘 클릭 가능 구조) */
 .modal-board-top {
   display: flex;
@@ -774,13 +855,18 @@ main .inner {
 }
 
 .modal-table th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #F8F8F8;
-  height: 50px;
+  min-height: 50px;
   font-size: 16px;
   color: #111;
   font-weight: 500;
   border-bottom: 1px solid #E0E0E0;
   border-right: 1px solid #e0e0e0;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .modal-table th:last-child {
@@ -788,13 +874,16 @@ main .inner {
 }
 
 .modal-table td {
-  height: 50px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
   font-size: 16px;
   color: #111;
   border-bottom: 1px solid #E0E0E0;
   border-right: 1px solid #e0e0e0;
   padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .modal-table td:last-child {
@@ -802,7 +891,111 @@ main .inner {
 }
 
 .modal-table td.text-left {
-  text-align: left;
+  justify-content: flex-start;
+}
+
+/* ========================================
+   파일관리 모달 - thead 고정 + tbody 스크롤
+   ======================================== */
+
+/* 테이블 컨테이너: thead 고정을 위해 display:block 사용 */
+.modal-table {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #111;
+}
+
+.modal-table colgroup {
+  display: none;
+  /* colgroup은 display:block 모드에서 작동 안 함 → 각 셀에 width 직접 지정 */
+}
+
+.modal-table thead {
+  display: block;
+  width: 100%;
+}
+
+.modal-table thead tr {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* tbody 영역: 최대 높이 지정 후 스크롤 */
+.modal-table tbody {
+  display: block;
+  max-height: 260px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.modal-table tbody tr {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* 각 열 너비 (colgroup 대체) */
+.modal-table thead tr th:nth-child(1),
+.modal-table tbody tr td:nth-child(1) {
+  width: 60px;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.modal-table thead tr th:nth-child(2),
+.modal-table tbody tr td:nth-child(2) {
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.modal-table thead tr th:nth-child(3),
+.modal-table tbody tr td:nth-child(3) {
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.modal-table thead tr th:nth-child(4),
+.modal-table tbody tr td:nth-child(4) {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-table thead tr th:nth-child(5),
+.modal-table tbody tr td:nth-child(5) {
+  width: 100px;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+/* ================================================
+   Figma 기반 커스텀 스크롤바 (보라색)
+   track: #EDE9F8 (연보라), thumb: #725AA4 (보라)
+   ================================================ */
+.modal-table tbody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-table tbody::-webkit-scrollbar-track {
+  background: #EDE9F8;
+  border-radius: 10px;
+}
+
+.modal-table tbody::-webkit-scrollbar-thumb {
+  background: #725AA4;
+  border-radius: 10px;
+}
+
+.modal-table tbody::-webkit-scrollbar-thumb:hover {
+  background: #5E4BC8;
+}
+
+/* Firefox 커스텀 스크롤바 */
+.modal-table tbody {
+  scrollbar-width: thin;
+  scrollbar-color: #725AA4 #EDE9F8;
 }
 
 /* 모달 테이블 행 호버 효과 */
@@ -948,7 +1141,7 @@ main .inner {
   font-size: 15px;
   color: #E63946;
   font-weight: 500;
-  padding-left:16px;
+  padding-left: 16px;
 }
 
 /* 입력 테이블 (작성용) */
@@ -961,9 +1154,9 @@ main .inner {
   border-collapse: collapse;
 }
 
-.write-table > thead > tr > th,
-.write-table > tbody > tr > th,
-.write-table > tr > th {
+.write-table>thead>tr>th,
+.write-table>tbody>tr>th,
+.write-table>tr>th {
   background: #F8F8F8;
   height: 60px;
   padding: 0 24px;
@@ -976,9 +1169,9 @@ main .inner {
   position: relative;
 }
 
-.write-table > thead > tr > th.required::after,
-.write-table > tbody > tr > th.required::after,
-.write-table > tr > th.required::after {
+.write-table>thead>tr>th.required::after,
+.write-table>tbody>tr>th.required::after,
+.write-table>tr>th.required::after {
   content: '*';
   color: #E63946;
   margin-left: 4px;
@@ -986,9 +1179,9 @@ main .inner {
   font-weight: 700;
 }
 
-.write-table > thead > tr > td,
-.write-table > tbody > tr > td,
-.write-table > tr > td {
+.write-table>thead>tr>td,
+.write-table>tbody>tr>td,
+.write-table>tr>td {
   height: 60px;
   padding: 6px 20px;
   font-size: 17px;
@@ -997,18 +1190,61 @@ main .inner {
   vertical-align: middle;
 }
 
-.write-table > tbody > tr > td.bg-light,
-.write-table > tr > td.bg-light {
+.write-table>tbody>tr>td.bg-light,
+.write-table>tr>td.bg-light {
   background-color: #F8F8F8;
 }
 
-.write-table > tbody > tr > th.sub-th,
-.write-table > tbody > tr > td.sub-th,
-.write-table > tr > th.sub-th,
-.write-table > tr > td.sub-th {
+.write-table>tbody>tr>th.sub-th,
+.write-table>tbody>tr>td.sub-th,
+.write-table>tr>th.sub-th,
+.write-table>tr>td.sub-th {
   background: #F8F8F8;
   border-right: 1px solid #E0E0E0;
   padding: 0 20px;
+}
+
+/* ============================================
+   운영비 현황 - 중첩 테이블 (inner-budget-table)
+   Figma: 총액(rowspan=2) | 보조금 / 보조금 외
+   ============================================ */
+.td-inner-table {
+  padding: 0 !important;
+  vertical-align: top;
+}
+
+.inner-budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.inner-budget-table .budget-total {
+  width: 40%;
+  padding: 0 20px;
+  vertical-align: middle;
+  border-right: 1px solid #E0E0E0;
+  display: table-cell;
+}
+
+.inner-budget-table .budget-sub {
+  padding: 12px 20px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+/* 보조금 행 사이 구분선 */
+.inner-budget-table tr:first-child .budget-sub {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+/* budget-label: 보조금 텍스트 */
+.budget-label {
+  display: inline-block;
+  min-width: 56px;
+  font-size: 17px;
+  color: #111;
+  margin-right: 8px;
 }
 
 /* 폼 요소 스타일 */
@@ -1105,13 +1341,13 @@ main .inner {
 }
 
 .btn-item.gray {
-  background: #F1F1F1;
-  color: #666;
+  background: #EAEAEA;
+  color: #A0A0A0;
 }
 
 .btn-item.purple-light {
-  background: #F1F0FA;
-  color: #7260D8;
+  background: #E0D9F0;
+  color: #725AA4;
 }
 
 .btn-item.white {
@@ -1121,7 +1357,7 @@ main .inner {
 }
 
 .btn-item.purple {
-  background: #5E4BC8;
+  background: #725AA4;
   color: #fff;
 }
 
@@ -1206,7 +1442,7 @@ main .inner {
   font-size: 14px;
   border-radius: 4px;
   white-space: nowrap;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s;
@@ -1347,24 +1583,52 @@ main .inner {
 
   .modal-table-wrap {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 16px;
   }
 
-  .modal-table {
-    min-width: 500px; /* 테이블 최소 너비 축소 */
+  /* 모바일 - 파일관리 테이블 flex 컬럼 너비 재정의 */
+  .modal-table thead,
+  .modal-table tbody {
+    min-width: 560px;
+    /* 가로 스크롤 기준 최소 너비 */
   }
 
-  /* 테이블 컬럼 너비 재조정 (텍스트 줄바꿈 방지를 위해 다시 확대) */
-  .modal-table col:nth-child(1) { width: 60px !important; } /* 번호 */
-  .modal-table col:nth-child(2) { width: 80px !important; } /* 유형 */
-  .modal-table col:nth-child(3) { width: 80px !important; } /* 평가자 */
-  .modal-table col:nth-child(5) { width: 120px !important; } /* 보완요청일 */
+  .modal-table thead tr th:nth-child(1),
+  .modal-table tbody tr td:nth-child(1) {
+    width: 44px;
+    min-width: 44px;
+  }
 
-  .modal-table th, 
+  .modal-table thead tr th:nth-child(2),
+  .modal-table tbody tr td:nth-child(2) {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .modal-table thead tr th:nth-child(3),
+  .modal-table tbody tr td:nth-child(3) {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .modal-table thead tr th:nth-child(4),
+  .modal-table tbody tr td:nth-child(4) {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .modal-table thead tr th:nth-child(5),
+  .modal-table tbody tr td:nth-child(5) {
+    width: 80px;
+    min-width: 80px;
+  }
+
+  .modal-table th,
   .modal-table td {
-    height: 40px;
+    min-height: 40px;
     font-size: 13px;
-    padding: 0 12px; /* 좌우 여백 확대 */
+    padding: 6px 8px;
   }
 
   .modal-detail-table-wrap {
@@ -1373,17 +1637,22 @@ main .inner {
   }
 
   .modal-detail-table {
-    min-width: 100% !important; /* 상세 테이블은 화면 너비에 맞춤 */
+    min-width: 100% !important;
+    /* 상세 테이블은 화면 너비에 맞춤 */
     margin-bottom: 0;
   }
 
-  .modal-detail-table col:nth-child(1) { width: 100px !important; }
+  .modal-detail-table col:nth-child(1) {
+    width: 100px !important;
+  }
 
   .modal-detail-table th {
-    width: 100px; /* 레이블 영역 확대 */
+    width: 100px;
+    /* 레이블 영역 확대 */
     padding: 10px 12px;
     font-size: 13px;
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
   }
 
   .modal-detail-table td {

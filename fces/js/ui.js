@@ -2735,3 +2735,28 @@ window.addEventListener("resize", () => {
   windowSize.setWinSize();
   krds_helpPanel.init();
 });
+
+// 파일관리 모달 - 전체선택 체크박스
+document.addEventListener("DOMContentLoaded", function () {
+  const checkAll = document.getElementById("check-all");
+  const rowChecks = document.querySelectorAll(".row-check");
+
+  if (!checkAll || rowChecks.length === 0) return;
+
+  // 전체선택 클릭 → 모든 행 체크박스 동기화
+  checkAll.addEventListener("change", function () {
+    rowChecks.forEach(function (chk) {
+      chk.checked = checkAll.checked;
+    });
+  });
+
+  // 개별 체크박스 변경 → 전체선택 상태 업데이트
+  rowChecks.forEach(function (chk) {
+    chk.addEventListener("change", function () {
+      const allChecked = Array.from(rowChecks).every(function (c) { return c.checked; });
+      const someChecked = Array.from(rowChecks).some(function (c) { return c.checked; });
+      checkAll.checked = allChecked;
+      checkAll.indeterminate = !allChecked && someChecked;
+    });
+  });
+});

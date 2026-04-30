@@ -1364,8 +1364,23 @@ const krds_calendar = {
     // 열려있던 달력 모두 닫기
     this.closeAllDatePickers();
 
-    const currentDatePicker = button.closest(".calendar-conts").querySelector(".krds-calendar-area");
+    const calendarConts = button.closest(".calendar-conts");
+    const currentDatePicker = calendarConts.querySelector(".krds-calendar-area");
     currentDatePicker.classList.add("active");
+
+    // range datepicker: 시작일/종료일 버튼에 따라 선택 모드 초기화
+    const isRangePicker = !!currentDatePicker.querySelector(".calendar-wrap.range");
+    if (isRangePicker) {
+      const rangeGroup = calendarConts.querySelector(".input-group.range.set");
+      const endLi = rangeGroup.querySelector("li:last-child");
+      const isEndButton = endLi.contains(button);
+      if (!isEndButton || !currentDatePicker._startTd) {
+        currentDatePicker._selectionMode = "start";
+        currentDatePicker._startTd = null;
+      } else {
+        currentDatePicker._selectionMode = "end";
+      }
+    }
 
     // 접근성
     button.setAttribute("aria-expanded", "true");
@@ -1536,33 +1551,25 @@ const krds_calendar = {
       const tblCells = datePicker.querySelectorAll(".calendar-tbl td");
       const tblCellBtns = datePicker.querySelectorAll(".calendar-tbl td .btn-set-date");
       const actionBtns = datePicker.querySelectorAll(".calendar-btn-wrap button");
-      let clickCount = 0;
-      let startTd = null;
 
-      // 캡션 설정
+      // 캡션 및 날짜 업데이트 (year/month 드롭다운 변경 시 재호출되므로 매번 실행)
       caption.innerHTML = `${year}년 ${month}월`;
-
-      // 테스트용 (실제 구현에서는 날짜 배열을 받아 처리함)
       tblCells.forEach((cell) => {
         const day = cell.querySelector(".btn-set-date").textContent.trim().padStart(2, "0");
         let [numberYear, numberMonth] = [parseFloat(year), parseFloat(month)];
         if (cell.classList.contains("old")) {
-          if (numberMonth === 1) {
-            numberYear -= 1;
-            numberMonth = 12;
-          } else {
-            numberMonth -= 1;
-          }
+          if (numberMonth === 1) { numberYear -= 1; numberMonth = 12; } else { numberMonth -= 1; }
         } else if (cell.classList.contains("new")) {
-          if (numberMonth === 12) {
-            numberYear += 1;
-            numberMonth = 1;
-          } else {
-            numberMonth += 1;
-          }
+          if (numberMonth === 12) { numberYear += 1; numberMonth = 1; } else { numberMonth += 1; }
         }
         cell.setAttribute("data-date", `${numberYear}.${String(numberMonth).padStart(2, "0")}.${day}`);
       });
+
+      // 이벤트 리스너는 한 번만 등록 (중복 방지)
+      if (datePicker._initialized) return;
+      datePicker._initialized = true;
+      datePicker._selectionMode = "start";
+      datePicker._startTd = null;
 
       const prevBtn = datePicker.querySelector(".btn-cal-move.prev");
       const nextBtn = datePicker.querySelector(".btn-cal-move.next");
@@ -1582,7 +1589,6 @@ const krds_calendar = {
         yearText.textContent = y + "년";
         monthText.textContent = String(m).padStart(2, "0") + "월";
         caption.innerHTML = `${y}년 ${String(m).padStart(2, "0")}월`;
-
         let currentDay = 1;
         tblCells.forEach((cell) => {
           if (!cell.classList.contains("old") && !cell.classList.contains("new")) {
@@ -1596,67 +1602,57 @@ const krds_calendar = {
       if (prevBtn) prevBtn.addEventListener("click", () => updateCalendar("prev"));
       if (nextBtn) nextBtn.addEventListener("click", () => updateCalendar("next"));
 
-      // action
-      const accReset = (action, btn, type) => {
-        // 인풋 단일
-        const targetInput = btn.closest(".calendar-conts").querySelector("input.datepicker.cal");
-        // 인풋 분할
-        const targetInputStart = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:first-child input.datepicker");
-        const targetInputEnd = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:last-child input.datepicker");
+      // action buttons (once per action button)
+      const isSingleCal = !!datePicker.querySelector(".calendar-wrap.single");
+      const calConts = datePicker.closest(".calendar-conts");
+      const targetInput = calConts.querySelector("input.datepicker.cal");
+      const targetInputStart = calConts.querySelector(".input-group.range.set li:first-child input.datepicker");
+      const targetInputEnd = calConts.querySelector(".input-group.range.set li:last-child input.datepicker");
 
+      const accSet = () => {
+        datePicker._selectionMode = "start";
+        datePicker._startTd = null;
+        datePicker.querySelectorAll(".period").forEach((prev) => {
+          prev.classList.remove("period", "start", "end");
+          prev.querySelector(".btn-set-date").removeAttribute("aria-pressed");
+        });
+        datePicker.querySelector("td.today")?.classList.add("period", "start", "end");
+        datePicker.querySelector("td.today .btn-set-date")?.setAttribute("aria-pressed", "true");
+      };
+
+      actionBtns.forEach((action) => {
         action.addEventListener("click", () => {
           if (targetInput) {
             targetInput.setAttribute("type", "text");
-            const target = action.innerText;
-            if (target === "오늘") {
-              accSet();
-            }
-            if (target === "확인") {
-              if (type === "single") {
-                const value = action.closest(".krds-calendar-area").querySelector("td.period.start.end").getAttribute("data-date");
-                targetInput.value = value;
+            if (action.innerText === "오늘") accSet();
+            if (action.innerText === "확인") {
+              if (isSingleCal) {
+                const value = datePicker.querySelector("td.period.start.end")?.getAttribute("data-date");
+                if (value) targetInput.value = value;
               } else {
-                const value1 = action.closest(".krds-calendar-area").querySelector("td.period.start")?.getAttribute("data-date");
-                const value2 = action.closest(".krds-calendar-area").querySelector("td.period.end")?.getAttribute("data-date") || "";
+                const value1 = datePicker.querySelector("td.period.start")?.getAttribute("data-date");
+                const value2 = datePicker.querySelector("td.period.end")?.getAttribute("data-date") || "";
                 targetInput.value = `${value1} ~ ${value2}`;
               }
             }
           } else {
-            targetInputStart.setAttribute("type", "text");
-            targetInputEnd.setAttribute("type", "text");
-            const target = action.innerText;
-            if (target === "오늘") {
-              accSet();
-            }
-            if (target === "확인") {
-              const value1 = action.closest(".krds-calendar-area").querySelector("td.period.start")?.getAttribute("data-date") || "";
-              const value2 = action.closest(".krds-calendar-area").querySelector("td.period.end")?.getAttribute("data-date") || "";
-              targetInputStart.value = value1;
-              targetInputEnd.value = value2;
+            if (targetInputStart) targetInputStart.setAttribute("type", "text");
+            if (targetInputEnd) targetInputEnd.setAttribute("type", "text");
+            if (action.innerText === "오늘") accSet();
+            if (action.innerText === "확인") {
+              if (targetInputStart) targetInputStart.value = datePicker.querySelector("td.period.start")?.getAttribute("data-date") || "";
+              if (targetInputEnd) targetInputEnd.value = datePicker.querySelector("td.period.end")?.getAttribute("data-date") || "";
             }
           }
         });
-        // 공통 접근성
-        const accSet = () => {
-          const prevItems = action.closest(".krds-calendar-area").querySelectorAll(".period");
-          prevItems.forEach((prev) => {
-            prev.classList.remove("period", "start", "end");
-            prev.querySelector(".btn-set-date").removeAttribute("aria-pressed");
-          });
-          action.closest(".krds-calendar-area").querySelector("td.today").classList.add("period", "start", "end");
-          action.closest(".krds-calendar-area").querySelector("td.today .btn-set-date").setAttribute("aria-pressed", "true");
-        };
-      };
+      });
 
       // btn-set-date
       tblCellBtns.forEach((btn) => {
-        // disabled 설정
-        if (btn.closest("td.new, td.old")) {
-          btn.setAttribute("disabled", "true");
-        }
+        if (btn.closest("td.new, td.old")) btn.setAttribute("disabled", "true");
 
-        // var
         const isSingle = btn.closest(".calendar-wrap").classList.contains("single");
+        const isRange = btn.closest(".calendar-wrap").classList.contains("range");
 
         if (isSingle) {
           btn.addEventListener("click", () => {
@@ -1665,67 +1661,59 @@ const krds_calendar = {
               otherBtn.removeAttribute("aria-pressed");
             });
             btn.closest("td").classList.add("period", "start", "end");
-            btn.setAttribute("aria-pressed", "true");  
+            btn.setAttribute("aria-pressed", "true");
           });
-          // action
-          actionBtns.forEach((action) => {
-            accReset(action, btn, "single");
-          });
-        } else {         
+        } else if (isRange) {
           btn.addEventListener("click", () => {
             const currentTd = btn.closest("td");
-            // 현재 td의 날짜
-            const currentDate = new Date(currentTd.getAttribute("data-date").replace(/\./g, "/"));
-            // 두 번째 클릭일 때, 시작날짜 이전 이면 초기화
-            if (startTd) {
-              const startDate = new Date(startTd.getAttribute("data-date").replace(/\./g, "/"));
-              if (currentDate < startDate) {
-                console.log("시작날짜 이전은 선택할 수 없습니다.");
-                startTd = null;
-                clickCount = 0;
-                // return;
-              }
-            }
+            const mode = datePicker._selectionMode || "start";
 
-            clickCount++;
-
-            if (clickCount % 2 === 1) {
+            if (mode === "start") {
               tblCellBtns.forEach((otherBtn) => {
                 otherBtn.closest("td").classList.remove("period", "start", "end");
                 otherBtn.removeAttribute("aria-pressed");
               });
-              btn.closest("td").classList.add("period", "start");
+              currentTd.classList.add("period", "start");
               btn.setAttribute("aria-pressed", "true");
-              startTd = currentTd;
-              const targetInputStart = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:first-child input.datepicker");
+              datePicker._startTd = currentTd;
               if (targetInputStart) targetInputStart.value = currentTd.getAttribute("data-date");
-              const targetInputEnd = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:last-child input.datepicker");
               if (targetInputEnd) targetInputEnd.value = "";
+              datePicker._selectionMode = "end";
             } else {
-              btn.closest("td").classList.add("period", "end");
+              if (datePicker._startTd) {
+                const startDate = new Date(datePicker._startTd.getAttribute("data-date").replace(/\./g, "/"));
+                const currentDate = new Date(currentTd.getAttribute("data-date").replace(/\./g, "/"));
+                if (currentDate < startDate) {
+                  tblCellBtns.forEach((otherBtn) => {
+                    otherBtn.closest("td").classList.remove("period", "start", "end");
+                    otherBtn.removeAttribute("aria-pressed");
+                  });
+                  currentTd.classList.add("period", "start");
+                  btn.setAttribute("aria-pressed", "true");
+                  datePicker._startTd = currentTd;
+                  if (targetInputStart) targetInputStart.value = currentTd.getAttribute("data-date");
+                  if (targetInputEnd) targetInputEnd.value = "";
+                  return;
+                }
+              }
+              currentTd.classList.add("period", "end");
               btn.setAttribute("aria-pressed", "true");
-              let started = false;
-              tblCellBtns.forEach((otherBtn) => {
-                const td = otherBtn.closest("td");
-                if (td === startTd) {
-                  started = true;
-                }
-                if (started && td !== currentTd) {
-                  td.classList.add("period");
-                  otherBtn.setAttribute("aria-pressed", "true");
-                }
-                if (td === currentTd) {
-                  started = false;
-                }
-              });
-              const targetInputEnd = btn.closest(".calendar-conts").querySelector(".input-group.range.set li:last-child input.datepicker");
+              if (datePicker._startTd) {
+                let started = false;
+                tblCellBtns.forEach((otherBtn) => {
+                  const td = otherBtn.closest("td");
+                  if (td === datePicker._startTd) started = true;
+                  if (started && td !== currentTd) {
+                    td.classList.add("period");
+                    otherBtn.setAttribute("aria-pressed", "true");
+                  }
+                  if (td === currentTd) started = false;
+                });
+              }
               if (targetInputEnd) targetInputEnd.value = currentTd.getAttribute("data-date");
-              startTd = null;
+              datePicker._selectionMode = "start";
+              datePicker._startTd = null;
             }
-          });
-          // action
-          actionBtns.forEach((action) => {
-            accReset(action, btn);
           });
         }
       });

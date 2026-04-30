@@ -1205,46 +1205,39 @@ main .inner {
 }
 
 /* ============================================
-   운영비 현황 - 중첩 테이블 (inner-budget-table)
-   Figma: 총액(rowspan=2) | 보조금 / 보조금 외
+   운영비 현황 - 단일 테이블 구조 스타일
+   Figma: 섹션 | 연도 | 총액 | 보조금/보조금 외
    ============================================ */
-.td-inner-table {
-  padding: 0 !important;
-  vertical-align: top;
-}
-
-.inner-budget-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-.inner-budget-table .budget-total {
-  width: 40%;
-  padding: 0 20px;
-  vertical-align: middle;
+.write-table .budget-total {
+  background: #fff !important;
   border-right: 1px solid #E0E0E0;
-  display: table-cell;
-}
-
-.inner-budget-table .budget-sub {
-  padding: 12px 20px;
   vertical-align: middle;
-  display: table-cell;
+  padding: 12px 20px !important;
 }
 
-/* 보조금 행 사이 구분선 */
-.inner-budget-table tr:first-child .budget-sub {
-  border-bottom: 1px solid #E0E0E0;
+.write-table .budget-sub {
+  background: #fff !important;
+  vertical-align: middle;
+  padding: 12px 20px !important;
 }
 
-/* budget-label: 보조금 텍스트 */
+.write-table .budget-sub .input-group {
+  justify-content: flex-end;
+}
+
 .budget-label {
   display: inline-block;
-  min-width: 56px;
-  font-size: 17px;
+  min-width: 70px;
+  font-size: 16px;
   color: #111;
-  margin-right: 8px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.write-table .unit {
+  font-size: 15px;
+  color: #666;
+  margin: 0 8px;
 }
 
 /* 폼 요소 스타일 */

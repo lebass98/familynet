@@ -2760,3 +2760,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// stepper 모바일 스크롤 중앙 정렬 기능
+const krds_stepper = {
+  init: function () {
+    const stepperWraps = document.querySelectorAll(".stepper-wrap");
+    if (stepperWraps.length === 0) return;
+
+    stepperWraps.forEach(function (wrap) {
+      const activeItem = wrap.querySelector(".active");
+      if (!activeItem) return;
+
+      const activeLi = activeItem.closest("li");
+      if (!activeLi) return;
+
+      const scrollToActive = () => {
+        // 모바일 해상도(768px 이하)일 때만 작동하도록 설정
+        if (window.innerWidth <= 768) {
+          const wrapWidth = wrap.offsetWidth;
+          const activeItemLeft = activeLi.offsetLeft;
+          const activeItemWidth = activeLi.offsetWidth;
+
+          // 가운데 정렬을 위한 스크롤 위치 계산
+          const scrollPosition = activeItemLeft - (wrapWidth / 2) + (activeItemWidth / 2);
+
+          wrap.scrollTo({
+            left: Math.max(0, scrollPosition),
+            behavior: "smooth"
+          });
+        }
+      };
+
+      // 약간의 지연 후 위치 조정 (렌더링 완료 후)
+      setTimeout(scrollToActive, 100);
+
+      // 화면 크기 변경 시 위치 재조정
+      window.addEventListener("resize", () => {
+        setTimeout(scrollToActive, 100);
+      });
+    });
+  }
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+  krds_stepper.init();
+});

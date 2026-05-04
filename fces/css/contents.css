@@ -267,6 +267,42 @@ main .inner {
   line-height: 1.5;
 }
 
+.line-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+.line-box p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.5;
+}
+
+.eval-input {
+  width: 150px;
+  height: 36px;
+  padding: 0 18px;
+  border: 1px solid #C6C6C6;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 15px;
+  color: #111;
+  text-align: right;
+  box-sizing: border-box;
+}
+.eval-input:focus {
+  border-color: #111;
+  outline: none;
+}
+.eval-input[readonly] {
+  background-color: #f8f8f8;
+  color: #666;
+  border-color: #ddd;
+}
+
 /* Stepper */
 .stepper-wrap {
   margin: 60px 0 60px;
@@ -1313,6 +1349,7 @@ main .inner {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  justify-content: center;
 }
 
 .krds-radio input[type="radio"] {
@@ -1378,7 +1415,7 @@ main .inner {
 
 .btn-item.gray {
   background: #EAEAEA;
-  color: #A0A0A0;
+  color: #111;
 }
 
 .btn-item.purple-light {

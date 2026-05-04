@@ -313,6 +313,7 @@ main .inner {
 .stepper {
   display: flex;
   align-items: flex-start;
+  min-width: max-content;
 }
 
 .stepper li {
@@ -320,6 +321,7 @@ main .inner {
   flex-direction: column;
   align-items: center;
   width: 188px;
+  flex-shrink: 0;
   position: relative;
 }
 
@@ -415,7 +417,7 @@ main .inner {
 
 @media screen and (max-width: 1024px) {
   .stepper li {
-    width: 150px;
+    width: 140px;
   }
 
   .stepper li dl dt {
@@ -1602,10 +1604,46 @@ main .inner {
     overflow-x: auto;
     justify-content: flex-start;
     padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .stepper {
     padding: 0 20px;
+  }
+
+  .stepper li {
+    width: 110px;
+  }
+
+  .stepper li dl dt {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  .stepper li dl dt img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stepper li dl.active dt {
+    width: 80px;
+    height: 80px;
+    margin-top: 0;
+  }
+
+  .stepper li dl.active dt img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .stepper li::after {
+    top: 40px;
+  }
+
+  .stepper li dl dd {
+    font-size: 13px;
+    word-break: keep-all;
   }
 
   .page-title {
@@ -1615,8 +1653,17 @@ main .inner {
   }
 
   /* 컨텐츠 영역 모바일 반응형 */
+  .content-title {
+    font-size: 24px;
+  }
+  
   .section-title {
     font-size: 18px;
+  }
+
+  .eval-rate-wrap {
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .gray-box {

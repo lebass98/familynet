@@ -1,3 +1,6 @@
+/* ==========================================================================
+   [1] 메인 페이지 (Main Page Layout & Components)
+   ========================================================================== */
 #main-contents {
   width: 100%;
   min-height: 800px;
@@ -201,7 +204,10 @@ main .inner {
   width: 320px;
 }
 
-/* Sub Page */
+/* ==========================================================================
+   [2] 서브 페이지 공통 레이아웃 (Sub Page Layout & Typography)
+   ========================================================================== */
+/* Sub Page Container */
 #sub-contents {
   background: #fff;
   min-height: 800px;
@@ -397,6 +403,9 @@ main .inner {
   }
 }
 
+/* ==========================================================================
+   [3] 검색, 필터 및 폼 요소 (Search, Filter & Form Inputs)
+   ========================================================================== */
 /* Content Area */
 .content-area {
   margin-top: 40px;
@@ -413,6 +422,8 @@ main .inner {
   font-size: 32px;
   font-weight: 700;
   color: #111;
+  display: flex;
+  gap: 8px;
 }
 
 .search-filter-wrap {
@@ -539,6 +550,9 @@ main .inner {
   cursor: pointer;
 }
 
+/* ==========================================================================
+   [4] 공통 목록 테이블 (Default List Table)
+   ========================================================================== */
 /* Default Table Styles */
 .default-table-wrap {
   margin-top: 24px;
@@ -594,6 +608,9 @@ main .inner {
   word-break: keep-all;
 }
 
+/* ==========================================================================
+   [5] 공통 상태 버튼 및 배지 (Status Buttons & Badges)
+   ========================================================================== */
 .btn-status {
   display: inline-flex;
   align-items: center;
@@ -666,7 +683,10 @@ main .inner {
   margin-top: -1px;
 }
 
-/* Modal */
+/* ==========================================================================
+   [6] 모달 팝업 (Modal Components & Inner Tables)
+   ========================================================================== */
+/* Modal Overlay & Container */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1135,6 +1155,18 @@ main .inner {
   font-size: 24px;
   font-weight: 700;
   color: #111;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title:before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50px;
+  background: #725AA4;
 }
 
 .essential-text {
@@ -1144,7 +1176,10 @@ main .inner {
   padding-left: 16px;
 }
 
-/* 입력 테이블 (작성용) */
+/* ==========================================================================
+   [7] 입력형 테이블 및 폼 요소 (Write Table & Form Elements)
+   ========================================================================== */
+/* 입력 테이블 (작성용) 컨테이너 */
 .write-table-wrap {
   border-top: 1px solid #111;
 }
@@ -1478,6 +1513,10 @@ main .inner {
   visibility: visible;
 }
 
+/* ==========================================================================
+   [8] 반응형 미디어 쿼리 (Responsive Media Queries)
+   ========================================================================== */
+/* Tablet & Mobile (max-width: 1200px) */
 @media screen and (max-width: 1200px) {
   .default-table-wrap {
     overflow-x: auto;
@@ -1994,11 +2033,11 @@ main .inner {
 
 }
 
-/* ================================================
-   커스텀 라디오 버튼 - SVG 이미지 교체
-   icon-radio-off.svg / icon-radio-on.svg
-   ================================================ */
-.krds-radio input[type="radio"] {
+/* ==========================================================================
+   [9] 커스텀 폼 컨트롤 (Custom Form Controls)
+   ========================================================================== */
+/* 커스텀 라디오 버튼 - SVG 이미지 교체 */
+icon-radio-off.svg / icon-radio-on.svg================================================*/ .krds-radio input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
   display: inline-block;

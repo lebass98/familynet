@@ -1225,6 +1225,14 @@ main .inner {
   justify-content: flex-end;
 }
 
+.write-table .budget-total .krds-input {
+  width: 246px;
+}
+
+.write-table .budget-sub .krds-input {
+  width: 207px;
+}
+
 .budget-label {
   display: inline-block;
   min-width: 70px;
@@ -1715,14 +1723,77 @@ main .inner {
   }
 
   /* colgroup 첫 번째 열(th 레이블) 너비 고정 */
-  .write-table col:nth-child(1),
+  .write-table col:nth-child(1) {
+    width: 80px !important;
+  }
+
   .write-table col:nth-child(2) {
+    width: 80px !important;
+  }
+
+  .write-table col:nth-child(3) {
+    width: auto !important;
+    min-width: 140px !important;
+  }
+
+  .write-table col:nth-child(4) {
     width: 100px !important;
+  }
+
+  .write-table col:nth-child(5) {
+    width: auto !important;
+    min-width: 200px !important;
   }
 
   /* input-group 내 flex-wrap 허용(모바일 좁은 폭 대응) */
   .write-table .input-group {
-    flex-wrap: nowrap;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    width: 100%;
+  }
+
+  .write-table .input-group .krds-input,
+  .write-table .input-group .krds-form-select {
+    width: auto !important;
+    flex: 1 1 auto !important;
+    min-width: 40px !important;
+    height: 38px;
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  .write-table .input-group select.krds-form-select {
+    flex: 0 0 80px !important;
+    min-width: 80px !important;
+  }
+
+  /* 날짜 선택 그룹 */
+  .write-table .input-date-wrap {
+    width: 130px !important;
+    min-width: 130px !important;
+  }
+
+  .write-table .input-date-wrap .krds-input {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* 연락처/팩스 등 짧은 입력창 */
+  .write-table .input-group select {
+    flex: 0 0 80px !important;
+  }
+
+  /* 날짜 선택 그룹 */
+  .write-table .input-date-wrap {
+    width: 140px !important;
+    min-width: 140px !important;
+  }
+
+  /* 이메일 등 긴 입력창 */
+  .write-table .input-group .krds-input[style*="width: 200px"],
+  .write-table .input-group .krds-input[style*="width: 300px"] {
+    flex: 1 1 120px !important;
   }
 
   /* 운영비 현황 중첩 테이블 */
@@ -1744,6 +1815,53 @@ main .inner {
   .budget-label {
     font-size: 14px;
     min-width: 48px;
+  }
+
+  .write-table .budget-total,
+  .write-table .budget-sub {
+    white-space: normal !important;
+    padding: 12px 10px !important;
+    vertical-align: middle;
+  }
+
+  /* 예산현황 모바일 반응형 */
+  .write-table .budget-total .input-group,
+  .write-table .budget-sub .input-group {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 6px 4px !important;
+    width: 100%;
+  }
+
+  .write-table .budget-total .budget-label,
+  .write-table .budget-sub .budget-label {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .write-table .budget-total .krds-input,
+  .write-table .budget-sub .krds-input {
+    width: calc(100% - 40px) !important;
+    margin-left: 0 !important;
+    text-align: right !important;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 8px;
+    flex: 1 1 auto !important;
+    min-width: 100px !important;
+  }
+
+  .write-table .budget-total .unit,
+  .write-table .budget-sub .unit {
+    flex: 0 0 auto !important;
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 38px;
   }
 
   /* textarea 줄내림 허용 예외 */

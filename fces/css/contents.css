@@ -2025,10 +2025,6 @@ main .inner {
   }
 
   /* 날짜 선택 그룹 */
-  .write-table .input-date-wrap {
-    width: 130px !important;
-    min-width: 130px !important;
-  }
 
   .write-table .input-date-wrap .krds-input {
     width: 100% !important;
@@ -2041,10 +2037,6 @@ main .inner {
   }
 
   /* 날짜 선택 그룹 */
-  .write-table .input-date-wrap {
-    width: 140px !important;
-    min-width: 140px !important;
-  }
 
   /* 이메일 등 긴 입력창 */
   .write-table .input-group .krds-input[style*="width: 200px"],
@@ -3305,6 +3297,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #d4d4d4;
 }
 
+
 @media screen and (max-width: 1024px) {
   .f-input, .f-select, .f-btn {
     height: 44px;
@@ -3313,5 +3306,82 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   
   .f-textarea {
     font-size: 15px;
+    height: 300px !important;
+  }
+
+  /* 입력 테이블 스택 레이아웃 (Tablet & Mobile) */
+  .write-table-wrap {
+    border-top: 1px solid #111;
+  }
+  
+  .write-table {
+    display: block;
+    width: 100%;
+  }
+  
+  .write-table colgroup {
+    display: none;
+  }
+  
+  .write-table tbody, .write-table tr {
+    display: block;
+    width: 100%;
+  }
+  
+  .write-table tr {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+  }
+  
+  .write-table th {
+    display: block;
+    width: 100% !important;
+    background: none !important;
+    border: none !important;
+    padding: 10px 0 6px !important;
+    height: auto !important;
+    text-align: left !important;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .write-table td {
+    display: block;
+    width: 100% !important;
+    border: none !important;
+    padding: 4px 0 10px !important;
+    height: auto !important;
+  }
+  
+  .write-table .f-select {
+    width: 100% !important;
+  }
+
+  /* 버튼 그룹 모바일 대응 */
+  .view-btn-group {
+    margin-top: 24px;
+    padding: 16px 0;
+    gap: 8px;
+  }
+  
+  .view-btn-group .f-btn {
+    flex: 1;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .f-textarea {
+    height: 250px !important;
+  }
+  
+  .file-upload-group .file-item {
+    gap: 10px;
+  }
+  
+  .file-upload-group .file-name {
+    font-size: 14px;
+    word-break: break-all;
   }
 }

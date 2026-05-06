@@ -3758,3 +3758,37 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     width: 120px !important; /* Slightly wider on mobile for better touch/readability */
   }
 }
+
+/* Evaluation (2/2) Specific Styles */
+.title-sub-text.color-red {
+  color: #ce0000;
+}
+
+.f-btn.prev {
+  background-color: #e0d9f0;
+  color: #725aa4;
+}
+
+.f-btn.prev:hover {
+  background-color: #d1c6e8;
+}
+
+.eval-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.eval-radio-group .krds-check-area label {
+  font-size: 17px;
+  color: #111;
+}
+
+/* Radio Purple Theme */
+.eval-radio-group .krds-radio:checked {
+  border-color: #725aa4;
+  background-color: #725aa4;
+}
+
+.eval-radio-group .krds-radio:checked::after {
+  background-color: #fff;
+}

@@ -2726,11 +2726,12 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 }
 
 .attach-file-wrap .ico-file,
-.view-file-box .ico-file {
+.view-file-box .ico-file,
+.file-upload-group .ico-file {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url('../images/common/icon-file-att-download.svg') no-repeat center / contain;
+  background: url('../images/common/icon-att.svg') no-repeat center / contain;
 }
 
 .attach-file-wrap .count {
@@ -2931,9 +2932,11 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 }
 
 .view-content {
-  padding: 40px 24px;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 24px;
   min-height: 320px;
+}
+.view-question .view-content {
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .view-content .content-inner {
@@ -2943,7 +2946,8 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 }
 
 .view-prev-next {
-  margin-top: 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
 }
 
 .nav-item {
@@ -3028,6 +3032,286 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     min-width: 0;
     width: auto;
     height: 44px;
+    font-size: 15px;
+  }
+}
+
+/* 파일 업로드 그룹 (Write/Edit) */
+.file-upload-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.file-upload-group .input-group {
+  display: flex;
+  gap: 8px;
+  max-width: 668px;
+  width: 100%;
+}
+
+.file-upload-group .input-group .f-input {
+  flex: 1;
+}
+
+.file-upload-group .input-group .f-btn.secondary {
+  background-color: #E0D9F0;
+  color: #725AA4;
+  border: none;
+  min-width: 100px;
+}
+
+.file-upload-group .krds-btn.secondary:hover {
+  background-color: #d1c8e8;
+}
+
+.file-upload-group .file-list-box {
+  padding: 16px 24px;
+  background-color: #f8f8f8;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.file-upload-group .file-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.file-upload-group .file-item:last-child {
+  margin-bottom: 0;
+}
+
+.file-upload-group .file-name {
+  font-size: 17px;
+  color: #111;
+}
+
+.file-upload-group .btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #e4e4e4;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.file-upload-group .btn-delete::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 1L9 9M9 1L1 9' stroke='%23666' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.file-upload-group .btn-delete:hover {
+  background-color: #d4d4d4;
+}
+
+@media screen and (max-width: 1024px) {
+  .file-upload-group .input-group {
+    max-width: 100%;
+  }
+  
+  .file-upload-group .file-list-box {
+    padding: 12px 16px;
+  }
+  
+  .file-upload-group .file-name {
+    font-size: 15px;
+  }
+}
+
+/* 답변 섹션 (Objection Answer) */
+.answer-section {
+  margin-top: 60px;
+}
+
+.answer-section .answer-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.answer-section .answer-title-wrap::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #725AA4;
+  border-radius: 50%;
+}
+
+.answer-section .answer-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.5;
+}
+
+.answer-section .view-container {
+  margin-top: 0;
+}
+
+.answer-section .view-header {
+  background-color: #f8f8fa;
+}
+
+.answer-section .view-header .view-info {
+  background-color: transparent;
+}
+
+.answer-section .view-file-box {
+  background-color: #f3f2f6;
+  margin-top: 0;
+  padding: 16px 24px;
+  border-radius: 16px;
+}
+
+.answer-section .view-header .view-title-wrap {
+  background-color: transparent;
+}
+
+.answer-section .view-content {
+  background-color: #f8f8fa;
+  min-height: auto;
+} 
+
+.answer-section .view-content .content-inner {
+  margin:40px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .answer-section {
+    margin-top: 40px;
+  }
+  
+  .answer-section .answer-title {
+    font-size: 20px;
+  }
+  
+  .answer-section .answer-title-wrap::before {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* 기본 폼 요소 (Base Form Elements) - f-prefix 사용 */
+.f-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 17px;
+  color: #111;
+  background-color: #fff;
+  font-family: 'Pretendard GOV', sans-serif;
+  box-sizing: border-box;
+}
+
+.f-input::placeholder {
+  color: #747478;
+}
+
+.f-input:focus,
+.f-textarea:focus,
+.f-select:focus {
+  outline: none;
+  border-color: #725AA4;
+}
+
+.f-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 17px;
+  color: #111;
+  background-color: #fff;
+  font-family: 'Pretendard GOV', sans-serif;
+  resize: none;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.f-textarea::placeholder {
+  color: #747478;
+}
+
+.f-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 40px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 17px;
+  color: #111;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 10L12 15L17 10' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center / 24px;
+  appearance: none;
+  font-family: 'Pretendard GOV', sans-serif;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.f-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  font-family: 'Pretendard GOV', sans-serif;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.f-btn.primary {
+  background-color: #725AA4;
+  color: #fff;
+}
+
+.f-btn.primary:hover {
+  background-color: #5d488a;
+}
+
+.f-btn.secondary {
+  background-color: #E0D9F0;
+  color: #725AA4;
+}
+
+.f-btn.secondary:hover {
+  background-color: #d1c8e8;
+}
+
+.f-btn.cancel {
+  background-color: #dfdfdf;
+  color: #111;
+}
+
+.f-btn.cancel:hover {
+  background-color: #d4d4d4;
+}
+
+@media screen and (max-width: 1024px) {
+  .f-input, .f-select, .f-btn {
+    height: 44px;
+    font-size: 15px;
+  }
+  
+  .f-textarea {
     font-size: 15px;
   }
 }

@@ -319,6 +319,113 @@ main .inner {
   box-sizing: border-box;
 }
 
+/* Evaluation System Detail Classes (to avoid inline styles) */
+.eval-sub-title {
+  font-size: 16px; 
+  font-weight: 500; 
+  color: #111;
+}
+
+.eval-answer {
+  display: inline-block;
+  color: #444;
+  font-size: 15px;
+}
+
+.file-link {
+  color: #725AA4 !important;
+  text-decoration: underline !important;
+  font-weight: 500;
+}
+
+.eval-flex-row {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.eval-input-wrap {
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.eval-input-sm {
+  width: 100px !important;
+}
+
+.eval-calc-wrap {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px;
+}
+
+.eval-calc-label {
+  font-size: 16px; 
+  color: #111;
+}
+
+.info-calc-box {
+  display: flex; 
+  align-items: center; 
+  border-bottom: 1px solid #d9d2ee; 
+  padding-bottom: 24px; 
+  margin-bottom: 24px;
+}
+
+.info-calc-label {
+  width: 120px; 
+  font-size: 18px; 
+  color: #725aa4;
+}
+
+.info-calc-inputs {
+  display: flex; 
+  align-items: center; 
+  gap: 40px;
+}
+
+.info-eval-box {
+  display: flex; 
+  align-items: flex-start;
+}
+
+.info-eval-label {
+  width: 120px; 
+  font-size: 18px; 
+  color: #725aa4; 
+  margin-top: 10px;
+}
+
+.info-eval-content {
+  flex: 1;
+}
+
+.info-eval-score {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin-bottom: 16px;
+}
+
+.info-eval-desc {
+  margin-bottom: 8px; 
+  color: #111; 
+  font-weight: 500; 
+  font-size: 15px;
+}
+
+.text-guide {
+  font-size: 14px; 
+  color: #555; 
+  line-height: 1.6;
+}
+
+.h-100 {
+  height: 100px !important;
+}
+
 .eval-input:focus {
   border-color: #111;
   outline: none;

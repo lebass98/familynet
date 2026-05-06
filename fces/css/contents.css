@@ -3479,6 +3479,7 @@ main .inner {
   height: 48px;
   padding: 0 24px;
   font-size: 17px;
+  min-width:120px;
 }
 
 .f-btn.medium {
@@ -3795,6 +3796,7 @@ main .inner {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top:6px;
   }
 
   .eval-radio {
@@ -3837,7 +3839,6 @@ main .inner {
   }
 
   .eval-radio input[type="radio"]:checked~.radio-text {
-    font-weight: 700;
     color: #111;
   }
 

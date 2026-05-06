@@ -350,6 +350,12 @@ main .inner {
   gap: 10px;
 }
 
+.input-unit-wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .eval-input-sm {
   width: 100px !important;
 }
@@ -364,6 +370,13 @@ main .inner {
 .eval-calc-label {
   font-size: 16px; 
   color: #111;
+}
+
+.title-sub-text {
+  font-size: 14px; 
+  font-weight: 400; 
+  color: #555; 
+  margin-left: 10px;
 }
 
 .info-calc-box {
@@ -3672,18 +3685,19 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 }
 
 /* Evaluation System Responsive Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .info-box {
-    padding: 20px;
+    padding: 24px 20px;
   }
   .info-calc-box, .info-eval-box {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
   }
   .info-calc-label, .info-eval-label {
     width: 100%;
     margin-top: 0;
+    text-align: left; /* Alignment change for stacked view */
   }
   .info-calc-inputs {
     flex-direction: column;
@@ -3706,13 +3720,41 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   .eval-flex-row {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 12px;
   }
   .eval-flex-row .eval-input-wrap {
     justify-content: space-between;
+    width: 100%;
+    gap: 12px;
   }
   .eval-calc-wrap {
     flex-direction: column;
     gap: 10px;
+    padding: 10px 0;
+  }
+  .eval-calc-wrap .eval-input-wrap {
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .section-title {
+    flex-wrap: wrap;
+    align-items: center; 
+  }
+  .title-sub-text {
+    display: block;
+    width: 100%;
+    margin-left: 22px; 
+    margin-top: 4px;
+  }
+
+  /* Specific fix for stacked write-table in evaluation detail */
+  .write-table th[colspan="2"] {
+    border-bottom: 2px solid #725AA4 !important;
+    margin-bottom: 5px;
+  }
+  .eval-input-sm {
+    width: 120px !important; /* Slightly wider on mobile for better touch/readability */
   }
 }

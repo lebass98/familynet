@@ -311,7 +311,7 @@
 
                 <!-- 1. 사업 계획 -->
                 <div class="section-title-wrap mt-40">
-                    <h4 class="section-title">사업 계획 <span class="title-sub-text color-red">※ 본 항목은 선택 입력입니다. 평가에 참고가 될 사항이 있는 경우 자유롭게 작성해 주세요.</span></h4>
+                    <h4 class="section-title">사업 계획 <span class="title-sub-text color-red">※ 본 항목은 선택 입력입니다. <br class="mo-only">평가에 참고가 될 사항이 있는 경우 자유롭게 작성해 주세요.</span></h4>
                 </div>
 
                 <div class="write-table-wrap mt-20">
@@ -329,17 +329,25 @@
                             <tr>
                                 <th>전체</th>
                                 <td>
-                                    <div class="eval-radio-group">
-                                        <div class="krds-check-area">
-                                            <input type="radio" name="strength_all" id="strength_all_none" class="krds-radio" checked>
-                                            <label for="strength_all_none">이견 없음</label>
-                                        </div>
-                                        <div class="krds-check-area mt-10">
-                                            <input type="radio" name="strength_all" id="strength_all_write" class="krds-radio">
-                                            <label for="strength_all_write">의견 작성</label>
-                                        </div>
-                                        <div class="mt-10">
-                                            <textarea class="f-textarea h-100" placeholder="내용을 입력해주세요"></textarea>
+                                    <div class="eval-radio-wrap">
+                                        <label class="eval-radio">
+                                            <input type="radio" name="strength_all" checked>
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">이견 없음</span>
+                                        </label>
+                                        <label class="eval-radio">
+                                            <input type="radio" name="strength_all">
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">의견 작성</span>
+                                        </label>
+                                        <div class="eval-textarea-wrap">
+                                            <textarea class="f-textarea h-100 bg-gray" placeholder="내용을 입력해주세요"></textarea>
                                         </div>
                                     </div>
                                 </td>
@@ -347,16 +355,24 @@
                             <tr>
                                 <th>주요 검토 사업</th>
                                 <td>
-                                    <div class="eval-radio-group">
-                                        <div class="krds-check-area">
-                                            <input type="radio" name="strength_major" id="strength_major_none" class="krds-radio" checked>
-                                            <label for="strength_major_none">이견 없음</label>
-                                        </div>
-                                        <div class="krds-check-area mt-10">
-                                            <input type="radio" name="strength_major" id="strength_major_write" class="krds-radio">
-                                            <label for="strength_major_write">의견 작성</label>
-                                        </div>
-                                        <div class="mt-10">
+                                    <div class="eval-radio-wrap">
+                                        <label class="eval-radio">
+                                            <input type="radio" name="strength_major">
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">이견 없음</span>
+                                        </label>
+                                        <label class="eval-radio">
+                                            <input type="radio" name="strength_major" checked>
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">의견 작성</span>
+                                        </label>
+                                        <div class="eval-textarea-wrap">
                                             <textarea class="f-textarea h-100" placeholder="내용을 입력해주세요"></textarea>
                                         </div>
                                     </div>
@@ -381,17 +397,25 @@
                             <tr>
                                 <th>전체</th>
                                 <td>
-                                    <div class="eval-radio-group">
-                                        <div class="krds-check-area">
-                                            <input type="radio" name="overall_all" id="overall_all_none" class="krds-radio" checked>
-                                            <label for="overall_all_none">이견 없음</label>
-                                        </div>
-                                        <div class="krds-check-area mt-10">
-                                            <input type="radio" name="overall_all" id="overall_all_write" class="krds-radio">
-                                            <label for="overall_all_write">의견 작성</label>
-                                        </div>
-                                        <div class="mt-10">
-                                            <textarea class="f-textarea h-100" placeholder="내용을 입력해주세요"></textarea>
+                                    <div class="eval-radio-wrap">
+                                        <label class="eval-radio">
+                                            <input type="radio" name="overall_all" checked>
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">이견 없음</span>
+                                        </label>
+                                        <label class="eval-radio">
+                                            <input type="radio" name="overall_all">
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">의견 작성</span>
+                                        </label>
+                                        <div class="eval-textarea-wrap">
+                                            <textarea class="f-textarea h-100 bg-gray" placeholder="내용을 입력해주세요"></textarea>
                                         </div>
                                     </div>
                                 </td>
@@ -399,16 +423,24 @@
                             <tr>
                                 <th>주요 검토 사업</th>
                                 <td>
-                                    <div class="eval-radio-group">
-                                        <div class="krds-check-area">
-                                            <input type="radio" name="overall_major" id="overall_major_none" class="krds-radio" checked>
-                                            <label for="overall_major_none">이견 없음</label>
-                                        </div>
-                                        <div class="krds-check-area mt-10">
-                                            <input type="radio" name="overall_major" id="overall_major_write" class="krds-radio">
-                                            <label for="overall_major_write">의견 작성</label>
-                                        </div>
-                                        <div class="mt-10">
+                                    <div class="eval-radio-wrap">
+                                        <label class="eval-radio">
+                                            <input type="radio" name="overall_major">
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">이견 없음</span>
+                                        </label>
+                                        <label class="eval-radio">
+                                            <input type="radio" name="overall_major" checked>
+                                            <span class="radio-mark">
+                                                <img src="../images/common/icon-radio-off.svg" alt="" class="r-off">
+                                                <img src="../images/common/icon-radio-on.svg" alt="" class="r-on">
+                                            </span>
+                                            <span class="radio-text">의견 작성</span>
+                                        </label>
+                                        <div class="eval-textarea-wrap">
                                             <textarea class="f-textarea h-100" placeholder="내용을 입력해주세요"></textarea>
                                         </div>
                                     </div>

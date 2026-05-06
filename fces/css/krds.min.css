@@ -7611,10 +7611,11 @@ legend {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1280px) {
   #krds-header .inner {
     padding-top: var(--krds-gap-3);
     padding-bottom: var(--krds-gap-3);
+    padding: 0 20px;
     border-bottom: var(--krds-light-border-width-static-regular) solid var(--krds-light-color-divider-gray-light);
   }
 
@@ -8009,6 +8010,7 @@ legend {
   margin-top: var(--krds-padding-4);
   border-radius: var(--krds-radius-max);
 }
+
 .krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content>ul a:hover::before {
   background-color: #fff;
 }
@@ -8016,7 +8018,7 @@ legend {
 .krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content>ul a:hover,
 .krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content>ul button:hover {
   background-color: #725AA4;
-  color:#fff;
+  color: #fff;
 }
 
 .krds-main-menu .gnb-toggle-wrap .gnb-sub-list .gnb-sub-content>ul a:active,

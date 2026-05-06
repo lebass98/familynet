@@ -2331,7 +2331,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   width: 120px;
   height: 48px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0 32px 0 16px;
   font-size: 15px;
   color: #111;
@@ -2344,7 +2344,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 .eval-result-search .search-keyword .krds-input {
   height: 48px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 15px;
 }
 
@@ -2354,7 +2354,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   justify-content: center;
   height: 36px;
   padding: 0 20px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
   color: #6C30DA;
@@ -2399,7 +2399,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   justify-content: center;
   background-color: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
@@ -2725,11 +2725,12 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   cursor: pointer;
 }
 
-.attach-file-wrap .ico-file {
+.attach-file-wrap .ico-file,
+.view-file-box .ico-file {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url('../images/sub/610a1e29b8c3aeebc0a91a13e84abd1bd25aacc7.svg') no-repeat center / contain;
+  background: url('../images/common/icon-file-att-download.svg') no-repeat center / contain;
 }
 
 .attach-file-wrap .count {
@@ -2771,14 +2772,60 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   transition: all 0.2s ease;
 }
 
-.btn-group-right .krds-btn.primary:hover {
-  background-color: #5e4a8a;
-  border-color: #5e4a8a;
-}
-
 .btn-group-right .krds-btn.primary:active {
   background-color: #4a3a6e;
   border-color: #4a3a6e;
+}
+
+.view-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 24px 0;
+}
+
+.view-btn-group .krds-btn {
+  width: 120px;
+  height: 48px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.view-btn-group .krds-btn.cancel {
+  background-color: #dfdfdf;
+  color: #111;
+  border: none;
+}
+
+.view-btn-group .krds-btn.edit {
+  background-color: #fff;
+  border: 1px solid #dadada;
+  color: #111;
+}
+
+.view-btn-group .krds-btn.primary {
+  background-color: #725AA4;
+  border: 1px solid #725AA4;
+  color: #fff;
+}
+
+.view-btn-group .krds-btn.cancel:hover {
+  background-color: #d0d0d0;
+}
+
+.view-btn-group .krds-btn.edit:hover {
+  background-color: #f5f5f5;
+}
+
+.view-btn-group .krds-btn.primary:hover {
+  background-color: #5e4a8a;
+  border-color: #5e4a8a;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2795,5 +2842,192 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 
   .search-group {
     gap: 4px;
+  }
+}
+
+/* ==========================================================================
+   [11] 이의신청 상세 (Objection View)
+   ========================================================================== */
+.view-container {
+  margin-top: 32px;
+}
+
+.view-header {
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+
+.view-header .view-title-wrap {
+  padding: 24px;
+  border-bottom: 1px solid #ccc;
+}
+
+.view-header .view-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.view-header .view-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.view-header .info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 17px;
+  color: #111;
+}
+
+.view-header .info-item dt {
+  color: #222;
+  flex-shrink: 0;
+}
+
+.view-header .info-item dd {
+  font-weight: 400;
+}
+
+.view-header .separator {
+  width: 1px;
+  height: 16px;
+  background-color: #DADADA;
+}
+
+.view-file-box {
+  margin-top: 32px;
+  padding: 16px 24px;
+  background-color: #f8f8f8;
+  border-radius: 16px;
+}
+
+.view-file-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.view-file-box li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.view-file-box .file-link {
+  font-size: 17px;
+  color: #111;
+  text-decoration: none;
+}
+
+.view-file-box .file-link.purple {
+  color: #725AA4;
+  text-decoration: underline;
+}
+
+.view-content {
+  padding: 40px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 320px;
+}
+
+.view-content .content-inner {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #111;
+}
+
+.view-prev-next {
+  margin-top: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-item .nav-label {
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  color: #222;
+  background-color: #fcfcfc;
+  height: 100%;
+}
+
+.nav-item .nav-link {
+  flex: 1;
+  padding: 0 24px;
+  font-size: 17px;
+  color: #111;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-item .nav-link.empty {
+  color: #a0a0a0;
+  cursor: default;
+}
+
+@media screen and (max-width: 1024px) {
+  .view-header .view-title {
+    font-size: 20px;
+  }
+  
+  .view-header .view-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  
+  .view-header .separator {
+    display: none;
+  }
+  
+  .view-header .view-title-wrap {
+    padding: 16px;
+  }
+  
+  .view-file-box {
+    padding: 12px 16px;
+  }
+  
+  .view-content {
+    padding: 24px 16px;
+  }
+  
+  .nav-item .nav-label {
+    width: 80px;
+    font-size: 15px;
+  }
+  
+  .nav-item .nav-link {
+    padding: 0 12px;
+    font-size: 15px;
+  }
+
+  .view-btn-group {
+    gap: 6px;
+    padding: 16px 0;
+  }
+
+  .view-btn-group .krds-btn {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 44px;
+    font-size: 15px;
   }
 }

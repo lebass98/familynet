@@ -634,7 +634,7 @@ main .inner {
   background-color: #f8f8f8;
   height: 60px;
   border: 1px solid #e0e0e0;
-  border-bottom:none;
+  border-bottom: none;
   font-size: 17px;
   font-weight: 500;
   color: #111;
@@ -652,6 +652,7 @@ main .inner {
 
 .default-table td:last-child {
   border-right: none;
+  border-left: 1px solid #e1e1e1;
 }
 
 .default-table td {
@@ -2984,6 +2985,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   padding: 24px;
   min-height: 320px;
 }
+
 .view-question .view-content {
   border-bottom: 1px solid #e0e0e0;
 }
@@ -3037,35 +3039,35 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   .view-header .view-title {
     font-size: 20px;
   }
-  
+
   .view-header .view-info {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     padding: 12px 16px;
   }
-  
+
   .view-header .separator {
     display: none;
   }
-  
+
   .view-header .view-title-wrap {
     padding: 16px;
   }
-  
+
   .view-file-box {
     padding: 12px 16px;
   }
-  
+
   .view-content {
     padding: 24px 16px;
   }
-  
+
   .nav-item .nav-label {
     width: 80px;
     font-size: 15px;
   }
-  
+
   .nav-item .nav-link {
     padding: 0 12px;
     font-size: 15px;
@@ -3167,11 +3169,11 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   .file-upload-group .input-group {
     max-width: 100%;
   }
-  
+
   .file-upload-group .file-list-box {
     padding: 12px 16px;
   }
-  
+
   .file-upload-group .file-name {
     font-size: 15px;
   }
@@ -3231,21 +3233,21 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 .answer-section .view-content {
   background-color: #f8f8fa;
   min-height: auto;
-} 
+}
 
 .answer-section .view-content .content-inner {
-  margin:40px 0;
+  margin: 40px 0;
 }
 
 @media screen and (max-width: 1024px) {
   .answer-section {
     margin-top: 40px;
   }
-  
+
   .answer-section .answer-title {
     font-size: 20px;
   }
-  
+
   .answer-section .answer-title-wrap::before {
     width: 6px;
     height: 6px;
@@ -3314,7 +3316,8 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px; /* Default to medium */
+  height: 40px;
+  /* Default to medium */
   padding: 0 16px;
   border-radius: 6px;
   font-size: 16px;
@@ -3334,11 +3337,13 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   padding: 0 24px;
   font-size: 17px;
 }
+
 .f-btn.medium {
   height: 40px;
   padding: 0 16px;
   font-size: 16px;
 }
+
 .f-btn.small {
   height: 30px;
   padding: 0 12px;
@@ -3353,6 +3358,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #725AA4;
   color: #fff;
 }
+
 .f-btn.primary:hover,
 .f-btn.contained:hover {
   background-color: #5D4A86;
@@ -3364,6 +3370,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #E0D9F0;
   color: #725AA4;
 }
+
 .f-btn.secondary:hover,
 .f-btn.soft:hover {
   background-color: #D2C8E8;
@@ -3375,6 +3382,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   border-color: #725AA4;
   color: #725AA4;
 }
+
 .f-btn.outlined:hover {
   background-color: #F5F2FC;
 }
@@ -3386,6 +3394,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   border-color: #DADADA;
   color: #111;
 }
+
 .f-btn.outlined2:hover,
 .f-btn.cancel:hover {
   background-color: #F5F5F5;
@@ -3396,6 +3405,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #D9421A;
   color: #fff;
 }
+
 .f-btn.warning:hover {
   background-color: #BD3714;
 }
@@ -3405,6 +3415,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #A67C33;
   color: #fff;
 }
+
 .f-btn.review:hover {
   background-color: #8A6729;
 }
@@ -3414,6 +3425,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: transparent;
   color: #111;
 }
+
 .f-btn.text:hover {
   background-color: #F5F5F5;
 }
@@ -3432,17 +3444,21 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #EAEAEA;
   color: #111;
 }
+
 .f-btn.gray:hover {
   background-color: #D4D4D4;
 }
 
 
 @media screen and (max-width: 1024px) {
-  .f-input, .f-select, .f-btn {
+
+  .f-input,
+  .f-select,
+  .f-btn {
     height: 44px;
     font-size: 15px;
   }
-  
+
   .f-textarea {
     font-size: 15px;
     height: 300px !important;
@@ -3452,26 +3468,27 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   .write-table-wrap {
     border-top: 1px solid #111;
   }
-  
+
   .write-table {
     display: block;
     width: 100%;
   }
-  
+
   .write-table colgroup {
     display: none;
   }
-  
-  .write-table tbody, .write-table tr {
+
+  .write-table tbody,
+  .write-table tr {
     display: block;
     width: 100%;
   }
-  
+
   .write-table tr {
     border-bottom: 1px solid #e0e0e0;
     padding: 10px 0;
   }
-  
+
   .write-table th {
     display: block;
     width: 100% !important;
@@ -3483,7 +3500,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     font-size: 16px;
     font-weight: 700;
   }
-  
+
   .write-table td {
     display: block;
     width: 100% !important;
@@ -3491,7 +3508,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     padding: 4px 0 10px !important;
     height: auto !important;
   }
-  
+
   .write-table .f-select {
     width: 100% !important;
   }
@@ -3502,7 +3519,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     padding: 16px 0;
     gap: 8px;
   }
-  
+
   .view-btn-group .f-btn {
     flex: 1;
     height: 48px;
@@ -3514,11 +3531,11 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   .f-textarea {
     height: 250px !important;
   }
-  
+
   .file-upload-group .file-item {
     gap: 10px;
   }
-  
+
   .file-upload-group .file-name {
     font-size: 14px;
     word-break: break-all;

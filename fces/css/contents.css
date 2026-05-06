@@ -604,9 +604,9 @@ main .inner {
 }
 
 .default-table th {
-  background-color: #f7f7f7;
+  background-color: #f8f8f8;
   height: 60px;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #e0e0e0;
   font-size: 17px;
   font-weight: 500;
   color: #111;
@@ -635,7 +635,7 @@ main .inner {
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  padding: 0 10px;
+  padding: 12px 20px;
 }
 
 .default-table td.text-left {
@@ -2031,22 +2031,6 @@ main .inner {
     flex: 1 1 120px !important;
   }
 
-  /* 운영비 현황 중첩 테이블 */
-  .td-inner-table {
-    padding: 0 !important;
-  }
-
-  .inner-budget-table {
-    min-width: 400px;
-    white-space: nowrap;
-  }
-
-  .inner-budget-table .budget-total,
-  .inner-budget-table .budget-sub {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
   .budget-label {
     font-size: 14px;
     min-width: 48px;
@@ -2341,51 +2325,6 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   font-size: 15px;
 }
 
-.eval-result-table-wrap {
-  border-top: 1px solid #111;
-  margin-bottom: 40px;
-}
-
-.eval-result-table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-.eval-result-table th {
-  height: 60px;
-  background: #F8F9FA;
-  border-bottom: 1px solid #EAEAEA;
-  font-size: 15px;
-  font-weight: 600;
-  color: #111;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.eval-result-table th + th {
-  border-left: 1px solid #EAEAEA;
-}
-
-.eval-result-table td {
-  height: 60px;
-  border-bottom: 1px solid #EAEAEA;
-  font-size: 15px;
-  color: #333;
-  vertical-align: middle;
-  text-align: center;
-  padding: 8px;
-}
-
-.eval-result-table td + td {
-  border-left: 1px solid #EAEAEA;
-}
-
-.eval-result-table td.align-left {
-  text-align: left;
-  padding: 0 24px;
-}
-
 .btn-result {
   display: inline-flex;
   align-items: center;
@@ -2413,7 +2352,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   cursor: not-allowed;
 }
 
-.eval-result-table .no-data {
+.default-table .no-data {
   padding: 80px 20px;
   color: #111;
   font-size: 17px;
@@ -2550,13 +2489,186 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     flex: 1;
     width: 100%;
   }
+}
 
-  .eval-result-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* ==========================================================================
+   평가결과 상세 카드 (Evaluation Result Detail Card)
+   ========================================================================== */
+.eval-result-card {
+  display: flex;
+  gap: 40px;
+  background-color: #f3f2f6;
+  border: 1px solid #e0d9f0;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.eval-result-card .card-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eval-result-card .card-title-wrap {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.eval-result-card .card-title-main {
+  font-weight: 700;
+  font-size: 32px;
+  color: #725aa4;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+}
+
+.eval-result-card .card-title-sub-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.eval-result-card .card-title-sub-wrap img {
+  width: 26px;
+  height: 26px;
+}
+
+.eval-result-card .card-title-sub {
+  font-weight: 700;
+  font-size: 32px;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+}
+
+.eval-result-card .card-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eval-result-card .info-item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.eval-result-card .info-label {
+  width: 120px;
+  font-weight: 500;
+  font-size: 17px;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+  flex-shrink: 0;
+}
+
+.eval-result-card .info-value {
+  flex: 1;
+  font-weight: 400;
+  font-size: 17px;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+  word-break: keep-all;
+}
+
+.eval-result-card .card-right {
+  width: 440px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.eval-result-card .grade-label {
+  font-weight: 700;
+  font-size: 23px;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+  text-align: center;
+}
+
+.eval-result-card .grade-value-wrap {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.eval-result-card .grade-value {
+  font-weight: 700;
+  font-size: 120px;
+  color: #725aa4;
+  line-height: 0.8;
+  letter-spacing: 1px;
+}
+
+.eval-result-card .grade-unit {
+  font-weight: 700;
+  font-size: 32px;
+  color: #111;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1024px) {
+  .eval-result-card {
+    flex-direction: column;
+    padding: 24px;
   }
   
-  .eval-result-table {
-    width: 1000px;
+  .eval-result-card .card-right {
+    width: 100%;
+    padding: 24px;
+    gap: 30px;
   }
+}
+
+/* ==========================================================================
+   평가결과 상세 테이블 영역 (Evaluation Result Details Section)
+   ========================================================================== */
+.eval-result-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.eval-table-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.eval-table-block .table-title-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.eval-table-block .table-title-wrap img {
+  width: 14px;
+  height: 14px;
+}
+
+.eval-table-block .table-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
+  margin: 0;
 }

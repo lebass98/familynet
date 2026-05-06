@@ -224,9 +224,19 @@ main .inner {
   font-size: 44px;
   font-weight: 700;
   color: #1d1d1d;
+  line-height: 1.2;
+}
+
+.page-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 24px;
   margin-bottom: 40px;
-  line-height: 1.2;
+}
+
+.page-title-wrap .page-title {
+  margin: 0;
 }
 
 .info-box {
@@ -245,10 +255,25 @@ main .inner {
   line-height: 1.5;
 }
 
-.info-box .box-body p {
-  font-size: 16px;
-  color: #111;
-  line-height: 1.5;
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.p-0 {
+  padding: 0 !important;
 }
 
 .info-box .box-body p+p {
@@ -609,6 +634,7 @@ main .inner {
   background-color: #f8f8f8;
   height: 60px;
   border: 1px solid #e0e0e0;
+  border-bottom:none;
   font-size: 17px;
   font-weight: 500;
   color: #111;
@@ -2136,14 +2162,37 @@ main .inner {
   }
 
   .card-group {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    width: 100%;
   }
 
-  .purple-card,
   .card-sub-wrap {
+    display: contents;
+  }
+
+  .purple-card {
+    grid-column: span 3;
     width: 100%;
-    max-width: 664px;
+    max-width: none;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .notice-card {
+    grid-column: span 3;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .archive-card,
+  .faq-card,
+  .qna-card {
+    grid-column: span 2;
+    width: 100%;
   }
 }
 
@@ -2190,9 +2239,17 @@ main .inner {
     font-size: 32px;
   }
 
+  .card-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
   .card-sub-wrap {
+    display: flex;
     flex-direction: column;
     max-width: 100%;
+    width: 100%;
   }
 
   .notice-card,
@@ -3257,44 +3314,126 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 0 24px;
+  height: 40px; /* Default to medium */
+  padding: 0 16px;
   border-radius: 6px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   font-family: 'Pretendard GOV', sans-serif;
   transition: all 0.2s;
   box-sizing: border-box;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.f-btn.primary {
+/* Sizes */
+.f-btn.large {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 17px;
+}
+.f-btn.medium {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+.f-btn.small {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* Variants */
+/* Contained */
+.f-btn.primary,
+.f-btn.contained {
   background-color: #725AA4;
   color: #fff;
 }
-
-.f-btn.primary:hover {
-  background-color: #5d488a;
+.f-btn.primary:hover,
+.f-btn.contained:hover {
+  background-color: #5D4A86;
 }
 
-.f-btn.secondary {
+/* Soft */
+.f-btn.secondary,
+.f-btn.soft {
   background-color: #E0D9F0;
   color: #725AA4;
 }
-
-.f-btn.secondary:hover {
-  background-color: #d1c8e8;
+.f-btn.secondary:hover,
+.f-btn.soft:hover {
+  background-color: #D2C8E8;
 }
 
+/* Outlined */
+.f-btn.outlined {
+  background-color: #fff;
+  border-color: #725AA4;
+  color: #725AA4;
+}
+.f-btn.outlined:hover {
+  background-color: #F5F2FC;
+}
+
+/* Outlined2 */
+.f-btn.outlined2,
 .f-btn.cancel {
-  background-color: #dfdfdf;
+  background-color: #fff;
+  border-color: #DADADA;
   color: #111;
 }
-
+.f-btn.outlined2:hover,
 .f-btn.cancel:hover {
-  background-color: #d4d4d4;
+  background-color: #F5F5F5;
+}
+
+/* 보완사유/보완요청 (Warning) */
+.f-btn.warning {
+  background-color: #D9421A;
+  color: #fff;
+}
+.f-btn.warning:hover {
+  background-color: #BD3714;
+}
+
+/* 재평가 (Review) */
+.f-btn.review {
+  background-color: #A67C33;
+  color: #fff;
+}
+.f-btn.review:hover {
+  background-color: #8A6729;
+}
+
+/* Text */
+.f-btn.text {
+  background-color: transparent;
+  color: #111;
+}
+.f-btn.text:hover {
+  background-color: #F5F5F5;
+}
+
+/* Disabled */
+.f-btn:disabled,
+.f-btn.disabled {
+  background-color: #EAEAEA !important;
+  border-color: transparent !important;
+  color: #A0A0A0 !important;
+  cursor: not-allowed;
+}
+
+/* Gray */
+.f-btn.gray {
+  background-color: #EAEAEA;
+  color: #111;
+}
+.f-btn.gray:hover {
+  background-color: #D4D4D4;
 }
 
 

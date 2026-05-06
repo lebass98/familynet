@@ -7747,7 +7747,7 @@ legend {
   left: 50%;
   width: 0;
   height: 0.4rem;
-  background-color: var(--krds-main-menu--main-trigger-color-border-selected);
+  background-color: #725AA4;
   transition: var(--krds-transition-base);
 }
 

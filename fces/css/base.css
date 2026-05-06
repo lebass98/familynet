@@ -26,7 +26,8 @@ td {
     padding: 0;
 }
 
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -62,6 +63,10 @@ caption {
     height: 0;
     font-size: 0;
     line-height: 0;
+}
+
+b {
+    font-weight: 600;
 }
 
 img,

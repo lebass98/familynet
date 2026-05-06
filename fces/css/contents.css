@@ -2559,7 +2559,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
 
 .eval-result-card .info-label {
   width: 120px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 17px;
   color: #111;
   line-height: 1.5;
@@ -2632,6 +2632,25 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     width: 100%;
     padding: 24px;
     gap: 30px;
+  }
+
+  .eval-result-card .card-title-main {
+    font-size: 27px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .eval-result-card .card-title-main {
+    font-size: 24px;
+  }
+
+  .eval-result-card .info-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .eval-result-card .info-label {
+    width: auto;
   }
 }
 

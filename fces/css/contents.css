@@ -293,10 +293,12 @@ main .inner {
   text-align: right;
   box-sizing: border-box;
 }
+
 .eval-input:focus {
   border-color: #111;
   outline: none;
 }
+
 .eval-input[readonly] {
   background-color: #f8f8f8;
   color: #666;
@@ -1557,20 +1559,24 @@ main .inner {
   text-align: center;
   margin-top: 60px;
 }
+
 .complete-icon {
   margin-bottom: 24px;
 }
+
 .complete-icon img {
   width: 120px;
   height: 120px;
   display: inline-block;
 }
+
 .complete-title {
   font-size: 28px;
   font-weight: 700;
   color: #111;
   margin-bottom: 40px;
 }
+
 .complete-info-card {
   max-width: 800px;
   margin: 0 auto;
@@ -1579,19 +1585,23 @@ main .inner {
   padding: 40px 20px;
   text-align: left;
 }
+
 .complete-info-inner {
   max-width: 380px;
   margin: 0 auto;
 }
+
 .complete-info-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .complete-info-list li {
   display: flex;
   align-items: flex-start;
 }
+
 .complete-info-list .tit {
   width: 128px;
   font-size: 16px;
@@ -1600,12 +1610,14 @@ main .inner {
   flex-shrink: 0;
   line-height: 26px;
 }
+
 .complete-info-list .txt {
   font-size: 16px;
   font-weight: 400;
   color: #111;
   line-height: 26px;
 }
+
 .complete-info-note {
   margin-top: 24px;
   font-size: 15px;
@@ -1613,12 +1625,14 @@ main .inner {
   color: #111;
   line-height: 24px;
 }
+
 .complete-btn-wrap {
   display: flex;
   justify-content: center;
   margin-top: 48px;
   margin-bottom: 80px;
 }
+
 .complete-btn-wrap .btn-item {
   width: 120px;
   height: 48px;
@@ -1738,28 +1752,35 @@ main .inner {
   .complete-wrap {
     margin-top: 40px;
   }
+
   .complete-title {
     font-size: 22px;
     margin-bottom: 30px;
   }
+
   .complete-icon img {
     width: 90px;
     height: 90px;
   }
+
   .complete-info-card {
     padding: 30px 20px;
     border-radius: 12px;
   }
+
   .complete-info-inner {
     max-width: 100%;
   }
+
   .complete-info-list .tit {
     width: 100px;
     font-size: 14px;
   }
+
   .complete-info-list .txt {
     font-size: 14px;
   }
+
   .complete-info-note {
     font-size: 13px;
   }
@@ -1768,7 +1789,7 @@ main .inner {
   .content-title {
     font-size: 24px;
   }
-  
+
   .section-title {
     font-size: 18px;
   }
@@ -2244,7 +2265,9 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   outline: 2px solid #725AA4;
   outline-offset: 2px;
   border-radius: 50%;
-}/* ==========================================================================
+}
+
+/* ==========================================================================
    평가결과 목록 (FE_SE_0019)
    ========================================================================== */
 .eval-result-wrap {
@@ -2345,7 +2368,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   background-color: #E2D6F5;
 }
 
-.btn-result.disabled, 
+.btn-result.disabled,
 .btn-result:disabled {
   color: #999;
   background-color: #F5F5F5;
@@ -2455,14 +2478,14 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .eval-result-search {
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
+
   .eval-result-search .search-item {
     width: 100%;
     margin-left: 0;
@@ -2473,17 +2496,17 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     width: 100%;
     margin-left: 0;
   }
-  
+
   .eval-result-search .date-group {
     flex: 1;
     width: 100%;
   }
-  
+
   .eval-result-search .date-input {
     flex: 1;
     width: auto;
   }
-  
+
   .eval-result-search .select-box,
   .eval-result-search .select-box select {
     flex: 1;
@@ -2627,7 +2650,7 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
     flex-direction: column;
     padding: 24px;
   }
-  
+
   .eval-result-card .card-right {
     width: 100%;
     padding: 24px;
@@ -2690,4 +2713,87 @@ icon-radio-off.svg / icon-radio-on.svg==========================================
   line-height: 1.5;
   letter-spacing: -0.25px;
   margin: 0;
+}
+
+/* ==========================================================================
+   이의신청 (FE_SE_0021)
+   ========================================================================== */
+.attach-file-wrap {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.attach-file-wrap .ico-file {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/sub/610a1e29b8c3aeebc0a91a13e84abd1bd25aacc7.svg') no-repeat center / contain;
+}
+
+.attach-file-wrap .count {
+  position: absolute;
+  bottom: -5px;
+  left: 16px;
+  background-color: #725AA4;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0 4px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn-group-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.btn-group-right .krds-btn.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  background-color: #725AA4;
+  border: 1px solid #725AA4;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-group-right .krds-btn.primary:hover {
+  background-color: #5e4a8a;
+  border-color: #5e4a8a;
+}
+
+.btn-group-right .krds-btn.primary:active {
+  background-color: #4a3a6e;
+  border-color: #4a3a6e;
+}
+
+@media screen and (max-width: 1024px) {
+  .eval-result-search .search-keyword {
+    width: 100%;
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .eval-result-search .search-item {
+    width: 100%;
+  }
+
+  .search-group {
+    gap: 4px;
+  }
 }

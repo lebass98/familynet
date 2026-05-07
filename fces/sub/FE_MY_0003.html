@@ -294,39 +294,50 @@
                 <ol class="breadcrumb">
                     <li class="home"><a href="#" class="txt">홈</a></li>
                     <li><a href="#" class="txt">마이페이지</a></li>
-                    <li class="current"><a href="#" class="txt">비밀번호 변경</a></li>
+                    <li class="current"><a href="#" class="txt">회원정보 수정</a></li>
                 </ol>
             </nav>
 
-            <h2 class="page-title">비밀번호 변경</h2>
+            <h2 class="page-title">회원정보 수정</h2>
 
             <div class="my-page-wrap">
                 <div class="section-title-wrap">
-                    <p class="notice-text">※ 영문, 숫자, 특수문자 포함 8~20자 동일 문자/연속 문자 사용 제한</p>
+                    <h3 class="section-title">기본정보</h3>
+                    <p class="notice-text">※ 개인정보보호를 위해 회원정보를 최신으로 유지해 주시기 바랍니다.</p>
                 </div>
-                <div class="write-table-wrap">
-                    <table class="write-table">
+                <div class="default-table-wrap">
+                    <table class="default-table">
                         <colgroup>
                             <col style="width: 200px;">
                             <col style="width: auto;">
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th scope="row">현재 비밀번호</th>
+                                <th scope="row">회원 유형</th>
+                                <td>센터 사용자</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">아이디</th>
+                                <td>abcd1234</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">센터명</th>
+                                <td>인천광역시남동구가족센터</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이메일</th>
                                 <td>
-                                    <input type="password" class="write-input" placeholder="현재 비밀번호를 입력해주세요.">
+                                    <div class="sch-input">
+                                        <input type="text" class="krds-input" value="abcd1234@naver.com" title="이메일 입력" style="width: 300px;" />
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">새 비밀번호</th>
+                                <th scope="row">연락처</th>
                                 <td>
-                                    <input type="password" class="write-input" placeholder="새로운 비밀번호를 입력해주세요.">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">새 비밀번호 확인</th>
-                                <td>
-                                    <input type="password" class="write-input" placeholder="새로운 비밀번호 확인">
+                                    <div class="sch-input">
+                                        <input type="text" class="krds-input" value="010-1234-5678" title="연락처 입력" style="width: 300px;" />
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -335,8 +346,8 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn-item btn-gray">취소</button>
-                <button type="button" class="btn-item purple">변경</button>
+                <button type="button" class="btn-item purple">저장하기</button>
+                <a href="index.html" class="btn-item gray">취소</a>
             </div>
         </div>
 

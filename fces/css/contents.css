@@ -782,6 +782,7 @@ main .inner {
   color: #111;
   text-align: center;
   vertical-align: middle;
+  padding:0 24px;
 }
 
 .default-table th:first-child {
@@ -4017,7 +4018,7 @@ main .inner {
   opacity: 1;
   border: 1px solid #E0E0E0;
   border-radius: 16px;
-  margin-top:8px;
+  margin-top: 8px;
 }
 
 .faq-content .a-icon {
@@ -4086,4 +4087,86 @@ main .inner {
 .pagination-wrap .btn-page.nav-btn {
   font-size: 18px;
   font-weight: 700;
+}
+
+/* ==========================================================================
+   [My Page] Member Info Styles
+   ========================================================================== */
+.my-page-wrap {
+  margin-top: 40px;
+}
+
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.5;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #725AA4;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.notice-text {
+  font-size: 16px;
+  color: #CE0000;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.my-page-wrap .default-table th {
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.my-page-wrap .default-table td {
+  text-align: left;
+  padding-left: 24px;
+}
+
+/* Password Change Specific */
+.write-input {
+  width: 100%;
+  max-width: 438px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 17px;
+  color: #111;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.write-input::placeholder {
+  color: #747478;
+}
+
+.write-input:focus {
+  outline: none;
+  border-color: #725AA4;
+}
+
+.btn-item.btn-gray {
+  background: #DFDFDF;
+  color: #111;
 }

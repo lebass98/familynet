@@ -367,12 +367,6 @@ main .inner {
   font-size: 15px;
 }
 
-.file-link {
-  color: #725AA4 !important;
-  text-decoration: underline !important;
-  font-weight: 500;
-}
-
 .eval-flex-row {
   display: flex;
   align-items: center;
@@ -3050,7 +3044,7 @@ main .inner {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url('../images/common/icon-att.svg') no-repeat center / contain;
+  background: url('../images/common/icon-file-att-download.svg') no-repeat center / contain;
 }
 
 .attach-file-wrap .count {
@@ -3243,6 +3237,12 @@ main .inner {
   font-size: 17px;
   color: #111;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.view-file-box .file-link:hover {
+  color: #725AA4;
+  text-decoration: underline;
 }
 
 .view-file-box .file-link.purple {

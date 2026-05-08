@@ -7324,6 +7324,7 @@ legend {
   left: 0;
   z-index: 70;
   background-color: var(--krds-header--color-surface);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
 }
 
 #krds-header .header-in {

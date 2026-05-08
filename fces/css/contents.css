@@ -3660,7 +3660,7 @@ main .inner {
 /* Outlined2 */
 .f-btn.outlined2,
 .f-btn.cancel {
-  background-color: #fff;
+  background-color: #dfdfdf;
   border-color: #DADADA;
   color: #111;
 }
@@ -3668,6 +3668,16 @@ main .inner {
 .f-btn.outlined2:hover,
 .f-btn.cancel:hover {
   background-color: #F5F5F5;
+}
+
+.f-btn.edit {
+  background-color: #fff;
+  border-color: #DADADA;
+  color: #111;
+}
+
+.f-btn.edit:hover {
+  background-color: #fff;
 }
 
 /* 보완사유/보완요청 (Warning) */

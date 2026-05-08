@@ -2838,6 +2838,7 @@ main .inner {
 .eval-result-card {
   display: flex;
   gap: 40px;
+  margin-top:32px;
   background-color: #f3f2f6;
   border: 1px solid #e0d9f0;
   border-radius: 16px;

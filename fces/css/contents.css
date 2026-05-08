@@ -2650,7 +2650,10 @@ main .inner {
 }
 
 .eval-result-pagination .page:hover {
-  background-color: #F5F5F5;
+  text-decoration: underline solid black 2px;
+  text-underline-offset: 4px;
+  color: #111;
+  font-weight: 700;
 }
 
 .eval-result-pagination .page.active {

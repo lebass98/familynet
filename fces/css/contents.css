@@ -1262,15 +1262,17 @@ main .inner {
   border-radius: 4px;
 }
 
-.modal-pagination button:hover:not(.active) {
-  background: #F8F8F8;
-}
-
-.modal-pagination button.active {
+.modal-pagination button:hover {
   text-decoration: underline solid black 2px;
   text-underline-offset: 4px;
   color: #111;
   font-weight: 700;
+}
+
+.modal-pagination button.active {
+  background-color: #776C9B;
+  color: #FFF;
+  font-weight: 600;
 }
 
 .modal-pagination .page-move {

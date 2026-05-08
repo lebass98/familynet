@@ -254,3 +254,6 @@ textarea[readonly] {
 .border-left-none {
     border-left:none !important;
 }
+.justify-end {
+    justify-content: flex-end !important;
+}

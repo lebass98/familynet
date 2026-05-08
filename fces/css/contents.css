@@ -861,26 +861,30 @@ main .inner {
 }
 
 .badge-red {
-  background-color: #e53935;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 90px;
+  padding: 0 16px;
+  background-color: #cd3000;
   color: #fff;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
   margin-left: 8px;
-  font-weight: 600;
   vertical-align: middle;
+  line-height: 1;
+  letter-spacing: -0.25px;
+  transition: background-color 0.2s;
 }
 
-.badge-red {
-  display: inline-block;
-  padding: 2px 8px;
-  background: #FFECEC;
-  color: #E63946;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
+.badge-red:hover {
+  background-color: #b02900;
 }
+
 
 
 .empty-msg {

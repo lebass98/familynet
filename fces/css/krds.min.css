@@ -12410,9 +12410,6 @@ legend {
   z-index: 1;
 }
 
-.krds-calendar-area .calendar-wrap .calendar-body .calendar-table-wrap .calendar-tbl td:not(.period, .old, .new, .disabled) .btn-set-date:hover::after {
-  background-color: var(--krds-calendar--date-set-color-action-period);
-}
 
 .krds-calendar-area .calendar-wrap .calendar-body .calendar-table-wrap .calendar-tbl td:not(.period, .old, .new, .disabled) .btn-set-date:active::after,
 .krds-calendar-area .calendar-wrap .calendar-body .calendar-table-wrap .calendar-tbl td:not(.period, .old, .new, .disabled) .btn-set-date:focus::after {

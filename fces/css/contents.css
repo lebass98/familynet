@@ -1057,6 +1057,10 @@ main .inner {
   overflow-y: auto;
 }
 
+.modal-container .view-btn-group {
+  padding:0;
+}
+
 /* 파일관리 모달 - select 스타일 */
 .select-wrap {
   position: relative;

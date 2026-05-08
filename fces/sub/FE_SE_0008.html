@@ -565,11 +565,11 @@
                 </div>
 
                 <!-- 카운트 + 버튼 영역 -->
-                <div class="d-flex flex-between align-center mb-10">
-                    <span class="section-title mb-0" style="font-size: 17px; font-weight: 500; color: #111;">총 1개 업로드 / 20개 가능</span>
-                    <div class="d-flex align-center" style="gap: 8px;">
-                        <button type="button" class="btn-outline" style="border: 1px solid #ccc; color: #444;">선택삭제</button>
-                        <button type="button" class="btn-outline purple">파일추가</button>
+                <div class="file-upload-header mb-10">
+                    <p class="upload-count">총 1개 업로드 / 20개 가능</p>
+                    <div class="btn-wrap">
+                        <button type="button" class="btn-delete">선택삭제</button>
+                        <button type="button" class="btn-add-file">파일추가</button>
                     </div>
                 </div>
 
@@ -610,15 +610,13 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="multi-row-wrap">
-                                        <div class="tag-chip-row d-flex align-center flex-direction-col" style="gap: 6px;">
-                                            <span class="tag-chip">
-                                                <button type="button" class="btn-tag-remove" title="제거">×</button> [1-1-1]
-                                            </span>
-                                            <span class="tag-chip">
-                                                <button type="button" class="btn-tag-remove" title="제거">×</button> [1-1-1]
-                                            </span>
-                                        </div>
+                                    <div class="tag-chip-wrap">
+                                        <span class="tag-chip">
+                                            <button type="button" class="btn-tag-remove" title="제거">×</button>[1-1-1]
+                                        </span>
+                                        <span class="tag-chip">
+                                            <button type="button" class="btn-tag-remove" title="제거">×</button>[1-1-1]
+                                        </span>
                                     </div>
                                 </td>
                                 <td class="text-left">00센터 중장기사업계획서.pdf</td>

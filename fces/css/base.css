@@ -251,3 +251,6 @@ textarea[readonly] {
 .flex-direction-col {
     flex-direction: column !important;
 }
+.border-left-none {
+    border-left:none !important;
+}

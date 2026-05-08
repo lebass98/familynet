@@ -1241,6 +1241,7 @@ main .inner {
 }
 
 .modal-table {
+  display: block;
   width: 100%;
   border-top: 1px solid #111;
 }
@@ -1288,13 +1289,6 @@ main .inner {
 /* ========================================
    파일관리 모달 - thead 고정 + tbody 스크롤
    ======================================== */
-
-/* 테이블 컨테이너: thead 고정을 위해 display:block 사용 */
-.modal-table {
-  display: block;
-  width: 100%;
-  border-top: 1px solid #111;
-}
 
 .modal-table colgroup {
   display: none;
@@ -1530,6 +1524,7 @@ main .inner {
   color: #111;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   line-height: 1.5;
   letter-spacing: -0.25px;
@@ -3769,6 +3764,10 @@ main .inner {
   color: #725AA4;
 }
 
+.f-btn.prev:hover {
+  background-color: #D1C6E8;
+}
+
 /* Disabled */
 .f-btn:disabled,
 .f-btn.disabled {
@@ -3948,13 +3947,6 @@ main .inner {
   }
 }
 
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
 .title-sub-text {
   font-size: 16px;
   font-weight: 400;
@@ -4055,15 +4047,6 @@ main .inner {
   background-color: #f4f4f4;
   border-color: #c6c6c6;
   color: #717171;
-}
-
-.f-btn.prev {
-  background-color: #e0d9f0;
-  color: #725aa4;
-}
-
-.f-btn.prev:hover {
-  background-color: #d1c6e8;
 }
 
 @media screen and (max-width: 1024px) {
@@ -4292,25 +4275,6 @@ main .inner {
   gap: 16px;
   margin-bottom: 16px;
   align-items: flex-start;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 700;
-  color: #111;
-  line-height: 1.5;
-}
-
-.section-title::before {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-color: #725AA4;
-  border-radius: 50%;
-  margin-right: 8px;
 }
 
 .notice-text {

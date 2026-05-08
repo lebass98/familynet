@@ -221,10 +221,11 @@ main .inner {
 }
 
 .page-title {
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 700;
   color: #1d1d1d;
-  line-height: 1.2;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
 }
 
 .page-title-wrap {
@@ -549,11 +550,12 @@ main .inner {
 }
 
 .stepper li dl dd {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #545454;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
   word-break: keep-all;
   margin: 0;
   width: 100%;
@@ -606,7 +608,19 @@ main .inner {
   }
 
   .stepper li dl dd {
-    font-size: 15px;
+    font-size: 18px;
+  }
+
+  .page-title {
+    font-size: 36px;
+  }
+
+  .content-title {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 20px;
   }
 }
 
@@ -631,6 +645,8 @@ main .inner {
   color: #111;
   display: flex;
   gap: 8px;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
 }
 
 .search-filter-wrap {
@@ -1374,6 +1390,8 @@ main .inner {
   display: flex;
   align-items: center;
   gap: 8px;
+  line-height: 1.5;
+  letter-spacing: -0.25px;
 }
 
 .section-title:before {

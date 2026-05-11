@@ -1300,7 +1300,6 @@ main .inner {
   display: block;
   width: 100%;
   /* tbody 스크롤바(6px) 너비만큼 보정하여 thead-tbody 컬럼 정렬 */
-  padding-right: 11px;
   box-sizing: border-box;
 }
 

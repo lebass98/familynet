@@ -1,0 +1,1663 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta name="_csrf_parameter" content="_csrf" />
+    <meta name="_csrf_header" content="X-CSRF-TOKEN" />
+    <meta name="_csrf" content="86fc596e-7761-4874-864f-7df775ed31b4" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="SiteID" content="1" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.familynet.or.kr/images/common/favicon.ico">
+    <title>가족센터
+
+    </title>
+    <meta name="naver-site-verification" content="eb4aabd5a1d8b12bfb0900b89d03c12bd4130c28" />
+    <meta name="description" content="가족상담 및 교육, 문화 프로그램 실시 등 안내">
+    <link rel="stylesheet" href="lib/css/import.css" type="text/css" />
+    <link rel="stylesheet" href="lib/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="lib/css/main_new.css" type="text/css" />
+    <!-- 한가원 고도화 (2022-02-11) 
+<link rel="stylesheet" href="https://www.familynet.or.kr/lib/css/new.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="https://www.familynet.or.kr/lib/css/jquery.bxslider.css" type="text/css" />
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/jquery-migrate-1.4.1.min.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/jquery-ui-1.14.1.min.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/jquery.cookie.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/jquery.bxslider.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/common.js" defer></script>
+    <script type="text/javascript" src="lib/js/lnb.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/main.js" defer></script>
+    <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/mc.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173347735-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173347735-1');
+    </script>
+    <script type="text/javascript" src="https://www.familynet.or.kr//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "77ea6930add954";
+        if (window.wcs) {
+            wcs_do();
+        }
+    </script>
+    <meta name="naver-site-verification" content="9b98af6176e515f7e413991ff9d1c064f04f6272" />
+</head>
+
+<body>
+    <div class="wrap">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <div id="backPage"
+            style="width:100%; height:100%; background-color : rgba(0,0,0, .5); position:fixed; z-index:999; display:none">
+            <div id="frontPage"
+                style="position:relative; top:200px; margin:auto; width:27%; background:white; height:25%; z-index:1000;">
+                <div class="login_insert clearfix">
+                    <p
+                        style="text-align: center; padding-top: 20px; color: #555; font-size: 24px; font-family: 'NS'; letter-spacing: -0.045em;">
+                        비밀번호를 입력해주세요.</p>
+                    <div style="margin-top: 30px; margin-left: 40px;">
+                        <div class="input">
+                            <input type="password" id="myPage_pw" placeholder="비밀번호" title="비밀번호"
+                                onkeypress="capLock(event)" autocomplete="off"
+                                style="padding: 13px; width: 88%; border: 1px solid #d5d5d5; color: #666; font-size: 13px; font-family: 'NBG'; box-sizing: border-box; line-height: 16px;">
+                        </div>
+                        <div style="margin-top: 40px; margin-left: 100px;">
+                            <a href="#" id="check_btn" value="확인" onClick="myPageIntercept();" style="background: #666; float: left; text-align: center; padding: 13px 0;
+	                        margin-left: 8px; width: calc(30% - 4px);
+                            color: white;">확인</a>
+                            &nbsp;
+                            <a href="#" id="backPage_close" value="닫기" style="background: #666; float: left; text-align: center; padding: 13px 0; margin-left: 8px;
+	                        width: calc(30% - 4px);
+                            color: white;">닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="header">
+            <div class="h_wrap clearfix">
+
+                <!-- 이재광 2026.03.30 KRDS 전자정부 누리 추가 -->
+                <div class="official_gov_banner">
+                    <div class="banner_inner">
+                        <div class="left_info">
+                            <img src="images/header/icon_kor_flag.svg" alt="대한민국 국기">
+                            <span>이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+                        </div>
+                        <div class="right_sns">
+                            <ul class="clearfix">
+                                <li><a href="#" target="_blank"><img src="images/header/icon_blog.png"
+                                            alt="건강가정진흥원 블로그"></a></li>
+                                <li><a href="#" target="_blank"><img src="images/header/icon_facebook.png"
+                                            alt="건강가정진흥원 페이스북"></a></li>
+                                <li><a href="#" target="_blank"><img src="images/header/icon_insta.png"
+                                            alt="건강가정진흥원 인스타그램"></a></li>
+                                <li><a href="#" target="_blank"><img src="images/header/icon_youtube.png"
+                                            alt="건강가정진흥원 유투브"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 이재광 2026.03.30 KRDS 전자정부 누리 추가 -->
+                <div class="h_wrap_bottom">
+                    <h1>
+                        <a href="#">
+                            <img src="images/header/logo.svg" alt="건강가정지원센터">
+                        </a>
+                    </h1>
+                    <div class="h_navi">
+                        <div class="utill clearfix">
+
+                            <div class="utill_menu">
+
+                                <!-- 이재광 2026.03.30 헤더 우측 수정-->
+                                <ul>
+                                    <li class="home">
+                                        <a href="https://www.kihf.or.kr/web/index.do" target="_blank">한국건강가정진흥원</a>
+                                    </li>
+                                    <li class="login">
+                                        <a href="#">로그인</a>
+                                    </li>
+                                    <li class="join">
+                                        <a href="#">회원가입</a>
+                                    </li>
+                                </ul>
+                                <!-- 이재광 2026.03.30 헤더 우측 수정-->
+
+                                <div class="side_menu btnCtg"><a href="#"><img src="images/header/icon_hamberger.svg"
+                                            alt="전체메뉴 열기"></a></div>
+                                <div class="m_search_box">
+                                    <form action="/web/lay3/program/S1T2C58/total/search.do" method="get"
+                                        name="searchFrm">
+                                        <input type="hidden" name="_csrf"
+                                            value="86fc596e-7761-4874-864f-7df775ed31b4" />
+                                        <fieldset>
+                                            <legend>통합검색</legend>
+                                            <input type="text" name="total_keyword" value="" placeholder="검색어를 입력해주세요"
+                                                title="검색어 입력란">
+                                            <input type="submit" value="검색">
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- h_wrap -->
+
+            <div class="gnb">
+                <div class="gnb_wrap clearfix">
+                    <!-- <a href="#" class="kihf_link" target="_blank" title="한국건강가정진흥원 홈페이지 새창열림"><img
+                            src="images/header/kihf_logo.png" alt="한국건강가정진흥원" /></a> -->
+                    <div class="lnb" id="gnavi">
+                        <div class="lnb_bg" style="display:none"></div>
+                        <ul>
+                            <li class="l_title1" menu-seq="296"> <a href="#">주요사업 </a>
+                                <div class="lnb_sub">
+                                    <p>주요사업<a href="#">바로가기</a></p>
+                                    <ul>
+                                        <li class="" menu-seq="297"> <a href="#">사업소개
+                                            </a> </li>
+                                        <li class="" menu-seq="337"> <a href="#">가족센터는
+                                            </a> </li>
+                                        <li class="" menu-seq="339"> <a href="#">사업운영
+                                                및
+                                                사업영역 </a> </li>
+                                        <li class="" menu-seq="338"> <a href="#">설립목적
+                                                및
+                                                방향 </a> </li>
+                                        <li class="" menu-seq="340"> <a href="#">전달체계도
+                                            </a> </li>
+                                        <li class="" menu-seq="424"> <a href="#">건강가정사
+                                            </a> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="l_title2" menu-seq="299"> <a href="#">알림마당 </a>
+                                <div class="lnb_sub">
+                                    <p>알림마당<a href="#">바로가기</a></p>
+                                    <ul>
+                                        <li class="" menu-seq="300"> <a href="#">진흥원소식
+                                            </a> </li>
+                                        <li class="" menu-seq="301"> <a href="#">뉴스링크
+                                            </a> </li>
+                                        <li class="" menu-seq="302"> <a href="#">센터홍보실
+                                            </a> </li>
+                                        <li class="" menu-seq="303"> <a href="#">자주
+                                                묻는 질문 </a> </li>
+                                        <li class="" menu-seq="416"> <a href="#">센터채용공고
+                                            </a> </li>
+                                        <li class="" menu-seq="442"> <a href="#">자료실
+                                            </a> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="l_title3" menu-seq="304"> <a href="#">참여마당 </a>
+                                <div class="lnb_sub">
+                                    <p>참여마당<a href="#">바로가기</a></p>
+                                    <ul>
+                                        <li class="" menu-seq="450"> <a href="#">프로그램신청
+                                            </a>
+                                        </li>
+                                        <li class="" menu-seq="379"> <a href="#">온라인상담실
+                                            </a> </li>
+                                        <li class="" menu-seq="306"> <a href="#">만족도조사
+                                            </a> </li>
+                                        <li class="" menu-seq="423"> <a href="#">센터홍보
+                                            </a> </li>
+                                        <li class="" menu-seq="305"> <a href="#">고객제안
+                                            </a> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="l_title4" menu-seq="307"> <a href="#">지역센터안내
+                                </a>
+                                <div class="lnb_sub">
+                                    <p>지역센터안내<a href="#">바로가기</a></p>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="l_title5" menu-seq="431"> <a href="#">돌봄지원 </a>
+                                <div class="lnb_sub">
+                                    <p>돌봄지원<a href="#">바로가기</a></p>
+                                    <ul>
+                                        <li class="" menu-seq="456"> <a href="#">공동육아나눔터
+                                            </a> </li>
+                                        <li class="" menu-seq="432"> <a href="#">돌봄공동체
+                                            </a> </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" id="allMenu_link" class="all_menu"><span>전체메뉴</span></a>
+                    <div class="allMenu" style="display: none;">
+                        <div class="dim_layer"></div>
+                        <div class="menu_list">
+                            <div class="wrap">
+                                <p class="allmenu_tit">전체메뉴</p>
+                                <div class="contents_wrap">
+                                    <!-- contents -->
+                                    <div class="sitemap_wrap">
+                                        <div class="all_sitemap">
+                                            <ol>
+                                                <li menu-seq="296" class="title"> <a href="#">주요사업
+                                                    </a>
+                                                    <ol class="list">
+                                                        <li menu-seq="297"> <a href="#">사업소개
+                                                            </a> </li>
+                                                        <li menu-seq="337"> <a href="#">가족센터는
+                                                            </a> </li>
+                                                        <li menu-seq="339"> <a href="#">사업운영
+                                                                및 사업영역 </a>
+                                                        </li>
+                                                        <li menu-seq="338"> <a href="#">설립목적
+                                                                및 방향 </a>
+                                                        </li>
+                                                        <li menu-seq="340"> <a href="#">전달체계도
+                                                            </a> </li>
+                                                        <li menu-seq="424"> <a href="#">건강가정사
+                                                            </a> </li>
+                                                    </ol>
+                                                </li>
+                                                <li menu-seq="299" class="title"> <a href="#">알림마당
+                                                    </a>
+                                                    <ol class="list">
+                                                        <li menu-seq="300"> <a href="#">진흥원소식
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="301"> <a href="#">뉴스링크
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="302"> <a href="#">센터홍보실
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="303"> <a href="#">자주
+                                                                묻는 질문
+                                                            </a> </li>
+                                                        <li menu-seq="416"> <a href="#">센터채용공고
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="442"> <a href="#">자료실
+                                                            </a>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li menu-seq="304" class="title"> <a href="#">참여마당
+                                                    </a>
+                                                    <ol class="list">
+                                                        <li menu-seq="450"> <a href="#">프로그램신청
+                                                            </a> </li>
+                                                        <li menu-seq="379"> <a href="#">온라인상담실
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="306"> <a href="#">만족도조사
+                                                            </a> </li>
+                                                        <li menu-seq="423"> <a href="#">센터홍보
+                                                            </a> </li>
+                                                        <li menu-seq="305"> <a href="#">고객제안
+                                                            </a> </li>
+                                                    </ol>
+                                                </li>
+                                                <li menu-seq="307" class="title"> <a href="#">지역센터안내
+                                                    </a>
+                                                    <ol class="list">
+                                                    </ol>
+                                                </li>
+                                                <li menu-seq="431" class="title"> <a href="#">돌봄지원
+                                                    </a>
+                                                    <ol class="list">
+                                                        <li menu-seq="456"> <a href="#">공동육아나눔터
+                                                            </a>
+                                                        </li>
+                                                        <li menu-seq="432"> <a href="#">돌봄공동체
+                                                            </a> </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <!-- //contents -->
+                                </div>
+                            </div>
+                        </div>
+                        <a class="allmenu_close" href="#" title="전체메뉴 닫기"><img
+                                href="https://www.familynet.or.kr/images/header/allMenu_close.gif" alt="닫기" /></a>
+                    </div> <!-- allMenu -->
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+
+                            if ($("#pw_change_yn").val() == 'Y') {
+                                alert("비밀번호를 변경해주세요.");
+                                $("#pw_change_yn").val('N');
+                                //location.href = "/web/lay1/program/S1T2C5/member/modify_step2.do";
+                                location.href = "/web/lay1/program/S1T2C5/member/modifyPwForm.do";
+                            }
+
+                            $(".all_menu").on("click", function () { /* focusin */
+                                if ($(".allMenu").css("display") == "none") {
+                                    $(".allMenu").fadeIn(300);
+                                    //jQuery(".menu_list").load("/popup/allmenu/index.do", function(){});
+                                } else {
+                                    $(".allMenu").fadeOut();
+                                }
+                            });
+
+                            $(".allmenu_close").on("click", function () {
+                                if ($(".allMenu").css("display") == "block") {
+                                    $(".allMenu").fadeOut();
+                                }
+                            });
+
+                            $(".dim_layer").on("click", function () {
+                                if ($(".allMenu").css("display") == "block") {
+                                    $(".allMenu").fadeOut();
+                                }
+                            });
+
+                            $("a.allmenu_close").on("mouseenter click", function () {
+                                $(".allMenu_btn a").focus();
+                            });
+                            // 05-02추가				
+                            $("#allMenu_link, .kihf_link").focus(function () {
+                                $(".lnb_sub, .lnb_bg").hide();
+                            });
+                        });
+
+                        function logout() {
+                            if (confirm("로그아웃 하시겠습니까?")) {
+                                location.href = "/login/logout.do";
+                            }
+                        }
+
+                        // 10분마다 세션 업데이트
+                        setInterval(function () {
+                            $.ajax({
+                                method: "POST",
+                                url: "/updateSession.do",
+                                data: {},
+                                dataType: "JSON",
+                                success: function (data) { }
+                            });
+                        }, 600000);
+
+                        function searchFormCheck() {
+                            alert("준비중 입니다.");
+                            return false;
+                        }
+
+                        $("#myPage").on("click", function () {
+                            /* var path = window.location.pathname;
+                        	
+                            if(path.indexOf('mypage') > -1 || path.indexOf('member/leave') > -1 || path.indexOf('member/modify')  > -1){
+                                location.href="#" ;
+                            }else{
+                                $("#backPage").show();
+                                $("#myPage_pw").focus();
+                            } */
+
+                            location.href = "/web/lay1/S1T1C2/sublink.do";
+                        });
+
+                        $("#backPage_close").on("click", function () {
+                            $("#backPage").hide();
+                        });
+
+                        function myPageIntercept() {
+                            /* var member_id = "";
+                            var member_pw = $("#myPage_pw").val();
+                        	
+                            if(member_pw == ""){
+                                alert("비밀번호를 입력하여 주시기 바립니다.");
+                                $("#member_pw").focus();
+                                return false;
+                            } else {		
+                        	
+                                $.ajax({
+                                            method: "POST",
+                                            url: "/login/myPage_pw_check.do",
+                                            data: {"member_id":member_id, "member_pw":member_pw},
+                                            dataType: "JSON",
+                                            success: function(data) {
+                                                var result = data.rst;
+                                                if(result == "Y"){
+                                                    location.href="#" ;
+                                                }else {
+                                                    alert("비밀번호가 일치하지 않습니다.");
+                                                    $("#myPage_pw").focus();
+                                                }
+                                            }
+                                });
+                            } */
+                            location.href = "/web/lay1/S1T1C2/sublink.do";
+                        }
+
+                        $("#myPage_pw").keyup(function (e) {
+                            if (e.keyCode == 13) $("#check_btn").click();;
+                        });
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- banner zone -->
+
+
+        <script type="text/javascript">
+            function closeWin1(seq) {
+                if ($("#chkbox" + seq).is(":checked")) {
+                    $.cookie("maindiv_19341_" + $.datepicker.formatDate('ymmdd', new Date()), 'done', { path: "/", expires: 1 });
+                }
+                $('#divpop19341').css("visibility", "hidden");
+            }
+
+            $(document).ready(function () {
+                $(".divpop").draggable();
+
+                if (!$.cookie("maindiv_19341_" + $.datepicker.formatDate('ymmdd', new Date()))) {
+                    $("#divpop19341").css("visibility", "visible");
+                }
+
+
+                if (!$.cookie("maindiv_14522_" + $.datepicker.formatDate('ymmdd', new Date()))) {
+                    $("#divpop14522").css("visibility", "visible");
+                }
+
+            });
+        </script>
+
+        <!-- //banner zone -->
+
+        <script type="text/javascript">
+            function closeWin(seq) {
+                if ($("#chkbox" + seq).is(":checked")) {
+                    $.cookie("maindiv_" + seq + "_" + $.datepicker.formatDate('ymmdd', new Date()), 'done', { path: "/", expires: 1 });
+                }
+                $('#divpop' + seq).css("visibility", "hidden");
+            }
+        </script>
+        <!-- main_pop -->
+
+
+
+        <div id="container">
+            <!-- 이재광 2026.03.31 메인 비주얼 영역 추가 -->
+
+            <div class="main-top-section">
+                <div class="top-section-inner">
+                    <div class="center-link-wrap">
+                        <div class="family-center-link">
+                            <div class="link-header">
+                                <h2>지역 가족센터 바로가기</h2>
+                                <a href="#" class="map-link">
+                                    <img src="images/main/icon_map_search.svg" alt="지도찾기아이콘" />지도로 찾기
+                                </a>
+                            </div>
+                            <div class="link-content">
+                                <div class="select-group">
+                                    <div class="custom-select-box city-sel" id="custom_area">
+                                        <button type="button" class="select-trigger"><span>시·도 선택</span></button>
+                                        <ul class="select-options">
+                                            <li><button type="button" data-value="">시·도 선택</button></li>
+                                            <li><button type="button" data-value="A000" data-area="main">중앙</button>
+                                            </li>
+                                            <li><button type="button" data-value="A001" data-area="seoul">서울</button>
+                                            </li>
+                                            <li><button type="button" data-value="A002" data-area="incheon">인천</button>
+                                            </li>
+                                            <li><button type="button" data-value="A003" data-area="gyeonggi">경기</button>
+                                            </li>
+                                            <li><button type="button" data-value="A004" data-area="gangwon">강원</button>
+                                            </li>
+                                            <li><button type="button" data-value="A005" data-area="chungnam">충남</button>
+                                            </li>
+                                            <li><button type="button" data-value="A006" data-area="chungbuk">충북</button>
+                                            </li>
+                                            <li><button type="button" data-value="A007" data-area="sejong">세종</button>
+                                            </li>
+                                            <li><button type="button" data-value="A008" data-area="daejeon">대전</button>
+                                            </li>
+                                            <li><button type="button" data-value="A009" data-area="kyungbuk">경북</button>
+                                            </li>
+                                            <li><button type="button" data-value="A010" data-area="daegu">대구</button>
+                                            </li>
+                                            <li><button type="button" data-value="A011" data-area="jeonbuk">전북</button>
+                                            </li>
+                                            <li><button type="button" data-value="A012"
+                                                    data-area="gyeongnam">경남</button></li>
+                                            <li><button type="button" data-value="A013" data-area="ulsan">울산</button>
+                                            </li>
+                                            <li><button type="button" data-value="A014" data-area="busan">부산</button>
+                                            </li>
+                                            <li><button type="button" data-value="A015" data-area="gwangju">광주</button>
+                                            </li>
+                                            <li><button type="button" data-value="A016" data-area="jeonnam">전남</button>
+                                            </li>
+                                            <li><button type="button" data-value="A017" data-area="jeju">제주</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="custom-select-box center-sel" id="custom_area_detail">
+                                        <button type="button" class="select-trigger"><span>지역센터 선택</span></button>
+                                        <ul class="select-options">
+                                            <li><button type="button" data-value="">지역센터 선택</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button type="button" class="area-search-btn" onclick="goCustomCenter()">바로가기</button>
+                            </div>
+                        </div>
+                        <div class="program-link-wrap">
+                            <ul>
+                                <li class="item-program active">
+                                    <a href="#">
+                                        <dl>
+                                            <dt>프로그램 신청</dt>
+                                            <dd>가족센터 프로그램 안내</dd>
+                                        </dl>
+                                        <span class="icon-arrow"></span>
+                                        <div class="icon-img-box">
+                                            <img src="images/main/icon_prgm_1.png" alt="프로그램 신청 아이콘">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="item-counsel">
+                                    <a href="#">
+                                        <dl>
+                                            <dt>온라인상담실</dt>
+                                            <dd>비대면으로 안내</dd>
+                                        </dl>
+                                        <span class="icon-arrow"></span>
+                                        <div class="icon-img-box">
+                                            <img src="images/main/icon_prgm_2.png" alt="온라인상담실 아이콘">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-visual-new">
+                        <div class="main-visual-new-inner">
+                            <ul class="main-visual-slider">
+                                <li class="visual-item v1">
+                                    <div class="visual-img-box">
+                                        <img src="images/main/main_visual_01_.png" alt="온 가족이 웃고 있는 3D 일러스트">
+                                    </div>
+                                </li>
+                                <li class="visual-item v2">
+                                    <div class="visual-img-box">
+                                        <img src="images/main/main_visual_01_.png" alt="다양한 세대가 함께 참여하는 3D 일러스트">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="main-visual-controls">
+                                <div class="controls-inner">
+                                    <div class="pager-wrap">
+                                        <a data-slide-index="0" href="" class="active">1</a>
+                                        <a data-slide-index="1" href="">2</a>
+                                    </div>
+                                    <div class="move-btns">
+                                        <button type="button" class="btn-prev"><span class="blind">이전</span></button>
+                                        <button type="button" class="btn-stop-play stop"><span
+                                                class="blind">정지</span></button>
+                                        <button type="button" class="btn-next"><span class="blind">다음</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- <div class="visual">
+                <div class="v_wrap">
+                    <div class="slide_wrap">
+
+                        <div class="slide">
+
+
+
+                            <img src="https://www.familynet.or.kr/upload/popup/2022/02/0404d41d-1e1b-47cb-8c00-78da13580f5d.jpg"
+                                alt="메인 이미지1" />
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="con_wrap new_">
+                <div class="con_top">
+                    <div class="bbs_popup">
+                        <div class="notice new_notice">
+                            <ul class="tabs clearfix tablist new_tabs" role="tablist" aria-label="공지사항">
+                                <li id="tab1"><a href="#tab-1" alt="선택됨" class="tabtab" role="tab" aria-controls="tab-1"
+                                        aria-selected="true">센터홍보실</a></li>
+                                <li id="tab2"><a href="#tab-2" class="tabtab" role="tab" aria-controls="tab-2"
+                                        aria-selected="false" tabindex="-1">센터채용공고</a></li>
+                                <li id="tab3"><a href="#tab-3" class="tabtab" role="tab" aria-controls="tab-3"
+                                        aria-selected="false" tabindex="-1">자주묻는 질문</a></li>
+                                <li id="tab4"><a href="#tab-4" class="tabtab" role="tab" aria-controls="tab-4"
+                                        aria-selected="false" tabindex="-1">진흥원 소식</a></li>
+                                <li id="tab5"><a href="#tab-5" class="tabtab" role="tab" aria-controls="tab-5"
+                                        aria-selected="false" tabindex="-1">타기관 소식</a></li>
+                            </ul>
+
+                            <div id="tab-1" class="tab_content new_tab_content" role="tabpanel" aria-labelledby="tab1">
+                                <h2 style="display:none">진흥원 소식</h2>
+                                <ul class="clearfix">
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C300/A/3/view.do?article_seq=134877">
+                                            <h6>
+                                                <span class="badge_notice">공지</span>
+                                                2026 다양한가족 인식개선 캠페인 2차
+                                            </h6>
+
+
+                                            <p>
+
+                                            </p>
+                                            <span>2026-01-28</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C300/A/3/view.do?article_seq=134129">
+                                            <h6>
+
+
+
+
+                                                2023년 결혼이주여성 자립역량 강화 및 자녀 진로지원 사업 수행기관 공모
+                                            </h6>
+
+
+                                            <p>
+                                                『3차년 결혼이주여성 자립역량 강화 및자녀 진로지원』공모사업 시행공고 본 사업은 포스코 기부금으로 운영되는 사업으로 총 3년간
+                                                운영되는 공모사업입니다. 결혼이주여성의 기초학습 및 정보기술 역량을 향상시켜 사회적 진출을 지원하여 포용적 사회문화 실현에
+                                                기여하고, 다문화 청소년의 관심과 재능에 맞는 진로상담으로 건강한 사회구성원으로의 성장을 촉진하기 위한 『3차년 결혼이주여성
+                                                자립역량 강화 및 자녀 진로지원』공모사업을 아래와 같이 공고하오니 많은 센터들의 적극적인 관심과 참여를 부탁드립니다. 2023.
+                                                3. 한국건강가정진흥원 이사장
+                                            </p>
+                                            <span>2023-03-27</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C300/A/3/view.do?article_seq=134129">
+                                            <h6>
+
+
+
+
+                                                2023년 결혼이주여성 자립역량 강화 및 자녀 진로지원 사업 수행기관 공모
+                                            </h6>
+
+
+                                            <p>
+                                                『3차년 결혼이주여성 자립역량 강화 및자녀 진로지원』공모사업 시행공고 본 사업은 포스코 기부금으로 운영되는 사업으로 총 3년간
+                                                운영되는 공모사업입니다. 결혼이주여성의 기초학습 및 정보기술 역량을 향상시켜 사회적 진출을 지원하여 포용적 사회문화 실현에
+                                                기여하고, 다문화 청소년의 관심과 재능에 맞는 진로상담으로 건강한 사회구성원으로의 성장을 촉진하기 위한 『3차년 결혼이주여성
+                                                자립역량 강화 및 자녀 진로지원』공모사업을 아래와 같이 공고하오니 많은 센터들의 적극적인 관심과 참여를 부탁드립니다. 2023.
+                                                3. 한국건강가정진흥원 이사장
+                                            </p>
+                                            <span>2023-03-27</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C300/A/3/view.do?article_seq=134129">
+                                            <h6>
+
+
+
+
+                                                2023년 결혼이주여성 자립역량 강화 및 자녀 진로지원 사업 수행기관 공모
+                                            </h6>
+
+
+                                            <p>
+                                                『3차년 결혼이주여성 자립역량 강화 및자녀 진로지원』공모사업 시행공고 본 사업은 포스코 기부금으로 운영되는 사업으로 총 3년간
+                                                운영되는 공모사업입니다. 결혼이주여성의 기초학습 및 정보기술 역량을 향상시켜 사회적 진출을 지원하여 포용적 사회문화 실현에
+                                                기여하고, 다문화 청소년의 관심과 재능에 맞는 진로상담으로 건강한 사회구성원으로의 성장을 촉진하기 위한 『3차년 결혼이주여성
+                                                자립역량 강화 및 자녀 진로지원』공모사업을 아래와 같이 공고하오니 많은 센터들의 적극적인 관심과 참여를 부탁드립니다. 2023.
+                                                3. 한국건강가정진흥원 이사장
+                                            </p>
+                                            <span>2023-03-27</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                                <a href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C300/A/3/list.do"
+                                    class="more new_more">더보기</a>
+                            </div>
+                            <div id="tab-2" class="tab_content new_tab_content" role="tabpanel" aria-labelledby="tab2"
+                                hidden="true">
+                                <h2 style="display:none">센터홍보실</h2>
+                                <ul class="clearfix">
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C302/A/6/view.do?article_seq=134742">
+                                            <h6>
+
+
+
+
+                                                2023년 사회복지현장 실습생 모집 공고
+                                            </h6>
+
+                                            <p>
+                                                남양주시가족센터는 가족지원센터의 사회복지실무를 경험하고 사회복지프로그램 참관 및 보조진행, 사회복지행정실무 경험을 통해
+                                                예비사회복지사로 성장하는 기회를 제공하고자 아래와 같이 실습생을 모집합니다. 예비사회복지사들의 많은 관심 바랍니다. 1. 개 요
+                                                ◯ 모집기간 : 2023년 4월 3일(월) ~5월 2일(화) 18:00 도착분에 한함 ◯ 모집대상 : 사회복지관련학과 재학생 ◯
+                                                실습기간 : 2023년 5월 22일~6월 20일, 총 20회(1일 8시간, 총 160시간) (프로그램 특성상 주말에 참여 할 수
+                                                있음, 주말 프로그램은 평일 프로그램 참여로 대체 예정) ◯ 모집인원 : 총 2명 내외(적격자가 없을시 선발하지 않을 수 있음)
+                                                ◯ 모집방법 : 신청서 E-MAIL접수(nyj8211@hanmail.net) * 서류 누락은 본인 과실로 센터에서 책임지지
+                                                않습니다. ◯ 합격자 발표 : 2023년 5월 8일(월), 개별 연락 및 홈페이지 공고 ◯ 실습비: 10만원(중식비 별도, 실습
+                                                시작전까지 센터 납부) 2. 실습분야 및 내용 ◯ 남양주시가족센터 사업 전 분야 및 복지서비스, 사회복지행정 등 3. 실습신청
+                                                방법 ◯ 실습지원신청서 작성 : 별첨한 실습지원신청서 작성 신청서와 개인정보활용동의서만 보내주세요. 서류탈락자는 문서를 반환하지
+                                                않으며 센터에서 내 규정에 의해 폐기합니다. ◯ 이메일 접수 : nyj8211@hanmail.net
+                                                ‘사회복지현장실습지원_학교명_이름’으로 보낼 것 ◯ 문의 담당자: 강은정 031-553-8211 주소: 남양주시 경춘로 522,
+                                                남양주시제2청사 남양주시가족센터 2층, 4층 홈페이지 https://nyjfc.familynet.or.kr/center/
+                                            </p>
+                                            <span>2023-03-31</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C302/A/6/view.do?article_seq=134746">
+                                            <h6>
+
+
+
+
+                                                2022년 후원금 수입 및 사용결과 보고
+                                            </h6>
+
+                                            <p>
+                                                사회복지법인 및 사회복지시설 재무회계규칙 제4장의 2(후원금의 관리), 제41조의 6(후원금의 수입 및 사용결과 보고 공개)에
+                                                의거 붙임과 같이 공고 합니다.
+                                            </p>
+                                            <span>2023-03-31</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                                <a href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C302/A/1/list.do"
+                                    class="more new_more">더보기</a>
+                            </div>
+                            <div id="tab-3" class="tab_content new_tab_content" role="tabpanel" aria-labelledby="tab3"
+                                hidden="true">
+                                <h2 style="display:none">채용공고</h2>
+                                <ul class="clearfix">
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C416/A/7/view.do?article_seq=134886">
+                                            <h6>
+
+
+                                                <img src="https://www.familynet.or.kr/images/main/new.gif" alt="새 글"
+                                                    class="new" />
+
+
+
+                                                채용공고 테스트
+                                            </h6>
+
+                                            <p>
+                                                채용공고 테스트
+                                            </p>
+                                            <span>2026-03-24</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C416/A/7/view.do?article_seq=134887">
+                                            <h6>
+
+
+                                                <img src="https://www.familynet.or.kr/images/main/new.gif" alt="새 글"
+                                                    class="new" />
+                                                채용공고 테스트 2
+                                            </h6>
+
+                                            <p>
+                                                11
+                                            </p>
+                                            <span>2026-03-24</span>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                                <a href="https://www.familynet.or.kr/web/lay1/bbs/S1T299C416/A/15/list.do"
+                                    class="more new_more">더보기</a>
+                            </div>
+                        </div>
+                        <!-- notice -->
+
+                        <!-- // 2025.09.29 Mr.Yoon 기존 베너존 스크립드 간소화 -->
+                        <!-- 2026.04.01 [yellow] 배너 및 SNS 바로가기 추가 -->
+                        <div class="sns_banner_wrap">
+                            <div class="sns_banner_inner">
+                                <div class="sns_top_cards">
+                                    <a href="tel:1577-9337" class="card_tel">
+                                        <div class="icon"><img src="images/main/icon_main_tel.svg" alt="전화 상담 아이콘 샘플" />
+                                        </div>
+                                        <p>전화상담<br class="mob-only"> 1577-9337</p>
+                                    </a>
+                                    <a href="#" class="card_chatbot">
+                                        <div class="icon"><img src="images/main/icon_main_chatbot.svg"
+                                                alt="챗봇 아이콘 샘플" /></div>
+                                        <p>국민비서 가족서비스 챗봇</p>
+                                        <span class="ico_link"></span>
+                                    </a>
+                                </div>
+                                <div class="sns_bottom_cards">
+                                    <a href="#" class="card_blog">
+                                        <div class="icon"><img src="images/main/icon_main_blog.svg" alt="블로그 아이콘 샘플" />
+                                        </div>
+                                        <p>한국건강가정진흥원 네이버 블로그</p>
+                                        <span class="ico_link"></span>
+                                    </a>
+                                    <a href="#" class="card_youtube">
+                                        <div class="icon"><img src="images/main/icon_main_youtube.svg"
+                                                alt="유튜브 아이콘 샘플" /></div>
+                                        <p>한국건강가정진흥원 유튜브</p>
+                                        <span class="ico_link"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="popup_zone">
+                            <h2>배너존</h2>
+
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- con_top -->
+                <!-- <div class="con_middle">
+            <div class="shortcut">
+                <div class="shortcut_wrap clearfix">
+                    <div class="txt" style="margin: 33px 0;">
+                        <h2>지역센터 바로가기</h2>
+                    </div>
+                    <div class="select">
+                        <select id="area" onchange="changeAreaDetail(this)" title="시·도를 선택하실 수 있습니다.">
+                            <option value="" selected="selected">시·도 선택</option>
+
+                            <option value="A000" data-area=main>중앙</option>
+
+                            <option value="A001" data-area=seoul>서울</option>
+
+                            <option value="A002" data-area=incheon>인천</option>
+
+                            <option value="A003" data-area=gyeonggi>경기</option>
+
+                            <option value="A004" data-area=gangwon>강원</option>
+
+                            <option value="A005" data-area=chungnam>충남</option>
+
+                            <option value="A006" data-area=chungbuk>충북</option>
+
+                            <option value="A007" data-area=sejong>세종</option>
+
+                            <option value="A008" data-area=daejeon>대전</option>
+
+                            <option value="A009" data-area=kyungbuk>경북</option>
+
+                            <option value="A010" data-area=daegu>대구</option>
+
+                            <option value="A011" data-area=jeonbuk>전북</option>
+
+                            <option value="A012" data-area=gyeongnam>경남</option>
+
+                            <option value="A013" data-area=ulsan>울산</option>
+
+                            <option value="A014" data-area=busan>부산</option>
+
+                            <option value="A015" data-area=gwangju>광주</option>
+
+                            <option value="A016" data-area=jeonnam>전남</option>
+
+                            <option value="A017" data-area=jeju>제주</option>
+
+                        </select>
+                        <select id="area_detail" title="선택하신 시·도의 지역을 선택하실 수 있습니다.">
+                            <option value="" selected="selected">지역센터 선택</option>
+                        </select>
+                    </div>
+                    <div class="shortcut_btn clearfix">
+                        <input type="hidden" name="_csrf" value="86fc596e-7761-4874-864f-7df775ed31b4" />
+                        <input type="button" value="바로가기" onclick="goCenter()" title="새창열림" />
+                        <a href="https://www.familynet.or.kr/web/lay1/program/S1T1C307/info/view.do"
+                            class="map">지도찾기</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+                <div aaa='test'></div>
+
+            </div> <!-- //con_wrap -->
+
+        </div> <!-- //container -->
+        <script>
+            var focusObjNo = 0;
+            function program_focus(no) {
+                if (no == focusObjNo) {
+                    return false;
+                }
+
+                focusObjNo = no;
+
+                var pageNoArr = { "0": 0, "1": 0, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 1, "8": 2, "9": 2, "10": 2, "11": 2 };
+                var pageNo = pageNoArr[no * 1];
+
+                $(".program_wrap .bx-pager-link")[pageNo].click();
+
+            }
+
+            function changeAreaDetail(dom) {
+                var area = $(dom).find(":selected").data("area");
+                $("#area_detail").html("<option value='' selected='selected'>지역센터 선택</option>");
+                if (!area) {
+                    return;
+                }
+                getSyncJSON("/json/list/Main.getAreaCenter.do", { val1: area }, function (data) {
+                    var centerOptions = data.map(function (item) {
+                        return "<option value='" + item.code + "'>" + item.code_nm + "</option>";
+                    });
+                    $("#area_detail").append(centerOptions)
+                });
+            }
+
+            function goCenter() {
+                var area = $("#area").find(":selected").val();
+                var area_detail = $("#area_detail").find(":selected").val();
+                if (!area || !area_detail) {
+                    alert("지역센터를 선택해주세요.");
+                    return;
+                }
+                var obj = {
+                    area: area,
+                    area_detail: area_detail,
+                    _csrf: $("input[name='_csrf']").val()
+                };
+                $.ajax({
+                    method: "POST",
+                    url: "/getCenterUrl.do",
+                    data: obj,
+                    dataType: "JSON",
+                    success: function (data) {
+                        var error = data.error;
+                        if (!error) {
+                            var centerUrl = data.centerUrl;
+                            window.open(centerUrl);
+                        }
+                    }
+                });
+            }
+
+            (function () {
+                var tablist = document.querySelectorAll('[role="tablist"]')[0];
+                var tabs;
+                var panels;
+                var delay = determineDelay();
+
+                generateArrays();
+
+                function generateArrays() {
+                    tabs = document.querySelectorAll('[role="tab"]');
+                    panels = document.querySelectorAll('[role="tabpanel"]');
+                };
+
+                // For easy reference
+                var keys = {
+                    end: 35,
+                    home: 36,
+                    left: 37,
+                    up: 38,
+                    right: 39,
+                    down: 40,
+                    delete: 46
+                };
+
+                // Add or substract depending on key pressed
+                var direction = {
+                    37: -1,
+                    38: -1,
+                    39: 1,
+                    40: 1
+                };
+
+                // Bind listeners
+                for (i = 0; i < tabs.length; ++i) {
+                    addListeners(i);
+                };
+
+                function addListeners(index) {
+                    tabs[index].addEventListener('click', clickEventListener);
+                    tabs[index].addEventListener('keydown', keydownEventListener);
+                    tabs[index].addEventListener('keyup', keyupEventListener);
+
+                    // Build an array with all tabs (<button>s) in it
+                    tabs[index].index = index;
+                };
+
+                // When a tab is clicked, activateTab is fired to activate it
+                function clickEventListener(event) {
+                    var tab = event.target;
+                    activateTab(tab, false);
+                };
+
+                // Handle keydown on tabs
+                function keydownEventListener(event) {
+                    var key = event.keyCode;
+
+                    switch (key) {
+                        case keys.end:
+                            event.preventDefault();
+                            // Activate last tab
+                            activateTab(tabs[tabs.length - 1]);
+                            break;
+                        case keys.home:
+                            event.preventDefault();
+                            // Activate first tab
+                            activateTab(tabs[0]);
+                            break;
+
+                        // Up and down are in keydown
+                        // because we need to prevent page scroll >:)
+                        case keys.up:
+                        case keys.down:
+                            determineOrientation(event);
+                            break;
+                    };
+                };
+
+                // Handle keyup on tabs
+                function keyupEventListener(event) {
+                    var key = event.keyCode;
+
+                    switch (key) {
+                        case keys.left:
+                        case keys.right:
+                            determineOrientation(event);
+                            break;
+                        case keys.delete:
+                            determineDeletable(event);
+                            break;
+                    };
+                };
+
+                // When a tablist�셲 aria-orientation is set to vertical,
+                // only up and down arrow should function.
+                // In all other cases only left and right arrow function.
+                function determineOrientation(event) {
+                    var key = event.keyCode;
+                    var vertical = tablist.getAttribute('aria-orientation') == 'vertical';
+                    var proceed = false;
+
+                    if (vertical) {
+                        if (key === keys.up || key === keys.down) {
+                            event.preventDefault();
+                            proceed = true;
+                        };
+                    }
+                    else {
+                        if (key === keys.left || key === keys.right) {
+                            proceed = true;
+                        };
+                    };
+
+                    if (proceed) {
+                        switchTabOnArrowPress(event);
+                    };
+                };
+
+                // Either focus the next, previous, first, or last tab
+                // depening on key pressed
+                function switchTabOnArrowPress(event) {
+                    var pressed = event.keyCode;
+
+                    for (x = 0; x < tabs.length; x++) {
+                        tabs[x].addEventListener('focus', focusEventHandler);
+                    };
+
+                    if (direction[pressed]) {
+                        var target = event.target;
+                        if (target.index !== undefined) {
+                            if (tabs[target.index + direction[pressed]]) {
+                                tabs[target.index + direction[pressed]].focus();
+                            }
+                            else if (pressed === keys.left || pressed === keys.up) {
+                                focusLastTab();
+                            }
+                            else if (pressed === keys.right || pressed == keys.down) {
+                                focusFirstTab();
+                            };
+                        };
+                    };
+                };
+
+                // Activates any given tab panel
+                function activateTab(tab, setFocus) {
+                    setFocus = setFocus || true;
+                    // Deactivate all other tabs
+                    deactivateTabs();
+
+                    // Remove tabindex attribute
+                    tab.removeAttribute('tabindex');
+
+                    // Set the tab as selected
+                    tab.setAttribute('aria-selected', 'true');
+
+                    // Get the value of aria-controls (which is an ID)
+                    var controls = tab.getAttribute('aria-controls');
+
+                    tab.closest("li").classList.add("active");
+
+
+                    // Remove hidden attribute from tab panel to make it visible
+                    document.getElementById(controls).removeAttribute('hidden');
+                    document.getElementById(controls).classList.add("active");
+
+                    // Set focus when required
+                    if (setFocus) {
+                        tab.focus();
+                    };
+                };
+
+                // Deactivate all tabs and tab panels
+                function deactivateTabs() {
+                    for (t = 0; t < tabs.length; t++) {
+                        tabs[t].setAttribute('tabindex', '-1');
+                        tabs[t].setAttribute('aria-selected', 'false');
+                        tabs[t].removeEventListener('focus', focusEventHandler);
+                        tabs[t].closest("li").classList.remove("active");
+                    };
+
+                    for (p = 0; p < panels.length; p++) {
+                        panels[p].setAttribute('hidden', 'hidden');
+                        panels[p].classList.remove("active");
+                    };
+                };
+
+                // Make a guess
+                function focusFirstTab() {
+                    tabs[0].focus();
+                };
+
+                // Make a guess
+                function focusLastTab() {
+                    tabs[tabs.length - 1].focus();
+                };
+
+                // Detect if a tab is deletable
+                function determineDeletable(event) {
+                    target = event.target;
+
+                    if (target.getAttribute('data-deletable') !== null) {
+                        // Delete target tab
+                        deleteTab(event, target);
+
+                        // Update arrays related to tabs widget
+                        generateArrays();
+
+                        // Activate the closest tab to the one that was just deleted
+                        if (target.index - 1 < 0) {
+                            activateTab(tabs[0]);
+                        }
+                        else {
+                            activateTab(tabs[target.index - 1]);
+                        };
+                    };
+                };
+
+                // Deletes a tab and its panel
+                function deleteTab(event) {
+                    var target = event.target;
+                    var panel = document.getElementById(target.getAttribute('aria-controls'));
+
+                    target.parentElement.removeChild(target);
+                    panel.parentElement.removeChild(panel);
+                };
+
+                // Determine whether there should be a delay
+                // when user navigates with the arrow keys
+                function determineDelay() {
+                    var hasDelay = tablist.hasAttribute('data-delay');
+                    var delay = 0;
+
+                    if (hasDelay) {
+                        var delayValue = tablist.getAttribute('data-delay');
+                        if (delayValue) {
+                            delay = delayValue;
+                        }
+                        else {
+                            // If no value is specified, default to 300ms
+                            delay = 300;
+                        };
+                    };
+
+                    return delay;
+                };
+
+                //
+                function focusEventHandler(event) {
+                    var target = event.target;
+
+                    setTimeout(checkTabFocus, delay, target);
+                };
+
+                // Only activate tab on focus if it still has focus after the delay
+                function checkTabFocus(target) {
+                    focused = document.activeElement;
+
+                    if (target === focused) {
+                        activateTab(target, false);
+                    };
+                };
+            }());
+        </script>
+
+
+
+
+
+
+        <div id="footer"><!-- 설정된게 없는경우 기본 화면 -->
+            <div class="f_wrap clearfix">
+                <div class="family_site_wrap">
+                    <div class="family_site_inner">
+                        <div class="f_utill">
+                            <div class="familySite">
+                                <a class="btn_family" href="javascript:void(0);" title="패밀리 사이트 목록 열기">패밀리 사이트</a>
+                                <div class="familyList-wrap">
+                                    <ul class="familyList" style="display: none;">
+                                        <li><a href="http://www.kihf.or.kr" target="_blank" title="새창열림">한국건강가정진흥원</a>
+                                        </li>
+                                        <li><a href="http://www.liveinkorea.kr" target="_blank" title="새창열림">다누리</a>
+                                        </li>
+                                        <li><a href="https://danurischool.kr" target="_blank" title="새창열림">다누리배움터</a>
+                                        </li>
+                                        <li><a href="http://idolbom.go.kr" target="_blank" title="새창열림">아이돌봄 지원사업</a>
+                                        </li>
+                                        <li><a href="http://www.ffsb.kr" target="_blank" title="새창열림">가족친화인증</a></li>
+                                        <li><a href="http://www.mogef.go.kr" target="_blank" title="새창열림">성평등가족부</a>
+                                        </li>
+                                        <li><a href="http://women.na.go.kr" target="_blank" title="새창열림">성평등가족위원회</a>
+                                        </li>
+                                        <li><a href="http://www.kwdi.re.kr" target="_blank" title="새창열림">한국여성정책연구원</a>
+                                        </li>
+                                        <li><a href="http://www.nypi.re.kr" target="_blank" title="새창열림">한국청소년정책연구원</a>
+                                        </li>
+                                        <li><a href="http://central.childcare.go.kr" target="_blank"
+                                                title="새창열림">중앙육아지원종합센터</a></li>
+                                        <li><a href="http://www.parents.go.kr" target="_blank"
+                                                title="새창열림">전국학부모지원센터</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="footer_bottom">
+                    <div class="footer_bottom_inner">
+                        <div class="f_logo"><img src="images/footer/footer_logo.svg" alt="한국건강가정진흥원" />
+                        </div>
+                        <div class="f_menu">
+                            <div class="f_txt">
+                                <p>[04554]&nbsp; 서울시 중구 퇴계로 173(충무로3가, 남산스퀘어) 21층 한국건강가정진흥원</p>
+                                <p><b>대표전화</b>&nbsp; 02-3479-7600 (평일 09시~18시)</p>
+                            </div>
+
+                            <div class="cert-copy">
+                                <ul>
+                                    <li><a
+                                            href="https://www.familynet.or.kr/web/lay1/S1T6C393/sublink.do"><b>개인정보처리방침</b></a>
+                                    </li>
+                                    <li><a
+                                            href="https://www.familynet.or.kr/web/lay1/S1T6C394/contents.do">이메일무단수집거부</a>
+                                    </li>
+                                    <li><a href="https://www.familynet.or.kr/web/lay1/S1T6C440/contents.do">공공저작물 저작권 관리
+                                            및
+                                            이용
+                                            지침</a>
+                                    </li>
+                                    <li><a
+                                            href="https://www.familynet.or.kr/web/lay1/program/S1T6C7/sitemap/intro.do">사이트맵</a>
+                                    </li>
+                                </ul>
+                                <p>© KOREA INSTITUTE FOR HEALTHY FAMILY. All Rights Reserved.</p>
+                            </div>
+                            <!-- <a title="새창에서 열립니다."
+                                href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110"
+                                title="국가 공인 인증기관 : 웹와치" class="wa_mark" target="_blank">
+                                <img src="https://www.familynet.or.kr/images/footer/wamark.png" border="0"
+                                    alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" />
+                            </a> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/pgwbrowser.js" async="async"></script>
+        <script type="text/javascript" src="https://www.familynet.or.kr/lib/js/mc.analytics.js" async="async"></script>
+        <div id="naviMenu">
+            <div>
+                <div class="mob-navi-top">
+                    <div class="navi-login">
+                        <div class="close_area">
+                            <button class="close_btn"><img src="images/header/icon_mob_close.svg" alt="닫기"></button>
+                        </div>
+                        <a href="https://www.familynet.or.kr/web/lay4/program/S1T2C4/member/login.do"
+                            class="mob-login"><img src="images/header/icon_mob_login.svg" alt="로그인" /><span>로그인을
+                                해주세요</span></a>
+                    </div>
+                    <ul class="mob-member">
+                        <li class="mob-home">
+                            <a href="https://www.kihf.or.kr/web/index.do"><img src="images/header/icon_family_home.svg"
+                                    alt="홈" />한국건강가정진흥원</a>
+                        </li>
+                        <li class="mob-join-mypage">
+                            <a href="/join"><img src="images/header/icon_mob_join.svg">
+                                회원가입
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <p class="navi_tit">전체메뉴</p>
+                <ul class="navi_top">
+                    <li class="home"><a href="https://www.familynet.or.kr/web"><span>처음으로</span></a></li>
+
+
+                    <li class="login"><a
+                            href="https://www.familynet.or.kr/web/lay4/program/S1T2C4/member/login.do"><span>로그인</span></a>
+                    </li>
+                    <li class="join"><a
+                            href="https://www.familynet.or.kr/web/lay4/program/S1T2C4/member/join_step1.do"><span>회원가입(sign
+                                up)</span></a></li>
+
+
+
+                </ul> -->
+                <ul class="menuCtg_ mob-menuCtg">
+                    <li class="menu_1" child-type="1" menu-seq="296">
+                        <div class="t_a_line">
+                            <a href="#" class="mnTit">주요사업 </a>
+                            <span class="arrow"></span>
+                        </div>
+                        <ul class="side_sub">
+                            <li class="" child-type="1" menu-seq="297"> <a href="#">법적근거 / 사업 주체별 역할</a> </li>
+                            <li class="" child-type="" menu-seq="337"> <a href="#">가족센터 사업 소개</a> </li>
+                            <li class="" child-type="" menu-seq="339"> <a href="#">사업운영 및 사업영역</a> </li>
+                            <li class="" child-type="" menu-seq="338"> <a href="#">건강가정사</a> </li>
+                        </ul>
+                    </li>
+                    <li class="menu_2" child-type="1" menu-seq="299">
+                        <div class="t_a_line">
+                            <a href="#" class="mnTit">지역센터 찾기 </a>
+                            <span class="arrow"></span>
+                        </div>
+                    </li>
+                    <li class="menu_3" child-type="1" menu-seq="304">
+                        <div class="t_a_line">
+                            <a href="#" class="mnTit">참여마당 </a>
+                            <span class="arrow"></span>
+                        </div>
+                        <ul class="side_sub">
+                            <li class="" child-type="1" menu-seq="450"> <a href="#">프로그램 신청
+                                </a> </li>
+                            <li class="" child-type="1" menu-seq="379"> <a href="#">온라인상담실 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu_4" child-type="1" menu-seq="307">
+                        <div class="t_a_line">
+                            <a href="#" class="mnTit">지역센터안내 </a>
+                            <span class="arrow"></span>
+                        </div>
+                        <ul class="side_sub">
+                        </ul>
+                    </li>
+                    <li class="menu_6" child-type="1" menu-seq="431">
+                        <div class="t_a_line">
+                            <a href="#" class="mnTit">참여마당 </a>
+                            <span class="arrow"></span>
+                        </div>
+                        <ul class="side_sub">
+                            <li class="" child-type="1" menu-seq="456"> <a href="#">진흥원소식 </a>
+                            </li>
+                            <li class="" child-type="1" menu-seq="432"> <a href="#">센터홍보실
+                                </a> </li>
+                            <li class="" child-type="1" menu-seq="432"> <a href="#">자주 묻는 질문
+                                </a> </li>
+                            <li class="" child-type="1" menu-seq="432"> <a href="#">센터채용공고
+                                </a> </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="mob-navi-bottom">
+                    <ul class="mob-sns">
+                        <li>
+                            <a href="#">네이버 블로그</a>
+                        </li>
+                        <li>
+                            <a href="#">페이스북</a>
+                        </li>
+                        <li>
+                            <a href="#">인스타그램</a>
+                        </li>
+                        <li>
+                            <a href="#">유투브</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="navi_bottom">
+                    <a href="http://www.kihf.or.kr" class="kihf_link" target="_blank"
+                        title="한국건강가정진흥원 홈페이지 링크"><span><img
+                                href="https://www.familynet.or.kr/images/header/kihf_logo.png" alt="" /></span></a>
+                    <div class="select clearfix">
+                        <select id="site_link" title="패밀리 사이트 보기">
+                            <option>패밀리 사이트</option>
+                            <option value="http://www.kihf.or.kr">한국건강가정진흥원</option>
+                            <option value="http://www.liveinkorea.kr">다누리</option>
+                            <option value="http://idolbom.go.kr">아이돌봄 지원사업</option>
+                            <option value="http://www.ffsb.kr">가족친화인증</option>
+                            <option value="http://www.mogef.go.kr">여성가족부</option>
+                            <option value="http://women.na.go.kr">여성가족위원회</option>
+                            <option value="http://www.kwdi.re.kr">한국여성정책연구원</option>
+                            <option value="http://www.nypi.re.kr">한국청소년정책연구원</option>
+                            <option value="http://central.childcare.go.kr">중앙육아지원종합센터</option>
+                            <option value="http://www.parents.go.kr">전국학부모지원센터</option>
+                        </select>
+                        <a href="javascript:void(0);" class="btn_go">이동</a>
+                        <script type="text/javascript">
+                            $(function () {
+                                $(".btn_go").click(function () {
+                                    var url = $("#site_link").attr('value');
+                                    window.open(url);
+                                });
+                            });
+                        </script>
+                    </div>
+                </div> -->
+                <p class="closeArea"><a class="close" title="메뉴 닫기">메뉴 닫기</a></p>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // 메인 비주얼 슬라이더 초기화
+            var mainSli = $('.main-visual-slider').bxSlider({
+                auto: true,
+                speed: 800,
+                pause: 5000,
+                mode: 'fade',
+                pager: true,
+                pagerCustom: '.pager-wrap',
+                controls: false, // 커스텀 버튼 사용을 위해 false
+                infiniteLoop: true,
+                autoControls: false,
+                touchEnabled: true,
+                onSliderLoad: function (currentIndex) {
+                    // 페이저가 pagerCustom에 의해 자동으로 생성되지 않을 경우 수동 생성 로직 (필요 시)
+                }
+            });
+
+            // 이전/다음 버튼 연동
+            $('.btn-prev').on('click', function () {
+                mainSli.goToPrevSlide();
+                return false;
+            });
+            $('.btn-next').on('click', function () {
+                mainSli.goToNextSlide();
+                return false;
+            });
+
+            // 정지/재생 버튼 연동
+            $('.btn-stop-play').on('click', function () {
+                if ($(this).hasClass('stop')) {
+                    mainSli.stopAuto();
+                    $(this).removeClass('stop').addClass('play').find('.blind').text('재생');
+                } else {
+                    mainSli.startAuto();
+                    $(this).removeClass('play').addClass('stop').find('.blind').text('정지');
+                }
+                return false;
+            });
+            // 커스텀 셀렉트 박스 동작
+            $('.select-trigger').on('click', function (e) {
+                e.stopPropagation();
+                var $parent = $(this).closest('.custom-select-box');
+                $('.custom-select-box').not($parent).removeClass('open'); // 다른 셀렉트 박스 닫기
+                $parent.toggleClass('open');
+            });
+
+            // 초기 이벤트 바인딩
+            bindCustomSelectEvents();
+
+            // 외부 클릭 시 닫기
+            $(document).on('click', function () {
+                $('.custom-select-box').removeClass('open');
+            });
+
+            // 카드 호버 인터랙션 보정 (item-program 기본 활성, item-counsel 호버 시 전환)
+            $('.item-counsel').hover(
+                function () {
+                    $('.item-program').removeClass('active');
+                    $(this).addClass('active');
+                },
+                function () {
+                    $(this).removeClass('active');
+                    $('.item-program').addClass('active');
+                }
+            );
+        });
+
+        // 커스텀 셀렉트 이벤트 바인딩 함수
+        function bindCustomSelectEvents() {
+            $('.select-options button').off('click').on('click', function () {
+                var $parent = $(this).closest('.custom-select-box');
+                var val = $(this).text();
+                var dataVal = $(this).data('value');
+                var dataArea = $(this).data('area');
+
+                $parent.find('.select-trigger span').text(val); // 트리거 텍스트 변경
+                $parent.find('button').removeClass('selected');
+                $(this).addClass('selected'); // 선택 표시
+                $parent.removeClass('open'); // 닫기
+
+                // 시/도 선택 시 지역센터 목록 업데이트
+                if ($parent.hasClass('city-sel')) {
+                    changeCustomAreaDetail(dataArea);
+                }
+            });
+        }
+
+        function changeCustomAreaDetail(area) {
+            $("#custom_area_detail .select-trigger span").text("지역센터 선택");
+            $("#custom_area_detail .select-options").html("<li><button type='button' data-value=''>지역센터 선택</button></li>");
+            if (!area) {
+                return;
+            }
+            getSyncJSON("/json/list/Main.getAreaCenter.do", { val1: area }, function (data) {
+                var centerOptions = data.map(function (item) {
+                    return "<li><button type='button' data-value='" + item.code + "'>" + item.code_nm + "</button></li>";
+                });
+                $("#custom_area_detail .select-options").append(centerOptions.join(''));
+
+                // 새로운 버튼들에 대해 이벤트 재바인딩
+                bindCustomSelectEvents();
+            });
+        }
+
+        function goCustomCenter() {
+            var area = $("#custom_area .select-options button.selected").data("value");
+            var area_detail = $("#custom_area_detail .select-options button.selected").data("value");
+
+            if (!area || !area_detail) {
+                alert("지역센터를 선택해주세요.");
+                return;
+            }
+            var obj = {
+                area: area,
+                area_detail: area_detail,
+                _csrf: $("input[name='_csrf']").val()
+            };
+            $.ajax({
+                method: "POST",
+                url: "/getCenterUrl.do",
+                data: obj,
+                dataType: "JSON",
+                success: function (data) {
+                    var error = data.error;
+                    if (!error) {
+                        var centerUrl = data.centerUrl;
+                        window.open(centerUrl);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

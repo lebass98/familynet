@@ -1,0 +1,1084 @@
+/* [메인 배경 섹션] 상단 메인 영역 전체를 감싸는 컨테이너 및 배경 설정 */
+.main-top-section {
+    background: #FAFAFA;
+    padding: 56px 0;
+}
+
+.main-top-section .top-section-inner {
+    max-width: 1430px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 64px;
+}
+
+/* [지역센터 링크 그룹] 지역별 가족센터 검색 폼과 프로그램/상담 메뉴를 포함하는 좌측 영역 */
+.center-link-wrap {
+    width: 756px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.family-center-link {
+    background: transparent;
+    padding: 0 0 40px 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* [심볼 및 타이틀] 지역 센터 바로가기 섹션의 메인 헤더 및 버튼 그룹 */
+.link-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.link-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.03em;
+}
+
+a.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #177e8b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.map-link i.icon-map {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>') no-repeat center;
+}
+
+/* [검색 컨트롤 박스] 지역 선택을 위한 커스텀 셀렉트박스 및 바로가기 실행 버튼 */
+.link-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.select-group {
+    display: flex;
+    gap: 8px;
+}
+
+.custom-select-box {
+    position: relative;
+    min-width: 216px;
+}
+
+.select-trigger {
+    width: 100%;
+    height: 52px;
+    background: #fff;
+    border: 2px solid #1a1a1a;
+    border-radius: 32px;
+    padding: 0 50px 0 25px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.select-trigger::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url('../../images/main/icon_sel_ar.svg') no-repeat center;
+    transition: transform 0.3s ease;
+}
+
+.custom-select-box.open .select-trigger {
+    border-color: #177e8b;
+    border-width: 2px;
+}
+
+.custom-select-box.open .select-trigger::after {
+    transform: translateY(-50%) rotate(180deg);
+    background-image: url('../../images/main/icon_sel_ar.svg');
+}
+
+/* [드롭다운 옵션] 셀렉트박스 클릭 시 나타나는 하위 항목 리스트 디자인 */
+.select-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: calc(100% - 10px);
+    max-height: 380px;
+    background: #fff;
+    outline: 2px solid #177e8b;
+    border-right: 10px solid #fff;
+    border-radius: 24px;
+    z-index: 1000;
+    padding: 15px 0;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select-box.open .select-options {
+    display: block;
+}
+
+.select-options li {
+    padding: 0 10px;
+}
+
+.select-options button {
+    width: 100%;
+    padding: 12px 15px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #444;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.select-options button:hover {
+    background: #f5fafd;
+    color: #177e8b;
+}
+
+.select-options button.selected {
+    font-weight: 800;
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* [스크롤바 커스텀] 드롭다운 메뉴용 웹킷 기반 스크롤바 스타일링 */
+.select-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.select-options::-webkit-scrollbar-track {
+    background: transparent;
+    background-color: #f1f1f1;
+    border-radius: 99px;
+    margin: 10px 0;
+    background-clip: padding-box;
+}
+
+.select-options::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 99px;
+    background-clip: padding-box;
+}
+
+.select-options::-webkit-scrollbar-thumb:hover {
+    background: #333;
+    background-clip: padding-box;
+}
+
+.area-search-btn {
+    width: 120px;
+    height: 52px;
+    background: #222A2B;
+    color: #fff;
+    border: none;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.area-search-btn:hover {
+    background: #424747;
+    text-decoration: underline;
+}
+
+/* [링크 카드 그리드] 프로그램 신청 및 온라인 상담 메뉴용 가로 배치 카드 리스트 */
+.program-link-wrap ul {
+    display: flex;
+    gap: 16px;
+}
+
+.program-link-wrap li {
+    flex: 1;
+    background: #fff;
+    border-radius: 24px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.program-link-wrap li a {
+    display: block;
+    padding: 35px;
+    min-height: 240px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* [카드 호버 액션] 마우스 오버 시의 배경색, 텍스트 크기 및 아이콘 애니메이션 */
+.item-program {
+    background: #fff;
+}
+
+.item-program:hover, 
+.item-program.active {
+    background: #FFF7E0;
+}
+
+.item-program dt {
+    color: #151717;
+    transition: all 0.3s ease;
+}
+
+.item-program dd {
+    color: #747474;
+    transition: all 0.3s ease;
+}
+
+.item-program .icon-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.item-counsel {
+    background: #fff;
+}
+
+.item-counsel:hover,
+.item-counsel.active {
+    background: #FFEEE6;
+}
+
+.item-counsel dt {
+    color: #151717;
+    transition: all 0.3s ease;
+}
+
+.item-counsel dd {
+    color: #747474;
+    transition: all 0.3s ease;
+}
+
+.item-counsel .icon-arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.program-link-wrap li:hover .icon-arrow,
+.program-link-wrap li.active .icon-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.program-link-wrap dt {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #151717;
+}
+
+.program-link-wrap dd {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.icon-arrow {
+    position: absolute;
+    left: 35px;
+    bottom: 35%;
+    width: 24px;
+    height: 24px;
+    background: url('../../images/main/icon_family_ar.svg') no-repeat center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-15px);
+}
+
+/* [3D 일러스트 효과] 카드 내 그래픽의 확대 및 회전 입체 애니메이션 */
+.icon-img-box {
+    position: absolute;
+    right: 25px;
+    bottom: 5px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-img-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.program-link-wrap li:hover .icon-img-box,
+.program-link-wrap li.active .icon-img-box {
+    transform: translate(-20px, 10px) scale(2) rotate(-5deg);
+}
+
+.program-link-wrap li:hover dl dt,
+.program-link-wrap li.active dl dt {
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.program-link-wrap li:hover dl dd,
+.program-link-wrap li.active dl dd {
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: #151717;
+}
+
+/* [비주얼 슬라이더] 메인 우측 메인 비주얼 이미지 슬라이드 영역의 기본 틀 및 조작계 스타일 */
+.main-visual-new {
+    width: 610px;
+}
+
+.main-visual-new-inner {
+    position: relative;
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+.main-visual-slider,
+.bx-wrapper,
+.bx-viewport {
+    height: 100% !important;
+}
+
+.main-visual-slider .visual-item {
+    position: relative;
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* [텍스트 상자] 슬라이드 내부 제목 및 서브 텍스트 영역 */
+.visual-txt-box {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.visual-txt-box .sub-txt {
+    font-size: 20px;
+    font-weight: 500;
+    color: #177e8b;
+    margin-bottom: 12px;
+}
+
+.visual-txt-box .main-txt {
+    font-size: 44px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.visual-img-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.visual-img-box img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* [컨트롤바] 슬라이더의 하단 인디케이터 및 재생/정지 버튼 인터페이스 */
+.main-visual-controls {
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.controls-inner {
+    background: #fff;
+    border-radius: 40px;
+    height: 48px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pager-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pager-wrap a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s ease;
+}
+
+.pager-wrap a.active {
+    width: 32px;
+    background: #555;
+    border-radius: 10px;
+}
+
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.move-btns {
+    display: flex;
+}
+
+.main-visual-controls .move-btns button {
+    background-color: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain !important;
+    transition: opacity 0.2s;
+}
+
+.main-visual-controls .move-btns button:hover {
+    opacity: 1;
+}
+
+.main-visual-controls .move-btns .btn-prev {
+    background: url('../../images/main/icon_visual_ar_l.svg') no-repeat center !important;
+}
+
+.main-visual-controls .move-btns .btn-next {
+    background: url('../../images/main/icon_visual_ar_r.svg') no-repeat center !important;
+}
+
+.main-visual-controls .move-btns .btn-stop-play.stop {
+    background: url('../../images/main/icon_visual_stop.svg') no-repeat center !important;
+}
+
+.main-visual-controls .move-btns .btn-stop-play.play {
+    background: url('../../images/main/icon_visual_play.svg') no-repeat center !important;
+}
+
+/* [게시판 레이아웃] 공지사항 및 메인 섹션 하단 컨텐츠의 구조적 정렬 및 정합성 설정 */
+.new_ .con_top {
+    max-width: 1430px;
+    width: auto;
+}
+
+.new_ .bbs_popup {
+    gap: 64px;
+    display: flex;
+}
+
+.new_ .notice {
+    width: 756px;
+    float: none;
+    border: none;
+}
+
+.new_ .popup_zone {
+    width: 610px;
+    margin-left: 0;
+    float: none;
+}
+
+.new_notice {
+    position: relative;
+}
+
+.notice .tabs {
+    background: none;
+}
+
+/* [탭 메뉴 구성] 공지사항 상단 카테고리 전환 탭 인터페이스 디자인 */
+.new_tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0;
+    padding-right: 60px;
+    list-style: none;
+}
+
+.new_tabs li {
+    margin: 0;
+}
+
+.notice .tabs li a {
+    padding: 12px 20px;
+    border: none;
+}
+
+.notice .tab_content .more {
+    border: none;
+}
+
+.notice .tabs {
+    border: none;
+}
+
+.notice .tab_content {
+    padding: 0;
+    position: relative;
+}
+
+.new_notice .new_tab_content ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.new_notice .tab_content ul li {
+    width: 100%;
+    margin-left: 0;
+}
+
+.new_notice .tab_content ul li a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.new_notice .tab_content ul li a span {
+    margin-top: 0;
+    display: flex;
+}
+
+.new_notice .tab_content ul li a h6 {
+    margin-bottom: 0;
+}
+
+/* [알약 스타일 탭] 둥근 모서리와 활성화 상태의 시각적 강조 효과 정의 */
+.new_tabs .tabtab {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #f7f7f7;
+    color: #555;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.new_tabs .tabtab:hover {
+    background: #eef1f3;
+    color: #111;
+}
+
+.new_tabs li a[aria-selected="true"] {
+    background: #25282b !important;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.new_tab_content {
+    margin-top: 0;
+}
+
+/* [페이드 애니메이션] 탭 전환 및 요소 등장 시 사용되는 부드러운 페이드인 정의 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* [목록 항목 구성] 다중 게시판 정보의 일관성 있는 리스트 정렬 및 스타일링 */
+.new_tab_content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.new_tab_content li {
+    position: relative;
+    padding: 19px 0;
+    border-bottom: 1px solid #E9EDED;
+    transition: background 0.2s;
+}
+
+.new_tab_content li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.notice .tab_content ul li a h6 {
+    height: auto;
+    color: #151717;
+    line-height: 30px;
+}
+
+.new_tab_content h6 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.new_tab_content p {
+    display: none;
+}
+
+.new_tab_content span:not(.badge_notice) {
+    font-size: 16px;
+    color: #888;
+    font-weight: 400;
+    margin-left: 30px;
+    flex-shrink: 0;
+}
+
+/* [공지사항 뱃지] 특정 중요 게시물을 고지하기 위한 전용 아이콘형 뱃지 정의 */
+.badge_notice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 10px;
+    border: 1px solid #177e8b;
+    color: #177e8b;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+/* [더보기 컨트롤러] 게시판 콘텐츠 확장을 위한 퀵 더보기(+) 버튼 스타일 및 애니메이션 */
+.notice .tab_content .new_more {
+    position: absolute;
+    top: -66px;
+    right: 0;
+    width: 46px;
+    height: 46px;
+    background-image: url('../../images/main/icon_main_notice_ar.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: -9999px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.new_more::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v8" stroke="%233b82f6" stroke-width="2.5" stroke-linecap="round"/><path d="M12 12v8" stroke="%23ef4444" stroke-width="2.5" stroke-linecap="round"/><path d="M12 12h8" stroke="%23f97316" stroke-width="2.5" stroke-linecap="round"/><path d="M12 12h8" stroke="%2314b8a6" stroke-width="2.5" stroke-linecap="round"/></svg>') no-repeat center;
+    background-size: 16px 16px;
+    text-indent: 0;
+}
+
+.new_more:hover {
+    transform: rotate(90deg) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.notice .tab_content .new_more::after,
+.notice .tab_content .new_more::before {
+    display: none;
+}
+
+/* [SNS 채널 배너] 챗봇, 유튜브, 전화상담 등 외부 연동 채널용 타일형 배너 디자인 */
+.sns_banner_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 610px;
+}
+
+.sns_banner_inner img {
+    max-width: 100%;
+}
+
+/* [타일 디자인 카드] SNS/알림 배너용 2열 가로배치 카드 및 상세 인터랙션 설정 */
+.sns_top_cards {
+    display: flex;
+    gap: 16px;
+}
+
+.sns_top_cards>a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.sns_top_cards .card_tel {
+    background-color: #FFF6E0;
+}
+
+.sns_top_cards .card_tel p {
+    color: #151717;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+}
+
+.sns_top_cards .card_chatbot {
+    background-color: #DEF5F5;
+}
+
+.sns_top_cards .card_chatbot p {
+    color: #151717;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 29px;
+}
+
+.sns_top_cards .icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sns_top_cards .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sns_top_cards .ico_link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background: url('../../images/main/icon_main_window_ar.svg') no-repeat center;
+    background-size: 18px;
+}
+
+/* [가로형 리스트 바] 긴 바 형태의 SNS 채널 링크 레이아웃 스타일 설정 */
+.sns_bottom_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sns_bottom_cards>a {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 72px;
+    border-radius: 16px;
+    background-color: #FAFAFA;
+    text-decoration: none;
+    color: #151717;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.sns_bottom_cards .icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sns_bottom_cards .ico_link {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    background: url('../../images/main/icon_main_window_ar.svg') no-repeat center;
+    background-size: 18px;
+}
+
+.con_wrap {
+    margin-bottom:65px;
+}
+
+/* [반응형 디자인 모음] 해상도별 레이아웃 재배치 및 요소 가시성 제어 로직 통합 섹션 */
+
+/* 최대 1450px: 대형 모니터 해상도 대응 여백 및 가변 레이아웃 조정 */
+@media only screen and (max-width: 1450px) {
+    .con_wrap.new_,
+    .main-top-section {
+        padding-left:16px;
+        padding-right:16px;
+    }
+    .center-link-wrap {
+        max-width: 756px;
+        width: auto;
+        flex: 1;
+    }
+    .new_ .bbs_popup,
+    .main-top-section .top-section-inner {
+        gap: 32px;
+    }
+    .new_tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .new_tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .new_tabs li {
+        flex-shrink: 0;
+    }
+}
+
+/* 최대 1300px: 중형 화면 전용 텍스트 크기 튜닝 */
+@media screen and (max-width: 1300px) {
+    .main-txt {
+        font-size: 36px !important;
+    }
+}
+
+/* 최대 1280px: 맥북 및 노트북 해상도 전용 레이아웃 수직 정렬 및 요소 크기 조정 */
+@media only screen and (max-width: 1280px) {
+    .bbs_popup,
+    .main-top-section .top-section-inner {
+        flex-direction: column;
+    }
+    .main-top-section {
+        padding:32px 16px;
+    }
+    .center-link-wrap {
+        max-width: 100%;
+    }
+    .main-visual-new {
+        width: 100%;
+        aspect-ratio: 1220 / 786;
+    }
+    .main-visual-new .bx-viewport {
+        height: 100% !important;
+    }
+    .visual-img-box {
+        align-items: normal;
+    }
+    .main-visual-new-inner {
+        border-radius: 50px;
+    }
+    .new_ .notice {
+        width:100%;
+    }
+    .sns_banner_inner {
+        width:100%;
+    }
+    .link-content .select-group {
+        flex:1;
+        gap:16px;
+    }
+    .link-content {
+        gap:16px;
+    }
+    .link-content .custom-select-box {
+        width:100%;
+    }
+    .link-content .area-search-btn {
+        min-width:auto;
+    }
+    .notice .tab_content ul li a h6 {
+        font-size:16px;
+    }
+    .notice .tab_content ul li a span {
+        font-size:15px;
+        margin-left:0;
+    }
+    .program-link-wrap li:hover .icon-img-box, .program-link-wrap li.active .icon-img-box {
+        transform: translate(-20px, -30px) scale(2) rotate(-5deg);
+    }
+}
+
+/* 최대 1100px: 태블릿 및 가로폭 축소 시 좌우 레이아웃 해제 및 자동 너비 적용 */
+@media screen and (max-width: 1100px) {
+    .main-top-section .top-section-inner {
+        flex-direction: column;
+    }
+
+    .center-link-wrap {
+        width: 100%;
+    }
+
+    .sns_banner_inner {
+        width: 100%;
+    }
+}
+
+/* 최대 768px: 스마트폰 표준 해상도 대응 탭 메뉴 스크롤 및 게시판 상세 구조 재배치 */
+@media screen and (max-width: 768px) {
+    .new_tabs {
+        gap: 8px;
+        padding-right: 50px;
+    }
+
+    .new_tabs .tabtab {
+        padding: 8px 18px;
+        font-size: 15px;
+    }
+
+    .new_tab_content h6 {
+        font-size: 16px;
+    }
+
+    .new_tab_content span:not(.badge_notice) {
+        font-size: 14px;
+    }
+
+    .new_more {
+        top: 18px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .move-btns {
+        display: none;
+    }
+    .notice .tabs {
+        position: relative;        
+    }
+    .notice .tabs:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 100px;
+        height: 100%;
+        background: #ffffff;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 29%, rgba(255, 255, 255, 1) 64%, #ffffff 100%);
+    }
+    .link-header {
+        justify-content: space-between;
+    }
+    .link-header h2 {
+        font-size:20px;
+    }
+    a.map-link {
+        font-size:15px;
+    }
+    .notice .tabs li {
+        padding:0;
+    }
+    .con_top {
+        padding:0;
+    }
+    .link-content {
+        flex-direction: column;
+        width: 100%;
+    }
+    .link-content .select-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .link-content .area-search-btn {
+        width:100%;
+    }
+    .new_notice .tab_content ul li a {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    .notice .tab_content ul li a h6 {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .notice .tab_content ul li a h6 .badge_notice {
+        display: inline-flex;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+}
+
+/* 최대 550px: 초소형 화면 가로 배치 요소의 완전 수직 전환 처리 */
+@media only screen and (max-width: 550px) {
+    .program-link-wrap ul {
+        flex-direction: column;
+    }
+    .program-link-wrap li a {
+        min-height: 120px;
+    }
+    .program-link-wrap li.active a {
+        min-height: 200px;
+    }
+}
+
+/* 최대 480px: 특수 소형 디바이스용 예외 처리 */
+@media screen and (max-width: 480px) {
+    /* 추가적인 모바일 소형화 처리가 필요할 경우 이곳에 작성 */
+}

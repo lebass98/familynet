@@ -1,0 +1,284 @@
+#contents {
+  width: 100%;
+  min-height: 800px;
+  background: #f8f9fa url('../images/main/hero-bg.png') no-repeat center center / cover;
+}
+
+main .inner {
+  max-width: 1430px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  padding: 80px 0;
+}
+
+/* Slogan */
+.slogan-wrap {
+  margin-bottom: 60px;
+}
+
+.sub-slogan {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1d1d1d;
+  margin-bottom: 12px;
+}
+
+.main-slogan {
+  font-size: 64px;
+  font-weight: 700;
+  color: #1d1d1d;
+  margin-bottom: 30px;
+  letter-spacing: -0.02em;
+}
+
+.desc {
+  font-size: 17px;
+  line-height: 1.5;
+  color: #1D1D1D;
+  opacity: 0.9;
+}
+
+/* Card Group */
+.card-group {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.card-item {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Purple Card */
+.purple-card {
+  width: 662px;
+  height: 400px;
+  background: url('../images/main/card-self-bg.jpg') no-repeat center center / cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  color: #fff;
+}
+
+.purple-card .card-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.purple-card .card-desc {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+
+/* Sub Card Layout */
+.card-sub-wrap {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 664px;
+}
+
+.white-card {
+  background: #fff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  border-radius: 24px;
+  height: 188px;
+}
+
+.white-card .card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+/* Notice Card */
+.notice-card {
+  width: 430px;
+}
+
+.notice-card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.btn-more {
+  width: 32px;
+  height: 32px;
+  background: #f1f3f5 url('../images/main/ico-plus.svg') no-repeat center center;
+  border-radius: 50%;
+}
+
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notice-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  color: #444;
+}
+
+.notice-item .text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 12px;
+  position: relative;
+  color:#333;
+  line-height:1;
+}
+
+.notice-item .text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 50%;
+}
+
+.notice-item .date {
+  color: #545454;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+/* Small Cards (Archive, FAQ, Q&A) */
+.btn-go {
+  width: 32px;
+  height: 32px;
+  background: #f1f3f5 url('../images/main/ico-arrow.svg') no-repeat center center;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.card-icon {
+  align-self: flex-end;
+  width: 56px;
+  height: 56px;
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.archive-card {
+  width: 210px;
+}
+
+.faq-card {
+  width: 320px;
+}
+
+.qna-card {
+  width: 320px;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media screen and (max-width: 1400px) {
+  .inner {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+  
+  .card-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .purple-card, 
+  .card-sub-wrap {
+    width: 100%;
+    max-width: 664px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+  }
+  
+  .hero-section {
+    padding: 40px 0;
+  }
+  
+  .sub-slogan {
+    font-size: 18px;
+  }
+  
+  .main-slogan {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .desc {
+    font-size: 15px;
+    br { display: none; } /* Remove line breaks on mobile */
+  }
+  
+  .slogan-wrap {
+    margin-bottom: 40px;
+  }
+
+  .purple-card {
+    height: auto;
+    min-height: 300px;
+    padding: 32px;
+  }
+  
+  .purple-card .card-title {
+    font-size: 32px;
+  }
+  
+  .card-sub-wrap {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  
+  .notice-card,
+  .archive-card,
+  .faq-card,
+  .qna-card {
+    width: 100% !important;
+    height: auto;
+    min-height: 180px;
+  }
+  
+  .notice-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .notice-item .date {
+    margin-left: 12px;
+  }
+}

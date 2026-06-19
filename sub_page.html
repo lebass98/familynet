@@ -1,7 +1,35 @@
 {% extends "sub.html" %}
 
+{% set depth_1 = "주요사업" %}
+{% set depth_2 = "가족센터 사업 소개" %}
+{% set page_title = "가족센터 사업 소개" %}
+
 {% block sub_content %}
-<div class="sub_contents">
     {% include "templates/contents_1.html" %}
-</div>
+    
+    <!-- 만족도조사 / 페이지담당자 -->
+    <div class="eval_sec">
+        <form id="satisfactionFrm" name="satisfactionFrm" action="/satifaction/estimate.do" method="post">
+            <input type="hidden" name="_csrf" value="17e3269e-d5eb-4759-a3d0-63e184540a98" />
+            <div class="eval_txt">
+                <p><strong>만족도</strong> 현재 페이지에 대하여 얼마나 만족하십니까?</p>
+            </div>
+            <div class="gtb">
+                <input type="hidden" name="cms_menu_seq" value="337" />
+                <ul>
+                    <li><input type="radio" id="well" name="score" value="5" /><label for="well">매우만족</label> </li>
+                    <li><input type="radio" id="satisfactorily" name="score" value="4" /><label for="satisfactorily">만족</label></li>
+                    <li><input type="radio" id="normal" name="score" value="3" /><label for="normal">보통</label></li>
+                    <li><input type="radio" id="dissatisfaction" name="score" value="2" /><label for="dissatisfaction">불만족</label></li>
+                    <li><input type="radio" id="veryunsatisfactory" name="score" value="1" /><label for="veryunsatisfactory">매우불만족</label></li>
+                    <li><input type="radio" id="etc_chk" name="score" value="0" /><label for="etc_chk">기타의견</label></li>
+                </ul>
+                <a href="javascript:estimate()"><span>평가하기</span></a>
+            </div>
+            <div class="eval_insert" id="eval_insert">
+                <textarea id="eval_etc_text" name="etc" placeholder="기타의견을 작성해주세요" title="기타의견 작성"></textarea>
+                <span><input type="submit" value="의견제출" /></span>
+            </div>
+        </form>
+    </div>
 {% endblock %}

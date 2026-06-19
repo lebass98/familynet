@@ -180,7 +180,6 @@
 
 .sb_footer .chk1 input[type="checkbox"]:checked+label:before {
     content: '';
-    '';
     background: #e9ecee url(../../images/common/check_ico01.png) no-repeat center center;
     background-size: cover;
     border-color: #adb8c0;

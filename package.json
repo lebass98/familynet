@@ -1,0 +1,15 @@
+{
+  "name": "familynet",
+  "version": "1.0.0",
+  "description": "한국건강가정진흥원 가족센터 프로젝트",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-nunjucks": "^0.2.0"
+  }
+}

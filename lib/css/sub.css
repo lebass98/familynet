@@ -1120,7 +1120,7 @@ b.esntl {
 .program_list .txt {
     display: table-cell;
     margin: 7px 0;
-    width: 520px;
+    width: 100%;
 }
 
 .program_list .txt .tit {

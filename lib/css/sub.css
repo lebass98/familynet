@@ -432,7 +432,7 @@
     padding-left: 30px;
     margin-top: 40px;
     margin-bottom: 20px;
-    background: url(../../images/sub/h4_tit.png) no-repeat 0 0;
+    background: url(/images/sub/h4_tit.png) no-repeat 0 0;
     color: #444;
     font-size: 20px;
     letter-spacing: -0.045em;
@@ -741,8 +741,7 @@ b.esntl {
     letter-spacing: -0.045em;
 }
 
-.bi_box .tit b {
-}
+.bi_box .tit b {}
 
 .bi_box p:not(.tit) {
     margin: 12px 0 20px 0;
@@ -1681,8 +1680,7 @@ b.esntl {
     font-size: 16px;
 }
 
-.program_join .pj_wrap div div.list>p span {
-}
+.program_join .pj_wrap div div.list>p span {}
 
 .program_join .pj_wrap div div.list>p span b {
     color: #3d7a99;
@@ -2228,8 +2226,7 @@ b.esntl {
     line-height: 24px;
 }
 
-.center_intro .tit span b {
-}
+.center_intro .tit span b {}
 
 .center_intro .img {}
 
@@ -2872,8 +2869,7 @@ b.esntl {
     letter-spacing: -0.045em;
 }
 
-.parent_tit_img p b {
-}
+.parent_tit_img p b {}
 
 .parent_tit_img p span {
     color: #38708c;
@@ -3389,8 +3385,7 @@ b.esntl {
     font-size: 24px;
 }
 
-.parent_local .right .statistics .tit b {
-}
+.parent_local .right .statistics .tit b {}
 
 .parent_local .right .statistics ul {
     margin-top: 20px;
@@ -4033,8 +4028,7 @@ b.esntl {
     background: url(../../images/sub/manager_line.gif) 0 0 no-repeat;
 }
 
-.eval_list ul li strong {
-}
+.eval_list ul li strong {}
 
 /* 시스템 경고 */
 .system_warning_box {}
@@ -4389,8 +4383,7 @@ b.esntl {
     font-weight: normal;
 }
 
-.insert_box .ib_wrap .insert label span+b {
-}
+.insert_box .ib_wrap .insert label span+b {}
 
 .insert_box .ib_wrap .insert label input {
     padding: 10px;
@@ -4937,8 +4930,7 @@ b.esntl {
     color: #444;
 }
 
-.health_family #cont0>.tit b {
-}
+.health_family #cont0>.tit b {}
 
 .health_family #cont0>.tit::after {
     content: '';
@@ -4976,15 +4968,20 @@ b.esntl {
 
 .health_family #cont0 li .num {
     margin-bottom: 14px;
-    font-size: 28px;
-    color: #3d9999;
+    font-size: 32px;
+    text-align: right;
+    color: #E3E7E8;
+    font-weight:700;
     letter-spacing: -0.045em;
 }
 
 .health_family #cont0 li .txt {
     font-size: 16px;
-    color: #666;
-    line-height: 24px;
+    color: #454545;
+    line-height: 1.5;
+}
+.health_family #cont0 li img {
+    position: absolute;
 }
 
 .health_family #cont0 li:nth-child(-n+4) {
@@ -5613,7 +5610,7 @@ b.esntl {
 
     .contents {
         padding: 25px 0 80px 0;
-		width: 100% !important;
+        width: 100% !important;
     }
 
     #left_menu {
@@ -6167,8 +6164,7 @@ b.esntl {
         font-size: 15px;
     }
 
-    .bi_box p:not(.tit) b {
-    }
+    .bi_box p:not(.tit) b {}
 
     .bi_box span {
         font-size: 13px;
@@ -6511,11 +6507,9 @@ b.esntl {
         line-height: 20px;
     }
 
-    .parent_tit_img p b {
-    }
+    .parent_tit_img p b {}
 
-    .parent_tit_img p span {
-    }
+    .parent_tit_img p span {}
 
     .parent_tit_img>span {
         margin-top: 10px;
@@ -6676,8 +6670,7 @@ b.esntl {
 
     .parent_status .txt ul li p {}
 
-    .parent_status .txt ul li span {
-    }
+    .parent_status .txt ul li span {}
 
     .parent_local .left #parent_tabList li.incheon {
         bottom: 290px;
@@ -6698,8 +6691,7 @@ b.esntl {
         font-size: 16px;
     }
 
-    .parent_local .right .statistics .tit b {
-    }
+    .parent_local .right .statistics .tit b {}
 
     .parent_local .right .statistics ul {
         margin-top: 8px;
@@ -6740,8 +6732,7 @@ b.esntl {
         letter-spacing: 0;
     }
 
-    .parent_search .notice .tit b {
-    }
+    .parent_search .notice .tit b {}
 
     .parent_search .notice ul {
         margin-top: 10px;
@@ -7330,8 +7321,7 @@ b.esntl {
         font-size: 15px;
     }
 
-    .member_contents .step1 ol li.on p {
-    }
+    .member_contents .step1 ol li.on p {}
 
     .member_contents .reference {
         font-size: 12px;

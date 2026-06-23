@@ -5613,7 +5613,7 @@ b.esntl {
 
     .contents {
         padding: 25px 0 80px 0;
-        width: auto;
+		width: 100% !important;
     }
 
     #left_menu {

@@ -856,6 +856,42 @@
                     };
                 };
             }());
+
+            // 메인 비주얼 슬라이더 초기화
+            $(document).ready(function() {
+                if (typeof $.fn.bxSlider !== 'undefined' && $('.main-visual-slider').length > 0) {
+                    var mainVisualSlider = $('.main-visual-slider').bxSlider({
+                        auto: true,
+                        controls: false,
+                        pager: true,
+                        pagerCustom: '.pager-wrap',
+                        speed: 800,
+                        pause: 5500
+                    });
+
+                    $('.btn-prev').on('click', function() {
+                        mainVisualSlider.goToPrevSlide();
+                        return false;
+                    });
+
+                    $('.btn-next').on('click', function() {
+                        mainVisualSlider.goToNextSlide();
+                        return false;
+                    });
+
+                    $('.btn-stop-play').on('click', function() {
+                        var $btn = $(this);
+                        if ($btn.hasClass('stop')) {
+                            mainVisualSlider.stopAuto();
+                            $btn.removeClass('stop').addClass('play').find('.blind').text('재생');
+                        } else {
+                            mainVisualSlider.startAuto();
+                            $btn.removeClass('play').addClass('stop').find('.blind').text('정지');
+                        }
+                        return false;
+                    });
+                }
+            });
         </script>
 
         {% include "templates/footer.html" %}

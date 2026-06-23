@@ -5,11 +5,12 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && mkdir -p docs/images docs/lib docs/sub && cp -r images/* docs/images/ && cp -r lib/* docs/lib/ && cp -r sub/* docs/sub/",
     "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.0.0",
-    "vite-plugin-nunjucks": "^0.2.0"
+    "vite-plugin-nunjucks": "^0.2.0",
+    "vite-plugin-static-copy": "^4.1.1"
   }
 }

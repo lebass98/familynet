@@ -39,34 +39,8 @@
             <div class="contents">
                 {% include "templates/left_menu.html" %}
 
-                <div id="sub">
-                    <div class="strapline">
-                        <div class="navi">
-                            <div class="n_wrap">
-                                <ul class="state clearfix">
-                                    <li><a href="#"><img src="https://familynet.or.kr/images/sub/state_home.png" alt="홈" /></a></li>
-                                    <li class="meta-depth1">주요사업</li>
-                                    <li class="meta-depth2"><strong>가족센터 사업 소개</strong></li>
-                                </ul>
-                                <div class="etc">
-                                    <a href="javascript:window.print();" class="etc_print" title="페이지 인쇄"><img src="https://familynet.or.kr/images/sub/etc_print.png" alt="프린트" /></a>
-                                    <a href="javascript:void(0);" class="etc_share" title="페이지 공유 사이트 목록 열기">페이지 공유 사이트 목록</a>
-                                    <ul class="etc_list">
-                                        <li><a href="javascript:fbLink();" class="etc_facebook" title="페이스북 공유 새창열림">페이스북 공유</a></li>
-                                        <li><a href="javascript:twtLink();" class="etc_twitter" title="트위터 공유 새창열림">트위터 공유</a></li>
-                                        <li><a href="javascript:ksLink();" class="etc_kakao" title="카카오스토리 공유 새창열림">카카오스토리 공유</a></li>
-                                        <li><a href="javascript:blogLink();" class="etc_naver" title="네이버블로그 공유 새창열림">네이버블로그 공유</a></li>
-                                        <li><a href="javascript:copyLink();" class="etc_link" title="링크 주소 복사">링크 주소 복사</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <h3 class="meta-title">가족센터 사업 소개</h3>
-                    </div>
-                    
-                    <div class="sub_contents" id="dynamic-sub-content">
-                        <!-- 동적으로 서브 콘텐츠 html 파일 로드 -->
-                    </div>
+                <div id="dynamic-sub-content">
+                    <!-- 동적으로 서브 콘텐츠 html 파일 로드 -->
                 </div>
             </div>
         </div>
@@ -78,31 +52,31 @@
             $(function () {
                 // url hash 파싱해서 동적으로 서브 콘텐츠 주입
                 function loadSubPage() {
-                    var page = window.location.search ? window.location.search.substring(1) : "";
+                    var page = window.location.search ? decodeURIComponent(window.location.search.substring(1)) : "";
                     if (!page) {
                         page = "contents_1"; // 기본값
                     }
                     
                     // 파일명에 이상한 경로가 섞이지 않도록 정규식 필터링
-                    page = page.replace(/[^a-zA-Z0-9_]/g, "");
+                    page = page.replace(/[^a-zA-Z0-9_가-힣-]/g, "");
 
                     axios.get("./sub/" + page + ".html")
                         .then(function(res) {
+                            if (res.data.indexOf("<!DOCTYPE") !== -1 || res.data.indexOf("<html") !== -1) {
+                                throw new Error("Page not found");
+                            }
                             var $temp = $("<div>").html(res.data);
-                            var content = $temp.find(".sub_contents_body").html() || res.data;
-                            $("#dynamic-sub-content").html(content);
-
-                            // 메타 데이터 및 타이틀 파싱 (존재하는 경우 변경)
-                            var depth1 = $temp.find(".meta-depth1-val").text() || "주요사업";
-                            var depth2 = $temp.find(".meta-depth2-val").text() || "가족센터 사업 소개";
-                            var title = $temp.find(".meta-title-val").text() || "가족센터 사업 소개";
+                            var $sub = $temp.find("#sub");
+                            if (!$sub.length) {
+                                throw new Error("Page not found");
+                            }
                             
-                            $(".meta-depth1").text(depth1);
-                            $(".meta-depth2 strong").text(depth2);
-                            $(".meta-title").text(title);
+                            var $target = $("#sub").length ? $("#sub") : $("#dynamic-sub-content");
+                            $target.replaceWith($sub);
                         })
                         .catch(function(err) {
-                            $("#dynamic-sub-content").html("<p style='padding:50px 0; text-align:center;'>존재하지 않는 페이지입니다.</p>");
+                            var $target = $("#sub").length ? $("#sub") : $("#dynamic-sub-content");
+                            $target.replaceWith("<div id='dynamic-sub-content'><p style='padding:50px 0; text-align:center; font-size: 13px; color: #999;'>빈파일입니다</p></div>");
                         });
                 }
 
@@ -110,10 +84,10 @@
                 loadSubPage();
 
                 // 팝오버 및 만족도 조사 등의 이벤트 바인딩
-                $('.etc_share').click(function () {
+                $(document).on("click", ".etc_share", function () {
                     $(this).toggleClass('open');
                     $('.etc_list').toggleClass('open').slideToggle(300);
-                    if ($(".etc_share").hasClass("open") === true) {
+                    if ($(this).hasClass("open") === true) {
                         $(this).attr("title", "페이지 공유 사이트 목록 닫기");
                     } else {
                         $(this).attr("title", "페이지 공유 사이트 목록 열기");

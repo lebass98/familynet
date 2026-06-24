@@ -5617,6 +5617,7 @@ b.esntl {
     .contents_wrap {
         position: relative;
         padding: 0 20px;
+        gap:0;
     }
 
     .contents {

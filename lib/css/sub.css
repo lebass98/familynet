@@ -276,7 +276,7 @@
     margin-top: 20px;
     color: #333;
     font-size: 32px;
-    font-weight: normal;
+    font-weight:600;
     letter-spacing: -0.045em;
 }
 
@@ -5601,15 +5601,22 @@ b.esntl {
     margin-left: 10px;
     cursor: pointer;
 }
+
 @media only screen and (max-width:1400px) {
     .contents {
         display: flex;
-        gap:40px;
+        gap: 40px;
     }
+
     #sub {
         float: none;
-        flex:1;
+        flex: 1;
     }
+
+    .contents:after {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width:1100px) {

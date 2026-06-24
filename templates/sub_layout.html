@@ -2,6 +2,7 @@
 <html lang="ko">
 {% set page_css = 'lib/css/sub.css' %}
 {% include "templates/head.html" %}
+
 <body>
     <div class="wrap">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -56,12 +57,12 @@
                     if (!page) {
                         page = "contents_1"; // 기본값
                     }
-                    
+
                     // 파일명에 이상한 경로가 섞이지 않도록 정규식 필터링
                     page = page.replace(/[^a-zA-Z0-9_가-힣-]/g, "");
 
                     axios.get("./sub/" + page + ".html")
-                        .then(function(res) {
+                        .then(function (res) {
                             if (res.data.indexOf("<!DOCTYPE") !== -1 || res.data.indexOf("<html") !== -1) {
                                 throw new Error("Page not found");
                             }
@@ -70,11 +71,11 @@
                             if (!$sub.length) {
                                 throw new Error("Page not found");
                             }
-                            
+
                             var $target = $("#sub").length ? $("#sub") : $("#dynamic-sub-content");
                             $target.replaceWith($sub);
                         })
-                        .catch(function(err) {
+                        .catch(function (err) {
                             var $target = $("#sub").length ? $("#sub") : $("#dynamic-sub-content");
                             $target.replaceWith("<div id='dynamic-sub-content'><p style='padding:50px 0; text-align:center; font-size: 13px; color: #999;'>빈파일입니다</p></div>");
                         });
@@ -122,4 +123,5 @@
         {% include "templates/footer.html" %}
     </div>
 </body>
+
 </html>
